@@ -5,20 +5,28 @@
   word-break: keep-all;
   overflow-wrap: break-word;
 
-  .link {
+  .section-link {
     color: base.func-get-color('on-dark-surface');
     background-color: base.func-get-color('dark-surface');
 
     @include base.typo-label;
 
     .container {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-auto-flow: row;
+      container-type: inline-size;
+    }
+
+    .layout {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 0.5rem;
+
+      > * {
+        flex-basis: 100%;
+      }
     }
   }
 
-  .info {
+  .section-info {
     color: base.func-get-color('on-primary-seed');
     background-color: base.func-get-color('primary-seed');
 
@@ -63,12 +71,6 @@
 
 @media (width >= map.get(base.$var-bp-gte,'lg')) {
   .Footer {
-    .link {
-      .container {
-        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      }
-    }
-
     .info {
       .container {
         row-gap: 1.5rem;
@@ -76,7 +78,7 @@
 
       .logo {
         svg {
-          height: 3rem;
+          height: 3.5rem;
         }
       }
 
@@ -97,4 +99,43 @@
 }
 
 @media (width >= map.get(base.$var-bp-gte,'xl')) {
+}
+
+@container (inline-size >= 23.4375rem) {
+  .Footer {
+    .section-link {
+      .layout {
+        > * {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+}
+
+@container (inline-size >= 37.5rem) {
+  .Footer {
+    .section-link {
+      .layout {
+        > * {
+          flex-basis: calc(100% / 3);
+        }
+      }
+    }
+  }
+}
+
+@container (inline-size >= 52.5rem) {
+  .Footer {
+    .section-link {
+      .layout {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        > * {
+          flex-basis: unset;
+        }
+      }
+    }
+  }
 }
