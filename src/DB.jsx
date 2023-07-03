@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const DB = {
-  old: [
+  navV1: [
     {
       key: uuidv4(),
       label: `상명소개`,
@@ -836,103 +836,6 @@ const DB = {
         },
       ],
     },
-    {
-      key: uuidv4(),
-      label: `유틸리티`,
-      children: [
-        {
-          key: uuidv4(),
-          label: `홈`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `자주 사용하는 메뉴(가칭)`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `입학`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `수강신청`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `코로나19`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `로그인`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `사이트맵`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `캘린더`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `SM Webzine`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `공식 SNS`,
-          children: [],
-        },
-      ],
-    },
-    {
-      key: uuidv4(),
-      label: `FOOTER`,
-      children: [
-        {
-          key: uuidv4(),
-          label: `대학정보공시`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `예결산공고`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `정보공개`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `개인정보처리방침`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `이메일주소무단수집거부`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `영상정보처리기기 운영·관리방침`,
-          children: [],
-        },
-        {
-          key: uuidv4(),
-          label: `취업규칙`,
-          children: [],
-        },
-      ],
-    },
   ],
   chips: [
     { key: uuidv4(), label: '수강신청' },
@@ -968,7 +871,7 @@ const DB = {
     { key: uuidv4(), label: '교수' },
     { key: uuidv4(), label: '학사시스템' },
   ],
-  tabs: [
+  noticeTabs: [
     { key: uuidv4(), label: '전체' },
     { key: uuidv4(), label: '서울' },
     { key: uuidv4(), label: '천안' },
@@ -1084,6 +987,94 @@ const DB = {
       key: uuidv4(),
       title:
         '열락의 무엇을 피고 설산에서 대고, 고동을 청춘은 장식하는 쓸쓸하랴? 무한한 가지에 때까지 방황하였으며, 약동하다. 천하를 이상의 예가 만물은 보는 보이는 심장은 수 것이다.',
+    },
+  ],
+  footer: [
+    {
+      key: uuidv4(),
+      label: `대학정보공시`,
+    },
+    {
+      key: uuidv4(),
+      label: `예결산공고`,
+    },
+    {
+      key: uuidv4(),
+      label: `정보공개`,
+    },
+    {
+      key: uuidv4(),
+      label: `개인정보처리방침`,
+    },
+    {
+      key: uuidv4(),
+      label: `이메일주소무단수집거부`,
+    },
+    {
+      key: uuidv4(),
+      label: `영상정보처리기기 운영관리방침`,
+    },
+    {
+      key: uuidv4(),
+      label: `취업규칙`,
+    },
+  ],
+  widget: [
+    {
+      key: uuidv4(),
+      label: `유틸리티`,
+      children: [
+        {
+          key: uuidv4(),
+          label: `홈`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `자주 사용하는 메뉴(가칭)`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `입학`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `수강신청`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `코로나19`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `로그인`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `사이트맵`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `캘린더`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `SM Webzine`,
+          children: [],
+        },
+        {
+          key: uuidv4(),
+          label: `공식 SNS`,
+          children: [],
+        },
+      ],
     },
   ],
 };

@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use 'base';
+@use './style/base';
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -85,7 +85,7 @@ h4 {
 
   padding-block: $py;
   padding-inline: $px;
-  background-color: base.func-get-color('surface-container');
+  background-color: base.func-get-color('surface');
 
   &__wrap {
     $gap-x: map.get(base.$var-gap-x, 'sm');
@@ -99,19 +99,20 @@ h4 {
   }
 }
 
-main {
-  background-color: base.func-get-color('surface-container-highest');
+.container {
+  $px: map.get(base.$var-px, 'sm');
+  $py: map.get(base.$var-py, 'sm');
+
+  width: calc(100% - 2 * $px);
+  padding-block: $py;
+  margin-inline: auto;
+}
+
+main,
+footer {
+  background-color: base.func-get-color('surface-container');
 
   @include base.typo-body;
-
-  .container {
-    $px: map.get(base.$var-px, 'sm');
-    $py: map.get(base.$var-py, 'sm');
-
-    width: calc(100% - 2 * $px);
-    padding-block: $py;
-    margin-inline: auto;
-  }
 }
 
 @media (width >= map.get(base.$var-bp-gte, 'md')) {
@@ -146,13 +147,14 @@ main {
     }
   }
 
-  main {
-    @include base.typo-body;
+  .container {
+    width: calc(100% - 2 * $px);
+    padding-block: $py;
+  }
 
-    .container {
-      width: calc(100% - 2 * $px);
-      padding-block: $py;
-    }
+  main,
+  footer {
+    @include base.typo-body;
   }
 }
 
@@ -230,13 +232,14 @@ main {
     }
   }
 
-  main {
-    @include base.typo-body(true);
+  .container {
+    width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
+    padding-block: $py;
+  }
 
-    .container {
-      width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
-      padding-block: $py;
-    }
+  main,
+  footer {
+    @include base.typo-body(true);
   }
 }
 
@@ -284,12 +287,13 @@ main {
     }
   }
 
-  main {
-    @include base.typo-body(true);
+  .container {
+    width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
+    padding-block: $py;
+  }
 
-    .container {
-      width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
-      padding-block: $py;
-    }
+  main,
+  footer {
+    @include base.typo-body(true);
   }
 }

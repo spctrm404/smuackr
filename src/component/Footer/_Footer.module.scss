@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use '../../style/base';
+
+.Footer {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  .link {
+    color: base.func-get-color('on-dark-surface');
+    background-color: base.func-get-color('dark-surface');
+
+    @include base.typo-label;
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-flow: row;
+    }
+  }
+
+  .info {
+    color: base.func-get-color('on-primary-seed');
+    background-color: base.func-get-color('primary-seed');
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    .logo {
+      svg {
+        height: 3rem;
+      }
+    }
+
+    .addresses {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+    }
+
+    .address {
+      display: flex;
+      column-gap: 0.5rem;
+    }
+
+    .address-title {
+      flex-shrink: 0;
+    }
+
+    .address-info {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 0.25rem;
+      column-gap: 0.5rem;
+    }
+  }
+}
+
+@media (width >= map.get(base.$var-bp-gte,'md')) {
+}
+
+@media (width >= map.get(base.$var-bp-gte,'lg')) {
+  .Footer {
+    .link {
+      .container {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      }
+    }
+
+    .info {
+      .container {
+        row-gap: 1.5rem;
+      }
+
+      .logo {
+        svg {
+          height: 3rem;
+        }
+      }
+
+      .addresses {
+        row-gap: 0.75rem;
+      }
+
+      .address {
+        column-gap: 0.5625rem;
+      }
+
+      .address-info {
+        row-gap: 0.5rem;
+        column-gap: 0.5625rem;
+      }
+    }
+  }
+}
+
+@media (width >= map.get(base.$var-bp-gte,'xl')) {
+}

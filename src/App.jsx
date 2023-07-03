@@ -1,7 +1,8 @@
 import NavRail from './component/NavRail/NavRail';
 import SearchWidget from './component/SearchWidget/SearchWidget';
 import NoticeWidget from './component/NoticeWidget/NoticeWidget';
-import './style/_layout.scss';
+import Footer from './component/Footer/Footer';
+import './_App.scss';
 import DB from './DB';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     <>
       <div className="grid">
         <div className="nav-bar"></div>
-        <NavRail className="nav-rail" navList={DB.old}></NavRail>
+        <NavRail className="nav-rail" navList={DB.navV1}></NavRail>
         <div className="imagery"></div>
         <div className="widget">
           <div className="widget__wrap">
@@ -25,7 +26,7 @@ function App() {
               length={12}></SearchWidget>
             <NoticeWidget
               className="widget__notice"
-              tabList={DB.tabs}
+              tabList={DB.noticeTabs}
               noticeList={DB.notices}
               length={8}></NoticeWidget>
           </div>
@@ -118,6 +119,7 @@ function App() {
             </div>
           </section>
         </main>
+        <Footer list={DB.footer}></Footer>
       </div>
     </>
   );
