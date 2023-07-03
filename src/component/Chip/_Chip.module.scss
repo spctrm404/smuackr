@@ -1,0 +1,43 @@
+@use '../../style/base';
+
+.a {
+  display: contents;
+}
+
+.Chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 3rem;
+  cursor: pointer;
+
+  @include base.typo-label;
+
+  > .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    padding-inline: 0.75rem;
+    overflow: hidden;
+    border: 0.0625rem solid base.func-get-color('outline');
+    border-radius: 256rem;
+
+    @include base.func-set-states(
+      transparent,
+      base.func-get-color('on-surface-variant')
+    );
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      display: block;
+      content: '';
+    }
+  }
+}

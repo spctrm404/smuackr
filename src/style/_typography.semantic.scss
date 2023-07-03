@@ -1,0 +1,147 @@
+@use 'sass:map';
+@use 'variables' as var;
+@use './typography.token' as tt;
+
+@mixin icon($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv-1;
+  } @else {
+    @include tt.type-scale-lv-1;
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv-1;
+      }
+    }
+  }
+
+  font-weight: 400;
+}
+
+@mixin label($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv0;
+  } @else {
+    @include tt.type-scale-lv0;
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv0;
+      }
+    }
+  }
+
+  font-weight: 400;
+}
+
+@mixin caption($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv0;
+  } @else {
+    @include tt.type-scale-lv0;
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv0;
+      }
+    }
+  }
+
+  font-weight: 300;
+}
+
+@mixin body($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv1;
+  } @else {
+    @include tt.type-scale-lv2;
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv2;
+      }
+    }
+  }
+
+  font-weight: 300;
+}
+
+@mixin subtitle($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv3(true);
+  } @else {
+    @include tt.type-scale-lv5(true);
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv5(true);
+      }
+    }
+  }
+
+  font-weight: 600;
+}
+
+@mixin title($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv5(true);
+  } @else {
+    @include tt.type-scale-lv8(true);
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv8(true);
+      }
+    }
+  }
+
+  font-weight: 600;
+}
+
+@mixin headline($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv7(true);
+  } @else {
+    @include tt.type-scale-lv11(true);
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv11(true);
+      }
+    }
+  }
+
+  font-weight: 600;
+}
+
+@mixin display($on-large-screen: false) {
+  @if not($on-large-screen) {
+    @include tt.type-scale-lv9(true);
+  } @else {
+    @include tt.type-scale-lv14(true);
+  }
+
+  @at-root {
+    @media (width >= map.get(var.$bp-gte, 'lg')) {
+      & {
+        @include tt.type-scale-lv14(true);
+      }
+    }
+  }
+
+  font-weight: 600;
+}

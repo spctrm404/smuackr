@@ -1,0 +1,295 @@
+@use 'sass:map';
+@use 'base';
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  line-height: 1.5;
+  color: base.func-get-color('on-surface');
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  background-color: base.func-get-color('surface-container-lowest');
+
+  @include base.typo-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  @include base.typo-display;
+}
+
+h2 {
+  @include base.typo-headline;
+}
+
+h3 {
+  @include base.typo-title;
+}
+
+h4 {
+  @include base.typo-subtitle;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  min-width: 20rem;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.grid {
+  @include base.typo-caption;
+}
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  height: base.$var-static-nav-bar-h;
+}
+
+.nav-rail {
+  display: none;
+}
+
+.imagery {
+  // 1:1 < height < 3:4
+  height: clamp(100vw, 100dvh, calc(100vw * 4 / 3));
+  background-color: base.func-get-color('surface-dim');
+}
+
+.widget {
+  $px: map.get(base.$var-px, 'sm');
+  $py: map.get(base.$var-py, 'sm');
+
+  padding-block: $py;
+  padding-inline: $px;
+  background-color: base.func-get-color('surface-container');
+
+  &__wrap {
+    $gap-x: map.get(base.$var-gap-x, 'sm');
+    $gap-y: map.get(base.$var-gap-y, 'sm');
+
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: $gap-y;
+    column-gap: $gap-x;
+  }
+}
+
+main {
+  background-color: base.func-get-color('surface-container-highest');
+
+  @include base.typo-body;
+
+  .container {
+    $px: map.get(base.$var-px, 'sm');
+    $py: map.get(base.$var-py, 'sm');
+
+    width: calc(100% - 2 * $px);
+    padding-block: $py;
+    margin-inline: auto;
+  }
+}
+
+@media (width >= map.get(base.$var-bp-gte, 'md')) {
+  $px: map.get(base.$var-px, 'md');
+  $py: map.get(base.$var-py, 'md');
+  $gap-x: map.get(base.$var-gap-x, 'md');
+  $gap-y: map.get(base.$var-gap-y, 'md');
+
+  body {
+    @include base.typo-body;
+  }
+
+  .grid {
+    @include base.typo-caption;
+  }
+
+  .widget {
+    padding-block: $py;
+    padding-inline: $px;
+
+    &__wrap {
+      grid-template-rows: min-content;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(map.get(base.$var-notice-widget-w, 'mdmn'), 1fr)
+      );
+      row-gap: $gap-y;
+      column-gap: $gap-x;
+      align-items: center;
+      max-width: base.$var-static-w-mx;
+      margin-inline: auto;
+    }
+  }
+
+  main {
+    @include base.typo-body;
+
+    .container {
+      width: calc(100% - 2 * $px);
+      padding-block: $py;
+    }
+  }
+}
+
+@media (width >= map.get(base.$var-bp-gte, 'lg')) {
+  $px: map.get(base.$var-px, 'lg');
+  $py: map.get(base.$var-py, 'lg');
+  $gap-x: map.get(base.$var-gap-x, 'lg');
+  $gap-y: map.get(base.$var-gap-y, 'lg');
+
+  body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+
+    @include base.typo-body(true);
+  }
+
+  h1 {
+    @include base.typo-display(true);
+  }
+
+  h2 {
+    @include base.typo-headline(true);
+  }
+
+  h3 {
+    @include base.typo-title(true);
+  }
+
+  h4 {
+    @include base.typo-subtitle(true);
+  }
+
+  .grid {
+    display: grid;
+
+    // 16:9 < height < 4:3
+    grid-template-rows: clamp(
+      calc(100vw - base.$var-static-nav-rail-w) * 9 / 16,
+      100dvh,
+      calc((100vw - base.$var-static-nav-rail-w) * 3 / 4)
+    );
+    grid-template-columns: base.$var-static-nav-rail-w minmax(0, 1fr);
+
+    @include base.typo-caption(true);
+
+    > * {
+      grid-column: 2;
+    }
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-rail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: base.$var-static-nav-rail-w;
+  }
+
+  .imagery {
+    height: unset;
+  }
+
+  .widget {
+    padding-block: $py;
+    padding-inline: $px;
+
+    &__wrap {
+      row-gap: $gap-y;
+      column-gap: $gap-x;
+    }
+  }
+
+  main {
+    @include base.typo-body(true);
+
+    .container {
+      width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
+      padding-block: $py;
+    }
+  }
+}
+
+@media (width >= map.get(base.$var-bp-gte,'xl')) {
+  $px: map.get(base.$var-px, 'xl');
+  $py: map.get(base.$var-py, 'xl');
+  $gap-x: map.get(base.$var-gap-x, 'xl');
+  $gap-y: map.get(base.$var-gap-y, 'xl');
+
+  body {
+    @include base.typo-body(true);
+  }
+
+  .grid {
+    // 56.25rem < height < 100dvh
+    grid-template-rows: minmax(56.25rem, 100dvh);
+    grid-template-columns:
+      base.$var-static-nav-rail-w minmax(0, 1fr)
+      calc(map.get(base.$var-notice-widget-w, 'md') + 2 * $px);
+
+    @include base.typo-caption(true);
+
+    > * {
+      grid-column: 2 / -1;
+    }
+  }
+
+  .imagery {
+    grid-column: 2;
+  }
+
+  .widget {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3;
+    justify-content: center;
+    padding-block: $py;
+    padding-inline: $px;
+
+    &__wrap {
+      grid-template-rows: min-content min-content;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: $gap-y;
+      column-gap: $gap-x;
+    }
+  }
+
+  main {
+    @include base.typo-body(true);
+
+    .container {
+      width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
+      padding-block: $py;
+    }
+  }
+}

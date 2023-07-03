@@ -1,0 +1,52 @@
+@use '../../style/base';
+
+.Notice {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  padding-block: 4px;
+  padding-inline: 4px;
+  overflow: hidden;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  border-radius: 4px;
+
+  @include base.typo-caption;
+  @include base.func-set-states(transparent, base.func-get-color('on-surface'));
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    display: block;
+    content: '';
+  }
+
+  .grp-title {
+    display: -webkit-box;
+    flex-grow: 1;
+    max-height: 2.5rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .prefix {
+    margin-right: 0.25rem;
+
+    @include base.typo-label;
+
+    &::before {
+      content: '[';
+    }
+
+    &::after {
+      content: ']';
+    }
+  }
+
+  .date {
+    flex-shrink: 0;
+    color: base.func-get-color('on-surface-variant');
+  }
+}

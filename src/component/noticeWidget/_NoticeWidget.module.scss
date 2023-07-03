@@ -1,0 +1,39 @@
+@use '../../style/base';
+
+.NoticeWidget {
+  .title {
+    margin-bottom: 1rem;
+    color: base.func-get-color('on-surface');
+  }
+
+  .grp {
+    &-control {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &-notice {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  .tab {
+    flex-grow: 1;
+  }
+
+  .btn {
+    margin-right: -8px;
+
+    > .content {
+      @include base.func-set-states(
+        transparent,
+        base.func-get-color('primary')
+      );
+    }
+  }
+}

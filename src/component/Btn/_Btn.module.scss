@@ -1,0 +1,70 @@
+@use '../../style/base';
+
+.a {
+  display: contents;
+}
+
+.Btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  > .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      display: block;
+      content: '';
+    }
+  }
+
+  &-type {
+    &-text {
+      width: fit-content;
+      height: 3rem;
+
+      @include base.typo-label(true);
+
+      > .content {
+        padding-block: 0.625rem;
+        padding-inline: 0.75rem;
+        border-radius: 0.25rem;
+      }
+    }
+
+    &-icon {
+      width: 3rem;
+      height: 3rem;
+
+      @include base.typo-icon(true);
+
+      > .content {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 256rem;
+
+        &::after {
+          border-radius: 256rem;
+        }
+      }
+    }
+
+    &-logo {
+      width: fit-content;
+
+      > .content {
+        padding: 0.75rem;
+      }
+    }
+  }
+}
