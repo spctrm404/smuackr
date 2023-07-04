@@ -33,17 +33,19 @@
 // $font-size-lg: 1.125rem;
 // $font-size-xl: $font-size-lg;
 // $content-w-mx: 75rem;
-$bp-gte: (
+
+$bp-gt: (
   'sm': 20rem,
-  'md': 37.5rem,
-  'lg': 52.5rem,
-  'xl': 90rem,
+  'md': 40rem,
+  'lg': 60rem,
+  'xl': 80rem,
+  'xxl': 100rem,
 );
 $px: (
-  'sm': 1rem,
-  'md': 1.5rem,
-  'lg': 2rem,
-  'xl': 3rem,
+  'sm': 1.5rem,
+  'md': 2.5rem,
+  'lg': 5.5rem,
+  'xl': 5.5rem,
 );
 $py: (
   'sm': 1.5rem,

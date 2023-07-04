@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../../style/base';
 
 .Notice {
@@ -12,7 +13,7 @@
   overflow-wrap: anywhere;
   border-radius: 4px;
 
-  @include base.typo-caption;
+  @include base.typo-body-sm;
   @include base.func-set-states(transparent, base.func-get-color('on-surface'));
 
   &::after {
@@ -33,8 +34,7 @@
 
   .prefix {
     margin-right: 0.25rem;
-
-    @include base.typo-label;
+    font-weight: 500;
 
     &::before {
       content: '[';
@@ -48,5 +48,13 @@
   .date {
     flex-shrink: 0;
     color: base.func-get-color('on-surface-variant');
+  }
+}
+
+@media (width > map.get(base.$var-bp-gt, 'md')) {
+  .Notice {
+    .grp-title {
+      max-height: 3rem;
+    }
   }
 }

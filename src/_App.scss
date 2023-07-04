@@ -1,15 +1,6 @@
 @use 'sass:map';
+@use './style/common';
 @use './style/base';
-
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
   margin: 0;
@@ -18,9 +9,9 @@ body {
   color: base.func-get-color('on-surface');
   word-break: break-all;
   overflow-wrap: anywhere;
-  background-color: base.func-get-color('surface-container-lowest');
+  background-color: base.func-get-color('surface-container-highest');
 
-  @include base.typo-body;
+  @include base.typo-caption;
 }
 
 h1,
@@ -47,7 +38,7 @@ h3 {
 }
 
 h4 {
-  @include base.typo-subtitle;
+  @include base.typo-title-sm;
 }
 
 #root {
@@ -60,7 +51,7 @@ h4 {
 }
 
 .grid {
-  @include base.typo-caption;
+  @include base.typo-body-sm;
 }
 
 .nav-bar {
@@ -111,23 +102,13 @@ h4 {
 main,
 footer {
   background-color: base.func-get-color('surface-container');
-
-  @include base.typo-body;
 }
 
-@media (width >= map.get(base.$var-bp-gte, 'md')) {
+@media (width > map.get(base.$var-bp-gt, 'md')) {
   $px: map.get(base.$var-px, 'md');
   $py: map.get(base.$var-py, 'md');
   $gap-x: map.get(base.$var-gap-x, 'md');
   $gap-y: map.get(base.$var-gap-y, 'md');
-
-  body {
-    @include base.typo-body;
-  }
-
-  .grid {
-    @include base.typo-caption;
-  }
 
   .widget {
     padding-block: $py;
@@ -151,14 +132,9 @@ footer {
     width: calc(100% - 2 * $px);
     padding-block: $py;
   }
-
-  main,
-  footer {
-    @include base.typo-body;
-  }
 }
 
-@media (width >= map.get(base.$var-bp-gte, 'lg')) {
+@media (width > map.get(base.$var-bp-gt, 'lg')) {
   $px: map.get(base.$var-px, 'lg');
   $py: map.get(base.$var-py, 'lg');
   $gap-x: map.get(base.$var-gap-x, 'lg');
@@ -167,24 +143,6 @@ footer {
   body {
     word-break: keep-all;
     overflow-wrap: break-word;
-
-    @include base.typo-body(true);
-  }
-
-  h1 {
-    @include base.typo-display(true);
-  }
-
-  h2 {
-    @include base.typo-headline(true);
-  }
-
-  h3 {
-    @include base.typo-title(true);
-  }
-
-  h4 {
-    @include base.typo-subtitle(true);
   }
 
   .grid {
@@ -197,8 +155,6 @@ footer {
       calc((100vw - base.$var-static-nav-rail-w) * 3 / 4)
     );
     grid-template-columns: base.$var-static-nav-rail-w minmax(0, 1fr);
-
-    @include base.typo-caption(true);
 
     > * {
       grid-column: 2;
@@ -214,6 +170,7 @@ footer {
     top: 0;
     bottom: 0;
     left: 0;
+    z-index: 1024;
     display: block;
     width: base.$var-static-nav-rail-w;
   }
@@ -236,22 +193,13 @@ footer {
     width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
     padding-block: $py;
   }
-
-  main,
-  footer {
-    @include base.typo-body(true);
-  }
 }
 
-@media (width >= map.get(base.$var-bp-gte,'xl')) {
+@media (width > map.get(base.$var-bp-gt, 'xxl')) {
   $px: map.get(base.$var-px, 'xl');
   $py: map.get(base.$var-py, 'xl');
   $gap-x: map.get(base.$var-gap-x, 'xl');
   $gap-y: map.get(base.$var-gap-y, 'xl');
-
-  body {
-    @include base.typo-body(true);
-  }
 
   .grid {
     // 56.25rem < height < 100dvh
@@ -259,8 +207,6 @@ footer {
     grid-template-columns:
       base.$var-static-nav-rail-w minmax(0, 1fr)
       calc(map.get(base.$var-notice-widget-w, 'md') + 2 * $px);
-
-    @include base.typo-caption(true);
 
     > * {
       grid-column: 2 / -1;
@@ -290,10 +236,5 @@ footer {
   .container {
     width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
     padding-block: $py;
-  }
-
-  main,
-  footer {
-    @include base.typo-body(true);
   }
 }

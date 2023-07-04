@@ -5,6 +5,15 @@ import { ReactComponent as LogoHori } from '../../assets/logo-w-hori.svg';
 const Footer = ({ className, list }) => {
   return (
     <footer className={`${Classes.footer} ${className}`}>
+      <section className={Classes.sectionLink}>
+        <div className={`${Classes.container} container`}>
+          <div className={Classes.layout}>
+            {list.map((eachListItem) => {
+              return <div key={eachListItem.key}>{eachListItem.label}</div>;
+            })}
+          </div>
+        </div>
+      </section>
       <section className={Classes.sectionInfo}>
         <div className={`${Classes.container} container`}>
           <div className={Classes.logo}>
@@ -31,15 +40,6 @@ const Footer = ({ className, list }) => {
             </div>
           </div>
           <div>COPYRIGHT BY SANGMYUNG UNIVERSITY. ALL RIGHTS RESERVED.</div>
-        </div>
-      </section>
-      <section className={Classes.sectionLink}>
-        <div className={`${Classes.container} container`}>
-          <div className={Classes.layout}>
-            {list.map((eachListItem) => {
-              return <div key={eachListItem.key}>{eachListItem.label}</div>;
-            })}
-          </div>
         </div>
       </section>
     </footer>

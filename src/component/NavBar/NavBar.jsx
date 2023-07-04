@@ -11,7 +11,7 @@ const NavBar = ({ className, list }) => {
     <div className={`${Classes.navRail} ${className}`}>
       <div className={Classes.railScroll}>
         <div className={Classes.grpTop}>
-          <Btn btnType={`btnTypeLogo`} overrideClass={Classes}>
+          <Btn type="logo" overrideClass={Classes}>
             <LogoHori />
           </Btn>
           <Ol
@@ -21,17 +21,17 @@ const NavBar = ({ className, list }) => {
             stateNthOfSelected={stateNthOfSelected}></Ol>
         </div>
         <div className={Classes.grpBottom}>
-          <Btn btnType={`btnTypeIcon`} overrideClass={Classes}>
+          <Btn type="icon" overrideClass={Classes}>
             <span className="material-symbols-outlined">widgets</span>
           </Btn>
-          <Btn btnType={`btnTypeIcon`} overrideClass={Classes}>
+          <Btn type="icon" overrideClass={Classes}>
             <span className="material-symbols-outlined">search</span>
           </Btn>
           <div className={Classes.grpLang}>
-            <Btn btnType={`btnTypeIcon`} overrideClass={Classes}>
+            <Btn type="icon" overrideClass={Classes}>
               <span>EN</span>
             </Btn>
-            <Btn btnType={`btnTypeIcon`} overrideClass={Classes}>
+            <Btn type="icon" overrideClass={Classes}>
               <span>中文</span>
             </Btn>
           </div>

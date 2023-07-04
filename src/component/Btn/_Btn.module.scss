@@ -11,6 +11,8 @@
   justify-content: center;
   cursor: pointer;
 
+  @include base.typo-label;
+
   > .content {
     position: relative;
     z-index: 1;
@@ -28,43 +30,37 @@
     }
   }
 
-  &-type {
-    &-text {
-      width: fit-content;
-      height: 3rem;
+  &[type='text'] {
+    width: fit-content;
+    height: 3rem;
 
-      @include base.typo-label(true);
-
-      > .content {
-        padding-block: 0.625rem;
-        padding-inline: 0.75rem;
-        border-radius: 0.25rem;
-      }
+    > .content {
+      padding-block: 0.625rem;
+      padding-inline: 0.75rem;
+      border-radius: 0.25rem;
     }
+  }
 
-    &-icon {
-      width: 3rem;
-      height: 3rem;
+  &[type='icon'] {
+    width: 3rem;
+    height: 3rem;
 
-      @include base.typo-icon(true);
+    > .content {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 256rem;
 
-      > .content {
-        width: 2.5rem;
-        height: 2.5rem;
+      &::after {
         border-radius: 256rem;
-
-        &::after {
-          border-radius: 256rem;
-        }
       }
     }
+  }
 
-    &-logo {
-      width: fit-content;
+  &[type='logo'] {
+    width: fit-content;
 
-      > .content {
-        padding: 0.75rem;
-      }
+    > .content {
+      padding: 0.75rem;
     }
   }
 }

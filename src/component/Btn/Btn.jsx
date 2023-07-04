@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Classes from './_Btn.module.scss';
 
 const Btn = ({
-  btnType,
+  type,
   overrideClasses,
   overrideClassName,
   children,
@@ -11,8 +11,7 @@ const Btn = ({
 }) => {
   return (
     <a className={Classes.a} href={href} onClick={onClickCb}>
-      <span
-        className={`${Classes.btn} ${Classes[btnType]} ${overrideClassName}`}>
+      <span className={`${Classes.btn}  ${overrideClassName}`} type={type}>
         <span className={`${Classes.content} ${overrideClasses[`content`]}`}>
           {children}
         </span>
@@ -22,7 +21,7 @@ const Btn = ({
 };
 
 Btn.propTypes = {
-  btnType: PropTypes.string,
+  type: PropTypes.string,
   overrideClasses: PropTypes.object,
   overrideClassName: PropTypes.string,
   children: PropTypes.object,

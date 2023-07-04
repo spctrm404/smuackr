@@ -35,7 +35,7 @@ const Ol = ({ list, depth, nthOfParent, stateNthOfSelected }) => {
         <ol className={`${Classes[`olDp${depth}`]} ${Classes.drawer}`}>
           <div className={Classes.drawerScroll}>{recursiveLiOl}</div>
           <Btn
-            btnType={`btnTypeIcon`}
+            type="icon"
             overrideClasses={Classes}
             overrideClassName={Classes.btnTypeIcon}
             onClickCb={onClickCb}>

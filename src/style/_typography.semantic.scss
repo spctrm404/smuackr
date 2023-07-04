@@ -2,146 +2,202 @@
 @use 'variables' as var;
 @use './typography.token' as tt;
 
-@mixin icon($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv-1;
+@mixin label-sm($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale--1;
   } @else {
-    @include tt.type-scale-lv-1;
+    @include tt.type-scale-0;
   }
 
+  font-weight: 500;
+
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv-1;
+        @include tt.type-scale-0;
+
+        font-weight: 500;
       }
     }
+  }
+}
+
+@mixin label($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-0;
+  } @else {
+    @include tt.type-scale-0;
+  }
+
+  font-weight: 500;
+
+  @at-root {
+    @media (width > map.get(var.$bp-gt, 'md')) {
+      & {
+        @include tt.type-scale-0;
+
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin caption($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-0;
+  } @else {
+    @include tt.type-scale-0;
   }
 
   font-weight: 400;
-}
-
-@mixin label($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv0;
-  } @else {
-    @include tt.type-scale-lv0;
-  }
 
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv0;
+        @include tt.type-scale-0;
+
+        font-weight: 400;
       }
     }
+  }
+}
+
+@mixin label-lg($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-1;
+  } @else {
+    @include tt.type-scale-1;
+  }
+
+  font-weight: 500;
+
+  @at-root {
+    @media (width > map.get(var.$bp-gt, 'md')) {
+      & {
+        @include tt.type-scale-1;
+
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin body-sm($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-0;
+  } @else {
+    @include tt.type-scale-1;
   }
 
   font-weight: 400;
-}
-
-@mixin caption($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv0;
-  } @else {
-    @include tt.type-scale-lv0;
-  }
 
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv0;
+        @include tt.type-scale-1;
+
+        font-weight: 400;
       }
     }
   }
-
-  font-weight: 300;
 }
 
-@mixin body($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv1;
+@mixin body($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-1;
   } @else {
-    @include tt.type-scale-lv2;
+    @include tt.type-scale-2;
   }
 
+  font-weight: 400;
+
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv2;
+        @include tt.type-scale-2;
+
+        font-weight: 400;
       }
     }
   }
-
-  font-weight: 300;
 }
 
-@mixin subtitle($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv3(true);
+@mixin title-sm($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-3;
   } @else {
-    @include tt.type-scale-lv5(true);
+    @include tt.type-scale-4;
   }
 
+  font-weight: 700;
+
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv5(true);
+        @include tt.type-scale-4;
+
+        font-weight: 700;
       }
     }
   }
-
-  font-weight: 600;
 }
 
-@mixin title($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv5(true);
+@mixin title($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-5;
   } @else {
-    @include tt.type-scale-lv8(true);
+    @include tt.type-scale-7;
   }
 
+  font-weight: 700;
+
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv8(true);
+        @include tt.type-scale-7;
+
+        font-weight: 700;
       }
     }
   }
-
-  font-weight: 600;
 }
 
-@mixin headline($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv7(true);
+@mixin headline($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-8;
   } @else {
-    @include tt.type-scale-lv11(true);
+    @include tt.type-scale-11;
   }
 
+  font-weight: 700;
+
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv11(true);
+        @include tt.type-scale-11;
+
+        font-weight: 700;
       }
     }
   }
-
-  font-weight: 600;
 }
 
-@mixin display($on-large-screen: false) {
-  @if not($on-large-screen) {
-    @include tt.type-scale-lv9(true);
+@mixin display($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-12;
   } @else {
-    @include tt.type-scale-lv14(true);
+    @include tt.type-scale-16;
   }
 
+  font-weight: 700;
+
   @at-root {
-    @media (width >= map.get(var.$bp-gte, 'lg')) {
+    @media (width > map.get(var.$bp-gt, 'md')) {
       & {
-        @include tt.type-scale-lv14(true);
+        @include tt.type-scale-16;
+
+        font-weight: 700;
       }
     }
   }
-
-  font-weight: 600;
 }

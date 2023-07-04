@@ -11,7 +11,7 @@ const NoticeWidget = ({ className, tabList, noticeList, length }) => {
       <div className={Classes.grpControl}>
         <Tab className={Classes.tab} list={tabList}></Tab>
         <Btn
-          btnType={`btnTypeText`}
+          type="text"
           overrideClasses={Classes}
           overrideClassName={Classes.btn}>
           <span>더보기</span>

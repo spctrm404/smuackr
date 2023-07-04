@@ -7,12 +7,16 @@ import Ol from './bb/Ol';
 
 const NavRail = ({ className, navList }) => {
   const stateNthOfSelected = useState(0);
+  const [nthOfSelected] = stateNthOfSelected;
   return (
-    <div className={`${Classes.navRail} ${className}`}>
+    <div
+      className={`${Classes.navRail} ${className}  ${
+        nthOfSelected === 0 ? Classes.collapsed : null
+      }`}>
       <div className={Classes.railScroll}>
         <div className={Classes.grpTop}>
           <Btn
-            btnType={`btnTypeLogo`}
+            type="logo"
             overrideClasses={Classes}
             overrideClassName={Classes.btnTypeLogo}>
             <LogoVert />
@@ -25,26 +29,26 @@ const NavRail = ({ className, navList }) => {
         </div>
         <div className={Classes.grpBottom}>
           <Btn
-            btnType={`btnTypeIcon`}
+            type="icon"
             overrideClasses={Classes}
             overrideClassName={Classes.btnTypeIcon}>
             <span className="material-symbols-outlined">widgets</span>
           </Btn>
           <Btn
-            btnType={`btnTypeIcon`}
+            type="icon"
             overrideClasses={Classes}
             overrideClassName={Classes.btnTypeIcon}>
             <span className="material-symbols-outlined">search</span>
           </Btn>
           <div className={Classes.grpLang}>
             <Btn
-              btnType={`btnTypeIcon`}
+              type="icon"
               overrideClasses={Classes}
               overrideClassName={Classes.btnTypeIcon}>
               <span>EN</span>
             </Btn>
             <Btn
-              btnType={`btnTypeIcon`}
+              type="icon"
               overrideClasses={Classes}
               overrideClassName={Classes.btnTypeIcon}>
               <span>中文</span>

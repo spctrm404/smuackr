@@ -10,7 +10,7 @@ const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
   return (
     <li className={`${Classes[`liDp${depth}`]} ${Classes[`liNth${depth}`]}`}>
       <Btn
-        btnType={`btnTypeText`}
+        type="text"
         overrideClasses={Classes}
         overrideClassName={Classes.btnTypeText}
         onClickCb={depth === 1 ? onClickCb : null}>

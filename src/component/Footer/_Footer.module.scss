@@ -6,8 +6,8 @@
   overflow-wrap: break-word;
 
   .section-link {
-    color: base.func-get-color('on-dark-surface');
-    background-color: base.func-get-color('dark-surface');
+    color: base.func-get-color('on-surface');
+    background-color: base.func-get-color('surface-dim');
 
     @include base.typo-label;
 
@@ -29,6 +29,8 @@
   .section-info {
     color: base.func-get-color('on-primary-seed');
     background-color: base.func-get-color('primary-seed');
+
+    @include base.typo-caption;
 
     .container {
       display: flex;
@@ -62,80 +64,6 @@
       flex-wrap: wrap;
       row-gap: 0.25rem;
       column-gap: 0.5rem;
-    }
-  }
-}
-
-@media (width >= map.get(base.$var-bp-gte,'md')) {
-}
-
-@media (width >= map.get(base.$var-bp-gte,'lg')) {
-  .Footer {
-    .info {
-      .container {
-        row-gap: 1.5rem;
-      }
-
-      .logo {
-        svg {
-          height: 3.5rem;
-        }
-      }
-
-      .addresses {
-        row-gap: 0.75rem;
-      }
-
-      .address {
-        column-gap: 0.5625rem;
-      }
-
-      .address-info {
-        row-gap: 0.5rem;
-        column-gap: 0.5625rem;
-      }
-    }
-  }
-}
-
-@media (width >= map.get(base.$var-bp-gte,'xl')) {
-}
-
-@container (inline-size >= 23.4375rem) {
-  .Footer {
-    .section-link {
-      .layout {
-        > * {
-          flex-basis: 50%;
-        }
-      }
-    }
-  }
-}
-
-@container (inline-size >= 37.5rem) {
-  .Footer {
-    .section-link {
-      .layout {
-        > * {
-          flex-basis: calc(100% / 3);
-        }
-      }
-    }
-  }
-}
-
-@container (inline-size >= 52.5rem) {
-  .Footer {
-    .section-link {
-      .layout {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-
-        > * {
-          flex-basis: unset;
-        }
-      }
     }
   }
 }
