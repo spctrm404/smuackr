@@ -14,7 +14,7 @@ const Footer = ({ className, list }) => {
               return (
                 <a
                   key={eachListItem.key}
-                  className={`nowrap ${
+                  className={`nowrap ${Classes.a} ${
                     eachListItem.label === '개인정보처리방침'
                       ? Classes.accent
                       : null
@@ -35,7 +35,7 @@ const Footer = ({ className, list }) => {
             </div>
             <div className={Classes.addr}>
               <div className={Classes.addrGrid}>
-                <div className={`${Classes.addrEach} ${Classes.seoul}`}>
+                <div className={Classes.addrEach}>
                   <div>서울캠퍼스 :</div>
                   <div>
                     <div>02-2287-5114</div>
@@ -45,7 +45,7 @@ const Footer = ({ className, list }) => {
                     </div>
                   </div>
                 </div>
-                <div className={`${Classes.addrEach} ${Classes.cheonan}`}>
+                <div className={Classes.addrEach}>
                   <div>천안캠퍼스 :</div>
                   <div>
                     <div>041-550-5114</div>
