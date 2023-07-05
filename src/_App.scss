@@ -41,6 +41,16 @@ h4 {
   @include base.typo-title-sm;
 }
 
+a {
+  color: base.func-get-color('link');
+  text-decoration: none;
+
+  &:hover {
+    color: base.func-get-color('link-hover');
+    text-decoration: underline;
+  }
+}
+
 #root {
   position: relative;
   width: 100%;

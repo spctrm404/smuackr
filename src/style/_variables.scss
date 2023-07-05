@@ -1,45 +1,14 @@
-// $nav-bar-h: 3.5rem;
-// $nav-rail-w: 7.5rem;
-// $bp-md: 37.5rem;
-// $bp-lg: 52.5rem;
-// $bp-xl: 90rem;
-// $px-sm: 1rem;
-// $px-md: 1.5rem;
-// $px-lg: 2rem;
-// $px-xl: 3rem;
-// $py-sm: 1rem;
-// $py-md: 1.5rem;
-// $py-lg: 2rem;
-// $py-xl: 3rem;
-// $gap-x-sm: 1rem;
-// $gap-x-md: 1.5rem;
-// $gap-x-lg: 2rem;
-// $gap-x-xl: $gap-x-lg;
-// $gap-y-sm: 1rem;
-// $gap-y-md: 1.5rem;
-// $gap-y-lg: 2rem;
-// $gap-y-xl: $gap-y-lg;
-// $notice-w-40: 40ch;
-// $notice-w-50: 50ch;
-// $notice-w-60: 60ch;
-// $notice-w-70: 70ch;
-// $notice-w-80: 80ch;
-// $notice-font-size-sm: 0.875rem;
-// $notice-font-size-md: $notice-font-size-sm;
-// $notice-font-size-lg: 1rem;
-// $notice-font-size-xl: $notice-font-size-lg;
-// $font-size-sm: 1rem;
-// $font-size-md: $font-size-sm;
-// $font-size-lg: 1.125rem;
-// $font-size-xl: $font-size-lg;
-// $content-w-mx: 75rem;
-
 $bp-gt: (
   'sm': 20rem,
+  // 320px
   'md': 40rem,
+  // 640px
   'lg': 60rem,
+  // 960px
   'xl': 80rem,
+  // 1280px
   'xxl': 100rem,
+  // 1600px
 );
 $px: (
   'sm': 1.5rem,

@@ -42,26 +42,6 @@
   }
 }
 
-@mixin caption($on-lg-screen: false) {
-  @if not($on-lg-screen) {
-    @include tt.type-scale-0;
-  } @else {
-    @include tt.type-scale-0;
-  }
-
-  font-weight: 400;
-
-  @at-root {
-    @media (width > map.get(var.$bp-gt, 'md')) {
-      & {
-        @include tt.type-scale-0;
-
-        font-weight: 400;
-      }
-    }
-  }
-}
-
 @mixin label-lg($on-lg-screen: false) {
   @if not($on-lg-screen) {
     @include tt.type-scale-1;
@@ -77,6 +57,26 @@
         @include tt.type-scale-1;
 
         font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin caption($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include tt.type-scale-0;
+  } @else {
+    @include tt.type-scale-0;
+  }
+
+  font-weight: 400;
+
+  @at-root {
+    @media (width > map.get(var.$bp-gt, 'md')) {
+      & {
+        @include tt.type-scale-0;
+
+        font-weight: 400;
       }
     }
   }

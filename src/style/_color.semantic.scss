@@ -1,6 +1,10 @@
 @use './color.token' as ct;
 
 $light: (
+  'link': ct.$blue-40,
+  'link-hover': ct.$blue-30,
+  'link-variant': ct.$gold-40,
+  'link-variant-hover': ct.$gold-30,
   'shadow': ct.$grey-flat-00,
   'surface-bright': ct.$grey-flat-98,
   'surface': ct.$grey-flat-98,
@@ -47,6 +51,10 @@ $light: (
   'primary': ct.$blue-40,
 );
 $dark: (
+  'link': ct.$blue-80,
+  'link-hover': ct.$blue-90,
+  'link-variant': ct.$gold-80,
+  'link-variant-hover': ct.$gold-90,
   'shadow': ct.$grey-flat-00,
   'surface-bright': ct.$grey-flat-24,
   'surface': ct.$grey-flat-06,

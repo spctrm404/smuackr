@@ -1004,6 +1004,10 @@ const DB = {
     },
     {
       key: uuidv4(),
+      label: `취업규칙`,
+    },
+    {
+      key: uuidv4(),
       label: `개인정보처리방침`,
     },
     {
@@ -1013,10 +1017,6 @@ const DB = {
     {
       key: uuidv4(),
       label: `영상정보처리기기 운영관리방침`,
-    },
-    {
-      key: uuidv4(),
-      label: `취업규칙`,
     },
   ],
   widget: [

@@ -28,7 +28,7 @@ function App() {
               className="widget__notice"
               tabList={DB.noticeTabs}
               noticeList={DB.notices}
-              length={8}></NoticeWidget>
+              length={6}></NoticeWidget>
           </div>
         </div>
         <main>
