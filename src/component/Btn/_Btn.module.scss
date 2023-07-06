@@ -11,7 +11,7 @@
   justify-content: center;
   cursor: pointer;
 
-  @include base.typo-label;
+  @include base.type-label;
 
   > .content {
     position: relative;

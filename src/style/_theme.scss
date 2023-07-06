@@ -1,0 +1,59 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:selector';
+@use 'color-semantic';
+
+$theme: color-semantic.$light;
+
+@function get-color($key) {
+  @return map.get($theme, $key);
+}
+
+@function get-transparent($col, $alph) {
+  @return color.change($col, $alpha: $alph);
+}
+
+@function get-states($fg) {
+  $states: get-transparent($fg, 0), get-transparent($fg, 0.08),
+    get-transparent($fg, 0.12), get-transparent($fg, 0.16);
+
+  @return $states;
+}
+
+@mixin set-transition($prop, $dura: 200ms) {
+  transition: $prop $dura cubic-bezier(0.2, 0, 0, 1);
+}
+
+@mixin set-states($bg, $fg) {
+  $states: get-states($fg);
+
+  color: $fg;
+  background-color: $bg;
+
+  &::after {
+    background-color: list.nth($states, 1);
+
+    @include set-transition(background-color);
+  }
+
+  &:hover {
+    &::after {
+      background-color: list.nth($states, 2);
+    }
+  }
+
+  &:active {
+    &::after {
+      background-color: list.nth($states, 3);
+    }
+  }
+
+  @at-root {
+    .selected {
+      #{selector.unify(&, '::after')} {
+        background-color: list.nth($states, 4);
+      }
+    }
+  }
+}

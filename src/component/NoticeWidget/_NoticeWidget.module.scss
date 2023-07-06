@@ -3,7 +3,7 @@
 .NoticeWidget {
   .title {
     margin-bottom: 1rem;
-    color: base.func-get-color('on-surface');
+    color: base.thm-get-color('on-surface');
   }
 
   .grp {
@@ -30,10 +30,7 @@
     margin-right: -8px;
 
     > .content {
-      @include base.func-set-states(
-        transparent,
-        base.func-get-color('primary')
-      );
+      @include base.thm-set-states(transparent, base.thm-get-color('primary'));
     }
   }
 }

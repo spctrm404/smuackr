@@ -1,0 +1,231 @@
+@use 'sass:map';
+@use 'dimension';
+@use 'type-token';
+
+@mixin label-sm($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale--1; // 12px
+  } @else {
+    @include type-token.type-scale-0; // 14px
+  }
+
+  font-weight: 500;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-0; // 14px
+
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin label($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-0; // 14px
+  } @else {
+    @include type-token.type-scale-0; // 14px
+  }
+
+  font-weight: 500;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-0; // 14px
+
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin label-lg($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-0; // 14px
+  } @else {
+    @include type-token.type-scale-1; // 16px
+  }
+
+  font-weight: 500;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-1; // 16px
+
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin caption($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-0; // 14px
+  } @else {
+    @include type-token.type-scale-0; // 14px
+  }
+
+  font-weight: 400;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-0; // 14px
+
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@mixin body-sm($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-0; // 14px
+  } @else {
+    @include type-token.type-scale-1; // 16px
+  }
+
+  font-weight: 400;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-1; // 16px
+
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@mixin body($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-1; // 16px
+  } @else {
+    @include type-token.type-scale-2; // 18px
+  }
+
+  font-weight: 400;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-2; // 18px
+
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@mixin title-sm($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-3;
+  } @else {
+    @include type-token.type-scale-4;
+  }
+
+  font-weight: 700;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-4;
+
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@mixin title($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-5;
+  } @else {
+    @include type-token.type-scale-7;
+  }
+
+  font-weight: 700;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-7;
+
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@mixin headline($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-8;
+  } @else {
+    @include type-token.type-scale-11;
+  }
+
+  font-weight: 700;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-11;
+
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@mixin display($on-lg-screen: false) {
+  @if not($on-lg-screen) {
+    @include type-token.type-scale-12;
+  } @else {
+    @include type-token.type-scale-16;
+  }
+
+  font-weight: 700;
+
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
+      & {
+        @include type-token.type-scale-16;
+
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@mixin set-h1 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  @include display;
+}
+
+@mixin set-h2 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  @include headline;
+}
+
+@mixin set-h3 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  @include title;
+}
+
+@mixin set-h4 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  @include subtitle;
+}

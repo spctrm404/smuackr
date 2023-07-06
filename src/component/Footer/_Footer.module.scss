@@ -27,17 +27,17 @@ $cert-gap-y: 16px;
 
 .section {
   &-link {
-    color: base.func-get-color('on-surface');
-    background-color: base.func-get-color('surface-dim');
+    color: base.thm-get-color('on-surface');
+    background-color: base.thm-get-color('surface-dim');
 
-    @include base.typo-label;
+    @include base.type-label;
   }
 
   &-info {
-    color: base.func-get-color('on-primary-seed');
-    background-color: base.func-get-color('primary-seed');
+    color: base.thm-get-color('on-primary-seed');
+    background-color: base.thm-get-color('primary-seed');
 
-    @include base.typo-body-sm;
+    @include base.type-body-sm;
   }
 }
 
@@ -66,10 +66,10 @@ $cert-gap-y: 16px;
 }
 
 .accent {
-  color: base.func-get-color('link-variant');
+  color: base.thm-get-color('link-variant');
 
   &:hover {
-    color: base.func-get-color('link-variant-hover');
+    color: base.thm-get-color('link-variant-hover');
   }
 }
 
@@ -111,7 +111,7 @@ $cert-gap-y: 16px;
   min-width: min-content;
   max-width: fit-content;
 
-  @include base.typo-caption;
+  @include base.type-caption;
 
   &-mark {
     display: flex;
@@ -134,7 +134,7 @@ $cert-gap-y: 16px;
   grid-row: 4;
   grid-column: 1;
 
-  @include base.typo-caption;
+  @include base.type-caption;
 }
 
 @container (inline-size < 26.0625rem) {
@@ -147,7 +147,7 @@ $cert-gap-y: 16px;
   }
 }
 
-@media (width > map.get(base.$var-bp-gt, 'md')) {
+@media (width > map.get(base.$dim-bp-gt, 'md')) {
   .layout {
     &-link {
       row-gap: $layout-link-gap-y;
@@ -201,10 +201,10 @@ $cert-gap-y: 16px;
   }
 }
 
-@media (width > map.get(base.$var-bp-gt, 'lg')) {
+@media (width > map.get(base.$dim-bp-gt, 'lg')) {
 }
 
-@media (width > map.get(base.$var-bp-gt, 'xl')) {
+@media (width > map.get(base.$dim-bp-gt, 'xl')) {
   .layout {
     &-link {
       display: flex;
@@ -216,5 +216,5 @@ $cert-gap-y: 16px;
   }
 }
 
-@media (width > map.get(base.$var-bp-gt, 'xxl')) {
+@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
 }

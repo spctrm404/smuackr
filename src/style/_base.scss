@@ -1,3 +1,4 @@
-@forward 'variables' as var-*;
-@forward './typography.semantic' as typo-*;
-@forward 'mixin' as func-*;
+@forward 'theme' as thm-*;
+@forward 'dimension' as dim-*;
+@forward 'type-semantic' as type-*;
+@forward 'util' as util-*;

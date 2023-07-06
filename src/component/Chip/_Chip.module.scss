@@ -13,7 +13,7 @@
   height: 3rem;
   cursor: pointer;
 
-  @include base.typo-label;
+  @include base.type-label;
 
   > .content {
     position: relative;
@@ -24,12 +24,12 @@
     height: 2rem;
     padding-inline: 0.75rem;
     overflow: hidden;
-    border: 0.0625rem solid base.func-get-color('outline');
+    border: 0.0625rem solid base.thm-get-color('outline');
     border-radius: 256rem;
 
-    @include base.func-set-states(
+    @include base.thm-set-states(
       transparent,
-      base.func-get-color('on-surface-variant')
+      base.thm-get-color('on-surface-variant')
     );
 
     &::after {

@@ -5,12 +5,12 @@ body {
   margin: 0;
   font-family: 'Spoqa Han Sans Neo', sans-serif;
   line-height: 1.5;
-  color: base.func-get-color('on-surface');
+  color: base.thm-get-color('on-surface');
   word-break: break-all;
   overflow-wrap: anywhere;
-  background-color: base.func-get-color('surface-container-highest');
+  background-color: base.thm-get-color('surface-container-highest');
 
-  @include base.typo-caption;
+  @include base.type-caption;
 }
 
 h1,
@@ -25,27 +25,27 @@ h6 {
 }
 
 h1 {
-  @include base.typo-display;
+  @include base.type-display;
 }
 
 h2 {
-  @include base.typo-headline;
+  @include base.type-headline;
 }
 
 h3 {
-  @include base.typo-title;
+  @include base.type-title;
 }
 
 h4 {
-  @include base.typo-title-sm;
+  @include base.type-title-sm;
 }
 
 a {
-  color: base.func-get-color('link');
+  color: base.thm-get-color('link');
   text-decoration: none;
 
   &:hover {
-    color: base.func-get-color('link-hover');
+    color: base.thm-get-color('link-hover');
     text-decoration: underline;
   }
 }
@@ -60,13 +60,13 @@ a {
 }
 
 .grid {
-  @include base.typo-body-sm;
+  @include base.type-body-sm;
 }
 
 .nav-bar {
   position: sticky;
   top: 0;
-  height: base.$var-static-nav-bar-h;
+  height: base.$dim-static-nav-bar-h;
 }
 
 .nav-rail {
@@ -76,20 +76,20 @@ a {
 .imagery {
   // 1:1 < height < 3:4
   height: clamp(100vw, 100dvh, calc(100vw * 4 / 3));
-  background-color: base.func-get-color('surface-dim');
+  background-color: base.thm-get-color('surface-dim');
 }
 
 .widget {
-  $px: map.get(base.$var-px, 'sm');
-  $py: map.get(base.$var-py, 'sm');
+  $px: map.get(base.$dim-px, 'sm');
+  $py: map.get(base.$dim-py, 'sm');
 
   padding-block: $py;
   padding-inline: $px;
-  background-color: base.func-get-color('surface');
+  background-color: base.thm-get-color('surface');
 
   &__wrap {
-    $gap-x: map.get(base.$var-gap-x, 'sm');
-    $gap-y: map.get(base.$var-gap-y, 'sm');
+    $gap-x: map.get(base.$dim-gap-x, 'sm');
+    $gap-y: map.get(base.$dim-gap-y, 'sm');
 
     display: grid;
     grid-template-rows: min-content min-content;
@@ -100,8 +100,8 @@ a {
 }
 
 .container {
-  $px: map.get(base.$var-px, 'sm');
-  $py: map.get(base.$var-py, 'sm');
+  $px: map.get(base.$dim-px, 'sm');
+  $py: map.get(base.$dim-py, 'sm');
 
   width: calc(100% - 2 * $px);
   padding-block: $py;
@@ -110,16 +110,16 @@ a {
 
 main,
 footer {
-  // background-color: base.func-get-color('surface-container');
+  // background-color: base.thm-get-color('surface-container');
 
   background-color: var(--surface-container);
 }
 
-@media (width > map.get(base.$var-bp-gt, 'md')) {
-  $px: map.get(base.$var-px, 'md');
-  $py: map.get(base.$var-py, 'md');
-  $gap-x: map.get(base.$var-gap-x, 'md');
-  $gap-y: map.get(base.$var-gap-y, 'md');
+@media (width > map.get(base.$dim-bp-gt, 'md')) {
+  $px: map.get(base.$dim-px, 'md');
+  $py: map.get(base.$dim-py, 'md');
+  $gap-x: map.get(base.$dim-gap-x, 'md');
+  $gap-y: map.get(base.$dim-gap-y, 'md');
 
   .widget {
     padding-block: $py;
@@ -129,12 +129,12 @@ footer {
       grid-template-rows: min-content;
       grid-template-columns: repeat(
         auto-fit,
-        minmax(map.get(base.$var-notice-widget-w, 'mdmn'), 1fr)
+        minmax(map.get(base.$dim-notice-widget-w, 'mdmn'), 1fr)
       );
       row-gap: $gap-y;
       column-gap: $gap-x;
       align-items: center;
-      max-width: base.$var-static-w-mx;
+      max-width: base.$dim-static-w-mx;
       margin-inline: auto;
     }
   }
@@ -145,11 +145,11 @@ footer {
   }
 }
 
-@media (width > map.get(base.$var-bp-gt, 'lg')) {
-  $px: map.get(base.$var-px, 'lg');
-  $py: map.get(base.$var-py, 'lg');
-  $gap-x: map.get(base.$var-gap-x, 'lg');
-  $gap-y: map.get(base.$var-gap-y, 'lg');
+@media (width > map.get(base.$dim-bp-gt, 'lg')) {
+  $px: map.get(base.$dim-px, 'lg');
+  $py: map.get(base.$dim-py, 'lg');
+  $gap-x: map.get(base.$dim-gap-x, 'lg');
+  $gap-y: map.get(base.$dim-gap-y, 'lg');
 
   body {
     word-break: keep-all;
@@ -161,11 +161,11 @@ footer {
 
     // 16:9 < height < 4:3
     grid-template-rows: clamp(
-      calc(100vw - base.$var-static-nav-rail-w) * 9 / 16,
+      calc(100vw - base.$dim-static-nav-rail-w) * 9 / 16,
       100dvh,
-      calc((100vw - base.$var-static-nav-rail-w) * 3 / 4)
+      calc((100vw - base.$dim-static-nav-rail-w) * 3 / 4)
     );
-    grid-template-columns: base.$var-static-nav-rail-w minmax(0, 1fr);
+    grid-template-columns: base.$dim-static-nav-rail-w minmax(0, 1fr);
 
     > * {
       grid-column: 2;
@@ -183,7 +183,7 @@ footer {
     left: 0;
     z-index: 1024;
     display: block;
-    width: base.$var-static-nav-rail-w;
+    width: base.$dim-static-nav-rail-w;
   }
 
   .imagery {
@@ -201,23 +201,23 @@ footer {
   }
 
   .container {
-    width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
+    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }
 
-@media (width > map.get(base.$var-bp-gt, 'xxl')) {
-  $px: map.get(base.$var-px, 'xl');
-  $py: map.get(base.$var-py, 'xl');
-  $gap-x: map.get(base.$var-gap-x, 'xl');
-  $gap-y: map.get(base.$var-gap-y, 'xl');
+@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
+  $px: map.get(base.$dim-px, 'xl');
+  $py: map.get(base.$dim-py, 'xl');
+  $gap-x: map.get(base.$dim-gap-x, 'xl');
+  $gap-y: map.get(base.$dim-gap-y, 'xl');
 
   .grid {
     // 56.25rem < height < 100dvh
     grid-template-rows: minmax(56.25rem, 100dvh);
     grid-template-columns:
-      base.$var-static-nav-rail-w minmax(0, 1fr)
-      calc(map.get(base.$var-notice-widget-w, 'md') + 2 * $px);
+      base.$dim-static-nav-rail-w minmax(0, 1fr)
+      calc(map.get(base.$dim-notice-widget-w, 'md') + 2 * $px);
 
     > * {
       grid-column: 2 / -1;
@@ -245,7 +245,7 @@ footer {
   }
 
   .container {
-    width: min(base.$var-static-w-mx, calc(100% - 2 * $px));
+    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }

@@ -5,9 +5,9 @@
     // container query
     // max-width: 240px;
     margin-bottom: 1rem;
-    color: base.func-get-color('on-surface-variant');
+    color: base.thm-get-color('on-surface-variant');
 
-    @include base.func-set-h2;
+    @include base.type-set-h2;
   }
 
   .search {
@@ -17,7 +17,7 @@
     height: 3rem;
     margin-bottom: 1rem;
     overflow: hidden;
-    background-color: base.func-get-color('surface-container-highest');
+    background-color: base.thm-get-color('surface-container-highest');
     border-radius: 0.25rem;
 
     &-border {
@@ -32,10 +32,10 @@
       border: 0.0625rem solid transparent;
       border-radius: 0.25rem;
 
-      @include base.func-set-transition(border-color);
+      @include base.thm-set-transition(border-color);
 
       &:has(.search-input:focus-visible) {
-        border: 0.0625rem solid base.func-get-color('primary');
+        border: 0.0625rem solid base.thm-get-color('primary');
       }
     }
 
@@ -45,23 +45,23 @@
       width: 100%;
       padding: 0;
       font-family: inherit;
-      color: base.func-get-color('on-surface');
+      color: base.thm-get-color('on-surface');
       background-color: transparent;
       border: 0;
 
-      @include base.typo-label-lg;
+      @include base.type-label-lg;
 
       &::placeholder {
-        color: base.func-get-color('on-surface-variant');
+        color: base.thm-get-color('on-surface-variant');
 
-        @include base.func-set-transition(color);
+        @include base.thm-set-transition(color);
       }
 
       &:focus-visible {
         outline: none;
 
         &::placeholder {
-          color: base.func-get-color('outline-variant');
+          color: base.thm-get-color('outline-variant');
         }
       }
     }
@@ -88,9 +88,9 @@
         height: 100%;
         overflow: hidden;
 
-        @include base.func-set-states(
-          base.func-get-color('primary'),
-          base.func-get-color('on-primary')
+        @include base.thm-set-states(
+          base.thm-get-color('primary'),
+          base.thm-get-color('on-primary')
         );
 
         &::after {

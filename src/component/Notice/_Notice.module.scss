@@ -13,8 +13,8 @@
   overflow-wrap: anywhere;
   border-radius: 4px;
 
-  @include base.typo-body-sm;
-  @include base.func-set-states(transparent, base.func-get-color('on-surface'));
+  @include base.type-body-sm;
+  @include base.thm-set-states(transparent, base.thm-get-color('on-surface'));
 
   &::after {
     position: absolute;
@@ -47,11 +47,11 @@
 
   .date {
     flex-shrink: 0;
-    color: base.func-get-color('on-surface-variant');
+    color: base.thm-get-color('on-surface-variant');
   }
 }
 
-@media (width > map.get(base.$var-bp-gt, 'md')) {
+@media (width > map.get(base.$dim-bp-gt, 'md')) {
   .Notice {
     .grp-title {
       max-height: 3rem;
