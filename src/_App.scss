@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use './style/common';
 @use './style/base';
 
 body {
@@ -111,7 +110,9 @@ a {
 
 main,
 footer {
-  background-color: base.func-get-color('surface-container');
+  // background-color: base.func-get-color('surface-container');
+
+  background-color: var(--surface-container);
 }
 
 @media (width > map.get(base.$var-bp-gt, 'md')) {
