@@ -5,7 +5,9 @@ import Chip from '../Chip/Chip';
 const SearchWidget = ({ className, chipList, length }) => {
   return (
     <div className={`${Classes.searchWidget} ${className}`}>
-      <div className={Classes.title}>Dream Hiker 상명</div>
+      <div className={Classes.title}>
+        Dream <span className="nowrap"> Hiker 상명</span>
+      </div>
       <form className={Classes.search} action="">
         <div className={Classes.searchBorder}>
           <input
@@ -22,11 +24,11 @@ const SearchWidget = ({ className, chipList, length }) => {
         </button>
       </form>
       <div className={Classes.chips}>
-        {chipList.map((eachListItem, idx) => {
+        {chipList.map((eachChipItem, idx) => {
           if (idx >= length) return;
           return (
-            <Chip key={eachListItem.key}>
-              <span>{eachListItem.label}</span>
+            <Chip key={eachChipItem.key}>
+              <span>{eachChipItem.label}</span>
             </Chip>
           );
         })}

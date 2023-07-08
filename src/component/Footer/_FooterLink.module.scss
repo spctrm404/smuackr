@@ -1,0 +1,60 @@
+@use 'sass:map';
+@use '../../style/base';
+
+$layout-link-item-w-min: 183.47px;
+$layout-link-gap-x-sm: 2rem;
+$layout-link-gap-y-sm: 1rem;
+$layout-link-gap-x: 2rem;
+$layout-link-gap-y: 1rem;
+
+.footer-link {
+  color: base.thm-get-color('on-surface');
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  background-color: base.thm-get-color('surface-dim');
+
+  @include base.type-label;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($layout-link-item-w-min, 1fr));
+  row-gap: $layout-link-gap-y-sm;
+  column-gap: $layout-link-gap-x-sm;
+}
+
+.a {
+  min-width: min-content;
+  max-width: fit-content;
+
+  &.accent {
+    color: base.thm-get-color('link-variant');
+
+    &:hover {
+      color: base.thm-get-color('link-variant-hover');
+    }
+  }
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'md')) {
+  .layout {
+    row-gap: $layout-link-gap-y;
+    column-gap: $layout-link-gap-x;
+  }
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'lg')) {
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'xl')) {
+  .layout {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: $layout-link-gap-y;
+    column-gap: $layout-link-gap-x;
+    justify-content: space-between;
+  }
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
+}

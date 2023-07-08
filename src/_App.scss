@@ -98,6 +98,8 @@ a {
     grid-template-columns: minmax(0, 1fr);
     row-gap: $gap-y;
     column-gap: $gap-x;
+    max-width: base.$dim-static-w-mx;
+    margin-inline: auto;
   }
 }
 
@@ -105,7 +107,7 @@ a {
   $px: map.get(base.$dim-px, 'sm');
   $py: map.get(base.$dim-py, 'sm');
 
-  width: calc(100% - 2 * $px);
+  width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
   padding-block: $py;
   margin-inline: auto;
 }
@@ -126,23 +128,13 @@ footer {
     padding-inline: $px;
 
     &__wrap {
-      grid-template-rows: min-content;
-
-      // fix later
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(map.get(base.$dim-notice-widget-w, '40'), 1fr)
-      );
       row-gap: $gap-y;
       column-gap: $gap-x;
-      align-items: center;
-      max-width: base.$dim-static-w-mx;
-      margin-inline: auto;
     }
   }
 
   .container {
-    width: calc(100% - 2 * $px);
+    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }
@@ -208,11 +200,38 @@ footer {
   }
 }
 
-@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
+@media (width > map.get(base.$dim-bp-gt, 'xl')) {
   $px: map.get(base.$dim-px, 'xl');
   $py: map.get(base.$dim-py, 'xl');
   $gap-x: map.get(base.$dim-gap-x, 'xl');
   $gap-y: map.get(base.$dim-gap-y, 'xl');
+
+  .widget {
+    padding-block: $py;
+    padding-inline: $px;
+
+    &__wrap {
+      grid-template-rows: min-content;
+      grid-template-columns:
+        minmax(20rem, 30rem)
+        minmax(map.get(base.$dim-notice-widget-w, '40'), 1fr);
+      row-gap: $gap-y;
+      column-gap: $gap-x;
+      align-items: center;
+    }
+  }
+
+  .container {
+    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+    padding-block: $py;
+  }
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
+  $px: map.get(base.$dim-px, 'xxl');
+  $py: map.get(base.$dim-py, 'xxl');
+  $gap-x: map.get(base.$dim-gap-x, 'xxl');
+  $gap-y: map.get(base.$dim-gap-y, 'xxl');
 
   .grid {
     // 56.25rem < height < 100dvh

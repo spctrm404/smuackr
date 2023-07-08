@@ -23,7 +23,7 @@ function App() {
             <SearchWidget
               className="widget__search"
               chipList={DB.chips}
-              length={12}></SearchWidget>
+              length={20}></SearchWidget>
             <NoticeWidget
               className="widget__notice"
               tabList={DB.noticeTabs}
@@ -38,7 +38,7 @@ function App() {
             </div>
           </section>
         </main>
-        <Footer list={DB.footer}></Footer>
+        <Footer linkList={DB.footerLinks}></Footer>
       </div>
     </>
   );
