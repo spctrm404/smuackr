@@ -13,7 +13,7 @@
   overflow-wrap: anywhere;
   border-radius: 4px;
 
-  @include base.type-body-sm;
+  @include base.type-body-out;
   @include base.thm-set-states(transparent, base.thm-get-color('on-surface'));
 
   &::after {
@@ -26,7 +26,7 @@
   .grp-title {
     display: -webkit-box;
     flex-grow: 1;
-    max-height: 2.5rem;
+    max-height: 3rem;
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -54,7 +54,7 @@
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
   .Notice {
     .grp-title {
-      max-height: 3rem;
+      max-height: 3.5rem;
     }
   }
 }

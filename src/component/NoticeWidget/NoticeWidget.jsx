@@ -7,7 +7,7 @@ import Notice from '../Notice/Notice';
 const NoticeWidget = ({ className, tabList, noticeList, length }) => {
   return (
     <div className={`${Classes.noticeWidget} ${className}`}>
-      <h3 className={Classes.title}>공지사항</h3>
+      <h4 className={Classes.title}>공지사항</h4>
       <div className={Classes.grpControl}>
         <Tab className={Classes.tab} list={tabList}></Tab>
         <Btn

@@ -2,7 +2,6 @@
 @use './style/base';
 
 body {
-  margin: 0;
   font-family: 'Spoqa Han Sans Neo', sans-serif;
   line-height: 1.5;
   color: base.thm-get-color('on-surface');
@@ -10,7 +9,7 @@ body {
   overflow-wrap: anywhere;
   background-color: base.thm-get-color('surface-container-highest');
 
-  @include base.type-caption;
+  @include base.type-body-out;
 }
 
 h1,
@@ -19,25 +18,32 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
 h1 {
-  @include base.type-display;
+  @include base.type-title-3;
 }
 
 h2 {
-  @include base.type-headline;
+  @include base.type-title-2;
 }
 
 h3 {
-  @include base.type-title;
+  @include base.type-title-1;
 }
 
 h4 {
-  @include base.type-title-sm;
+  @include base.type-title;
+}
+
+h5 {
+  @include base.type-title--1;
+}
+
+h6 {
+  @include base.type-title--2;
 }
 
 a {
@@ -57,10 +63,6 @@ a {
   height: 100dvh;
   overflow-x: hidden;
   overflow-y: scroll;
-}
-
-.grid {
-  @include base.type-body-sm;
 }
 
 .nav-bar {
@@ -110,9 +112,7 @@ a {
 
 main,
 footer {
-  // background-color: base.thm-get-color('surface-container');
-
-  background-color: var(--surface-container);
+  background-color: base.thm-get-color('surface-container');
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
@@ -127,9 +127,11 @@ footer {
 
     &__wrap {
       grid-template-rows: min-content;
+
+      // fix later
       grid-template-columns: repeat(
         auto-fit,
-        minmax(map.get(base.$dim-notice-widget-w, 'mdmn'), 1fr)
+        minmax(map.get(base.$dim-notice-widget-w, '40'), 1fr)
       );
       row-gap: $gap-y;
       column-gap: $gap-x;
@@ -215,9 +217,11 @@ footer {
   .grid {
     // 56.25rem < height < 100dvh
     grid-template-rows: minmax(56.25rem, 100dvh);
+
+    // fix later
     grid-template-columns:
       base.$dim-static-nav-rail-w minmax(0, 1fr)
-      calc(map.get(base.$dim-notice-widget-w, 'md') + 2 * $px);
+      calc(map.get(base.$dim-notice-widget-w, '40') + 2 * $px);
 
     > * {
       grid-column: 2 / -1;

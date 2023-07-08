@@ -37,7 +37,7 @@ $cert-gap-y: 16px;
     color: base.thm-get-color('on-primary-seed');
     background-color: base.thm-get-color('primary-seed');
 
-    @include base.type-body-sm;
+    @include base.type-body-out;
   }
 }
 
@@ -111,7 +111,7 @@ $cert-gap-y: 16px;
   min-width: min-content;
   max-width: fit-content;
 
-  @include base.type-caption;
+  @include base.type-detail--1;
 
   &-mark {
     display: flex;
@@ -134,7 +134,7 @@ $cert-gap-y: 16px;
   grid-row: 4;
   grid-column: 1;
 
-  @include base.type-caption;
+  @include base.type-detail;
 }
 
 @container (inline-size < 26.0625rem) {
