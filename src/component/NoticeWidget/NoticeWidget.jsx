@@ -9,7 +9,7 @@ const NoticeWidget = ({ className, tabList, noticeList, length }) => {
     <div className={`${Classes.noticeWidget} ${className}`}>
       <h4 className={Classes.title}>공지사항</h4>
       <div className={Classes.grpControl}>
-        <Tab className={Classes.tab} list={tabList}></Tab>
+        <Tab className={Classes.tab} tabList={tabList}></Tab>
         <Btn
           type="text"
           overrideClasses={Classes}
@@ -23,6 +23,7 @@ const NoticeWidget = ({ className, tabList, noticeList, length }) => {
           return (
             <Notice
               key={eachListItem.key}
+              className={Classes.notice}
               title={eachListItem.title}
               date={eachListItem.date}
               prefix={eachListItem.prefix}></Notice>

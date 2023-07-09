@@ -1,64 +1,17 @@
 @use '../../style/base';
 
-.a {
-  display: contents;
-}
-
 .Btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  @include base.type-label;
-
-  > .content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-    &::after {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      display: block;
-      content: '';
-    }
-  }
+  @include base.style-buttonize;
 
   &[type='text'] {
-    width: fit-content;
-    height: 3rem;
-
-    > .content {
-      padding-block: 0.625rem;
-      padding-inline: 0.75rem;
-      border-radius: 0.25rem;
-    }
+    @include base.style-buttonize('text');
   }
 
   &[type='icon'] {
-    width: 3rem;
-    height: 3rem;
-
-    > .content {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 256rem;
-
-      &::after {
-        border-radius: 256rem;
-      }
-    }
+    @include base.style-buttonize('icon');
   }
 
   &[type='logo'] {
-    width: fit-content;
-
     > .content {
       padding: 0.75rem;
     }

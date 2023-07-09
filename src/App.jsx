@@ -1,9 +1,10 @@
+import './_App.scss';
+import photo from './assets/photo.jpg';
+import DB from './DB';
 import NavRail from './component/NavRail/NavRail';
 import SearchWidget from './component/SearchWidget/SearchWidget';
 import NoticeWidget from './component/NoticeWidget/NoticeWidget';
 import Footer from './component/Footer/Footer';
-import './_App.scss';
-import DB from './DB';
 
 function App() {
   DB.notices.forEach((eachNoticeItem) => {
@@ -17,7 +18,9 @@ function App() {
       <div className="grid">
         <div className="nav-bar"></div>
         <NavRail className="nav-rail" navList={DB.navV1}></NavRail>
-        <div className="imagery"></div>
+        <div className="imagery">
+          <img src={photo} alt="" />
+        </div>
         <div className="widget">
           <div className="widget__wrap">
             <SearchWidget
@@ -28,7 +31,7 @@ function App() {
               className="widget__notice"
               tabList={DB.noticeTabs}
               noticeList={DB.notices}
-              length={6}></NoticeWidget>
+              length={20}></NoticeWidget>
           </div>
         </div>
         <main>

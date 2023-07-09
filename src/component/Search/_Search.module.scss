@@ -1,0 +1,70 @@
+@use '../../style/base';
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  overflow: hidden;
+  background-color: base.thm-get-color('surface-container-highest');
+  border-radius: 0.25rem;
+
+  @include base.type-label-1;
+
+  &-border {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    height: 100%;
+    padding-inline: 0.75rem 1rem;
+    margin-right: -0.5rem;
+    border: 0.0625rem solid transparent;
+    border-radius: 0.25rem;
+
+    @include base.style-set-transition(border-color);
+
+    &:has(.search-input:focus-visible) {
+      border: 0.0625rem solid base.thm-get-color('primary');
+    }
+  }
+
+  &-input {
+    flex-grow: 1;
+    width: 100%;
+    color: base.thm-get-color('on-surface');
+    background-color: transparent;
+    border: 0;
+
+    &::placeholder {
+      color: base.thm-get-color('on-surface-variant');
+
+      @include base.style-set-transition(color);
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::placeholder {
+        color: base.thm-get-color('outline-variant');
+      }
+    }
+  }
+
+  &-btn {
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+
+    @include base.style-buttonize;
+
+    > .content {
+      width: 100%;
+      height: 100%;
+
+      @include base.style-set-states(
+        base.thm-get-color('primary'),
+        base.thm-get-color('on-primary')
+      );
+    }
+  }
+}

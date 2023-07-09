@@ -1,0 +1,105 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:selector';
+@use 'theme';
+@use 'dimension';
+@use 'type-semantic';
+@use 'util';
+
+@mixin buttonize($type: '') {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+
+  @include type-semantic.label;
+
+  > .content {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      display: block;
+      content: '';
+    }
+  }
+
+  @if $type == 'text' {
+    height: 3rem;
+
+    > .content {
+      padding-block: 0.625rem;
+      padding-inline: 0.75rem;
+      border-radius: 0.25rem;
+    }
+  } @else if $type == 'icon' {
+    width: 3rem;
+    height: 3rem;
+
+    > .content {
+      flex-grow: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 256rem;
+
+      &::before {
+        border-radius: 256rem;
+      }
+    }
+  }
+}
+
+@function get-transparent($col, $alph) {
+  @return color.change($col, $alpha: $alph);
+}
+
+@function get-states($fg) {
+  $states: get-transparent($fg, 0), get-transparent($fg, 0.08),
+    get-transparent($fg, 0.12), get-transparent($fg, 0.16);
+
+  @return $states;
+}
+
+@mixin set-transition($prop, $dura: 200ms) {
+  transition: $prop $dura cubic-bezier(0.2, 0, 0, 1);
+}
+
+@mixin set-states($bg, $fg) {
+  $states: get-states($fg);
+
+  color: $fg;
+  background-color: $bg;
+
+  &::before {
+    background-color: list.nth($states, 1);
+
+    @include set-transition(background-color);
+  }
+
+  &:hover {
+    &::before {
+      background-color: list.nth($states, 2);
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: list.nth($states, 3);
+    }
+  }
+
+  @at-root {
+    .selected {
+      #{selector.unify(&, '::before')} {
+        background-color: list.nth($states, 4);
+      }
+    }
+  }
+}

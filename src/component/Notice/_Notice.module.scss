@@ -14,47 +14,43 @@
   border-radius: 4px;
 
   @include base.type-body-out;
-  @include base.thm-set-states(transparent, base.thm-get-color('on-surface'));
+  @include base.style-set-states(transparent, base.thm-get-color('on-surface'));
 
-  &::after {
+  &::before {
     position: absolute;
     inset: 0;
     display: block;
     content: '';
   }
+}
 
-  .grp-title {
-    display: -webkit-box;
-    flex-grow: 1;
-    max-height: 3rem;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+.grp-title {
+  display: -webkit-box;
+  flex-grow: 1;
+
+  // max-height: 3rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.prefix {
+  margin-right: 0.25rem;
+  font-weight: 500;
+
+  &::before {
+    content: '[';
   }
 
-  .prefix {
-    margin-right: 0.25rem;
-    font-weight: 500;
-
-    &::before {
-      content: '[';
-    }
-
-    &::after {
-      content: ']';
-    }
-  }
-
-  .date {
-    flex-shrink: 0;
-    color: base.thm-get-color('on-surface-variant');
+  &::after {
+    content: ']';
   }
 }
 
+.date {
+  flex-shrink: 0;
+  color: base.thm-get-color('on-surface-variant');
+}
+
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
-  .Notice {
-    .grp-title {
-      max-height: 3.5rem;
-    }
-  }
 }

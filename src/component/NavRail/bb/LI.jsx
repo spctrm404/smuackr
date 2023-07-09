@@ -14,7 +14,7 @@ const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
         overrideClasses={Classes}
         overrideClassName={Classes.btnTypeText}
         onClickCb={depth === 1 ? onClickCb : null}>
-        <span>{listItem.label}</span>
+        {listItem.label}
       </Btn>
       {children}
     </li>

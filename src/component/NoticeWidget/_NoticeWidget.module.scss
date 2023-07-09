@@ -1,36 +1,57 @@
+@use 'sass:map';
 @use '../../style/base';
 
-.NoticeWidget {
+.title {
+  margin-bottom: 4px;
+  color: base.thm-get-color('on-surface');
+}
+
+.grp {
+  &-control {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &-notice {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.notice:nth-of-type(n + 9) {
+  display: none;
+}
+
+.tab {
+  flex-grow: 1;
+}
+
+.btn {
+  margin-right: -8px;
+
+  > .content {
+    @include base.style-set-states(transparent, base.thm-get-color('primary'));
+  }
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'md')) {
   .title {
-    margin-bottom: 1rem;
-    color: base.thm-get-color('on-surface');
+    margin-bottom: 8px;
   }
+}
 
-  .grp {
-    &-control {
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
-      width: 100%;
-      margin-bottom: 15px;
-    }
+@media (width > map.get(base.$dim-bp-gt, 'lg')) {
+}
 
-    &-notice {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-  }
+@media (width > map.get(base.$dim-bp-gt, 'xl')) {
+}
 
-  .tab {
-    flex-grow: 1;
-  }
-
-  .btn {
-    margin-right: -8px;
-
-    > .content {
-      @include base.thm-set-states(transparent, base.thm-get-color('primary'));
-    }
+@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
+  .notice:nth-of-type(n + 7) {
+    display: none;
   }
 }

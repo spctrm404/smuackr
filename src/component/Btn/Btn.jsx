@@ -10,11 +10,14 @@ const Btn = ({
   onClickCb,
 }) => {
   return (
-    <a className={Classes.a} href={href} onClick={onClickCb}>
-      <span className={`${Classes.btn}  ${overrideClassName}`} type={type}>
-        <span className={`${Classes.content} ${overrideClasses[`content`]}`}>
-          {children}
-        </span>
+    <a
+      className={`${Classes.btn}  ${overrideClassName}`}
+      type={type}
+      href={href}
+      onClick={onClickCb}>
+      <span
+        className={`${Classes.content} ${overrideClasses[`content`]} nowrap`}>
+        {children}
       </span>
     </a>
   );
@@ -24,7 +27,7 @@ Btn.propTypes = {
   type: PropTypes.string,
   overrideClasses: PropTypes.object,
   overrideClassName: PropTypes.string,
-  children: PropTypes.object,
+  children: PropTypes.any,
   href: PropTypes.string,
   onClickCb: PropTypes.func,
 };

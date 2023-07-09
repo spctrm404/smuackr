@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Classes from './_SearchWidget.module.scss';
+import Search from '../Search/Search';
 import Chip from '../Chip/Chip';
 
 const SearchWidget = ({ className, chipList, length }) => {
@@ -8,27 +9,15 @@ const SearchWidget = ({ className, chipList, length }) => {
       <div className={Classes.title}>
         Dream <span className="nowrap"> Hiker 상명</span>
       </div>
-      <form className={Classes.search} action="">
-        <div className={Classes.searchBorder}>
-          <input
-            className={Classes.searchInput}
-            type="search"
-            placeholder="검색"
-            name="search"
-          />
-        </div>
-        <button className={Classes.searchBtn} type="submit">
-          <div className={Classes.content}>
-            <span className="material-symbols-outlined">Search</span>
-          </div>
-        </button>
+      <form className={Classes.form} action="">
+        <Search></Search>
       </form>
       <div className={Classes.chips}>
         {chipList.map((eachChipItem, idx) => {
           if (idx >= length) return;
           return (
-            <Chip key={eachChipItem.key}>
-              <span>{eachChipItem.label}</span>
+            <Chip key={eachChipItem.key} className={Classes.chip}>
+              {eachChipItem.label}
             </Chip>
           );
         })}

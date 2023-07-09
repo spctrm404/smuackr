@@ -3,7 +3,7 @@ import Classes from './_Tab.module.scss';
 import { useState } from 'react';
 import TabBtn from './bb/TabBtn';
 
-const Tab = ({ className, list }) => {
+const Tab = ({ className, tabList }) => {
   const stateNthOfSelected = useState(1);
   const [nthOfSelected] = stateNthOfSelected;
   return (
@@ -11,13 +11,13 @@ const Tab = ({ className, list }) => {
       className={`${Classes.tab} ${
         Classes[`tabSel${nthOfSelected}`]
       } ${className}`}>
-      {list.map((eachListItem, idx) => {
+      {tabList.map((eachTabItem, idx) => {
         return (
           <TabBtn
-            key={eachListItem.key}
+            key={eachTabItem.key}
             nth={idx + 1}
             stateNthOfSelected={stateNthOfSelected}>
-            {eachListItem.label}
+            {eachTabItem.label}
           </TabBtn>
         );
       })}
@@ -27,7 +27,7 @@ const Tab = ({ className, list }) => {
 
 Tab.propTypes = {
   className: PropTypes.string,
-  list: PropTypes.array,
+  tabList: PropTypes.array,
 };
 
 export default Tab;
