@@ -6,6 +6,20 @@
 @use 'type-semantic';
 @use 'util';
 
+@mixin base() {
+  word-break: break-all;
+  overflow-wrap: anywhere;
+
+  @at-root {
+    @media (width > map.get(dimemsion.$bp-gt, 'md')) {
+      & {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
 @mixin buttonize($type: '') {
   display: flex;
   align-items: center;
@@ -101,5 +115,16 @@
         background-color: list.nth($states, 4);
       }
     }
+  }
+}
+
+@mixin hide-scrollbar() {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
   }
 }

@@ -40,9 +40,9 @@
 
 @mixin label($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-0; // 14px
+    @include type-token.type-scale-0(true); // 14px
   } @else {
-    @include type-token.type-scale-0; // 14px
+    @include type-token.type-scale-0(true); // 14px
   }
 
   font-weight: 500;
@@ -50,7 +50,7 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-0; // 14px
+        @include type-token.type-scale-0(true); // 14px
       }
     }
   }
@@ -76,9 +76,9 @@
 
 @mixin label-1($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-1; // 16px
+    @include type-token.type-scale-1(true); // 16px
   } @else {
-    @include type-token.type-scale-1; // 16px
+    @include type-token.type-scale-1(true); // 16px
   }
 
   font-weight: 500;
@@ -86,7 +86,7 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-1; // 16px
+        @include type-token.type-scale-1(true); // 16px
       }
     }
   }

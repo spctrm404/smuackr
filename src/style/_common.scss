@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  @include base.type-title-3;
+}
+
+h2 {
+  @include base.type-title-2;
+}
+
+h3 {
+  @include base.type-title-1;
+}
+
+h4 {
+  @include base.type-title;
+}
+
+h5 {
+  @include base.type-title--1;
+}
+
+h6 {
+  @include base.type-title--2;
+}

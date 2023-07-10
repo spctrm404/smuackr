@@ -2,48 +2,12 @@
 @use './style/base';
 
 body {
-  font-family: 'Spoqa Han Sans Neo', sans-serif;
-  line-height: 1.5;
   color: base.thm-get-color('on-surface');
   word-break: break-all;
   overflow-wrap: anywhere;
   background-color: base.thm-get-color('surface-container-highest');
 
   @include base.type-body-out;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-
-h1 {
-  @include base.type-title-3;
-}
-
-h2 {
-  @include base.type-title-2;
-}
-
-h3 {
-  @include base.type-title-1;
-}
-
-h4 {
-  @include base.type-title;
-}
-
-h5 {
-  @include base.type-title--1;
-}
-
-h6 {
-  @include base.type-title--2;
 }
 
 #root {
@@ -127,6 +91,11 @@ footer {
   $gap-x: map.get(base.$dim-gap-x, 'md');
   $gap-y: map.get(base.$dim-gap-y, 'md');
 
+  body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
   .widget {
     padding-block: $py;
     padding-inline: $px;
@@ -148,11 +117,6 @@ footer {
   $py: map.get(base.$dim-py, 'lg');
   $gap-x: map.get(base.$dim-gap-x, 'lg');
   $gap-y: map.get(base.$dim-gap-y, 'lg');
-
-  body {
-    word-break: keep-all;
-    overflow-wrap: break-word;
-  }
 
   .grid {
     display: grid;
