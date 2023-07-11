@@ -17,7 +17,7 @@ function App() {
     <>
       <div className="grid">
         <div className="nav-bar"></div>
-        <NavRail className="nav-rail" navList={DB.navV1}></NavRail>
+        <NavRail className="nav-rail" listNav={DB.navV1}></NavRail>
         <div className="imagery">
           <img src={photo} alt="" />
         </div>
@@ -25,12 +25,12 @@ function App() {
           <div className="widget__wrap">
             <SearchWidget
               className="widget__search"
-              chipList={DB.chips}
+              listChip={DB.chips}
               length={20}></SearchWidget>
             <NoticeWidget
               className="widget__notice"
-              tabList={DB.noticeTabs}
-              noticeList={DB.notices}
+              listTab={DB.noticeTabs}
+              listNotice={DB.notices}
               length={20}></NoticeWidget>
           </div>
         </div>
@@ -41,7 +41,7 @@ function App() {
             </div>
           </section>
         </main>
-        <Footer linkList={DB.footerLinks}></Footer>
+        <Footer listLink={DB.footerLinks}></Footer>
       </div>
     </>
   );

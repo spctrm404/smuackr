@@ -6,7 +6,8 @@ import mark2 from '../../assets/cert-mark-2.png';
 
 const FooterInfo = ({ className }) => {
   return (
-    <section className={`${Classes.footerInfo} ${className}`}>
+    <section
+      className={`${Classes.footerInfo} ${Classes.section} ${className}`}>
       <div className={`${Classes.container} container`}>
         <div className={Classes.layout}>
           <div className={Classes.logo}>
@@ -19,7 +20,9 @@ const FooterInfo = ({ className }) => {
                 <div>
                   <div>02-2287-5114</div>
                   <div>
-                    <span className="nowrap">서울시 종로구 홍지문 2길</span>
+                    <span className={Classes.nowrap}>
+                      서울시 종로구 홍지문 2길
+                    </span>
                     {` `}20 상명대학교 &#40;03016&#41;
                   </div>
                 </div>
@@ -29,7 +32,7 @@ const FooterInfo = ({ className }) => {
                 <div>
                   <div>041-550-5114</div>
                   <div>
-                    <span className="nowrap">
+                    <span className={Classes.nowrap}>
                       충청남도 천안시 동남구 상명대길
                     </span>
                     {` `}31 상명대학교 &#40;31066&#41;
@@ -47,7 +50,7 @@ const FooterInfo = ({ className }) => {
               <div>
                 <div>인증범위 학사행정시스템:</div>
                 <div>
-                  <span className="nowrap">
+                  <span className={Classes.nowrap}>
                     &#40;학적,성적관리,학사관리,증명발급&#41;
                   </span>{' '}
                   및 대표홈페이지 운영

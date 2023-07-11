@@ -20,51 +20,31 @@
   }
 }
 
-@mixin buttonize($type: '') {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@mixin buttonize() {
   cursor: pointer;
   user-select: none;
 
-  @include type-semantic.label;
+  @at-root {
+    .area {
+      $root-selector: &;
 
-  > .content {
-    position: relative;
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+      &-interaction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-    &::before {
-      position: absolute;
-      inset: 0;
-      display: block;
-      content: '';
-    }
-  }
+      &-visible {
+        position: relative;
+        overflow: hidden;
 
-  @if $type == 'text' {
-    height: 3rem;
-
-    > .content {
-      padding-block: 0.625rem;
-      padding-inline: 0.75rem;
-      border-radius: 0.25rem;
-    }
-  } @else if $type == 'icon' {
-    width: 3rem;
-    height: 3rem;
-
-    > .content {
-      flex-grow: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 256rem;
-
-      &::before {
-        border-radius: 256rem;
+        &::before {
+          position: absolute;
+          inset: 0;
+          display: block;
+          content: '';
+        }
       }
     }
   }

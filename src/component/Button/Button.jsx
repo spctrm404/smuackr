@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types';
-import Classes from './_Chip.module.scss';
+import Classes from './_Button.module.scss';
 
-const Chip = ({
+const Button = ({
   children,
   overridingClasses,
   href,
   onClickCb,
-  chipType = 'standard',
+  buttonType = 'standard',
+  fitWidth = true,
   icon,
 }) => {
   return (
     <a
-      className={`${Classes.chip} ${Classes.areaInteraction} ${
-        overridingClasses?.[`chip`]
-      } ${overridingClasses?.[`areaInteraction`]} `}
+      className={`${Classes.button} ${Classes.areaInteraction} ${
+        overridingClasses?.[`button`]
+      } ${overridingClasses?.[`areaInteraction`]}`}
       href={href}
       onClick={onClickCb}
-      data-chip-type={chipType}
+      data-button-type={buttonType}
+      data-is-fixed-width={fitWidth}
       data-has-icon={icon ? true : false}>
       <span
         className={`${Classes.areaVisible} ${
@@ -36,13 +38,14 @@ const Chip = ({
   );
 };
 
-Chip.propTypes = {
+Button.propTypes = {
   children: PropTypes.element,
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
   onClickCb: PropTypes.func,
-  chipType: PropTypes.string,
+  buttonType: PropTypes.string,
+  fitWidth: PropTypes.bool,
   icon: PropTypes.string,
 };
 
-export default Chip;
+export default Button;

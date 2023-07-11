@@ -31,13 +31,13 @@ $layout-link-gap-y: 1rem;
   &:hover {
     color: base.thm-get-color('link-hover');
   }
+}
 
-  &.accent {
-    color: base.thm-get-color('link-variant');
+.accent {
+  color: base.thm-get-color('link-variant');
 
-    &:hover {
-      color: base.thm-get-color('link-variant-hover');
-    }
+  &:hover {
+    color: base.thm-get-color('link-variant-hover');
   }
 }
 
@@ -55,7 +55,6 @@ $layout-link-gap-y: 1rem;
   .layout {
     display: flex;
     flex-wrap: wrap;
-    row-gap: $layout-link-gap-y;
     column-gap: $layout-link-gap-x;
     justify-content: space-between;
   }

@@ -2,57 +2,43 @@ import PropTypes from 'prop-types';
 import Classes from './_NavRail.module.scss';
 import { useState } from 'react';
 import { ReactComponent as LogoVert } from '../../assets/logo-w-vert.svg';
-import Btn from '../Btn/Btn';
+import Button from '../Button/Button';
+import IconButton from '../Button/IconButton';
 import Ol from './bb/Ol';
 
-const NavRail = ({ className, navList }) => {
+const NavRail = ({ className, listNav }) => {
   const stateNthOfSelected = useState(0);
   const [nthOfSelected] = stateNthOfSelected;
   return (
     <div
-      className={`${Classes.navRail} ${className}  ${
+      className={`${Classes.navRail} ${Classes.viewportRail} ${className}  ${
         nthOfSelected === 0 ? Classes.collapsed : null
       }`}>
-      <div className={Classes.railScroll}>
+      <div className={Classes.scrollRail}>
         <div className={Classes.grpTop}>
-          <Btn
-            type="logo"
-            overrideClasses={Classes}
-            overrideClassName={Classes.btnTypeLogo}>
+          <Button overridingClasses={Classes}>
             <LogoVert />
-          </Btn>
+          </Button>
           <Ol
-            list={navList}
+            list={listNav}
             depth={1}
             nthOfParent={0}
             stateNthOfSelected={stateNthOfSelected}></Ol>
         </div>
         <div className={Classes.grpBottom}>
-          <Btn
-            type="icon"
-            overrideClasses={Classes}
-            overrideClassName={Classes.btnTypeIcon}>
+          <IconButton overridingClasses={Classes}>
             <span className="material-symbols-outlined">widgets</span>
-          </Btn>
-          <Btn
-            type="icon"
-            overrideClasses={Classes}
-            overrideClassName={Classes.btnTypeIcon}>
+          </IconButton>
+          <IconButton overridingClasses={Classes}>
             <span className="material-symbols-outlined">search</span>
-          </Btn>
+          </IconButton>
           <div className={Classes.grpLang}>
-            <Btn
-              type="icon"
-              overrideClasses={Classes}
-              overrideClassName={Classes.btnTypeIcon}>
+            <IconButton overridingClasses={Classes}>
               <span>EN</span>
-            </Btn>
-            <Btn
-              type="icon"
-              overrideClasses={Classes}
-              overrideClassName={Classes.btnTypeIcon}>
+            </IconButton>
+            <IconButton overridingClasses={Classes}>
               <span>中文</span>
-            </Btn>
+            </IconButton>
           </div>
         </div>
       </div>
@@ -62,7 +48,7 @@ const NavRail = ({ className, navList }) => {
 
 NavRail.propTypes = {
   className: PropTypes.string,
-  navList: PropTypes.array,
+  listNav: PropTypes.array,
 };
 
 export default NavRail;

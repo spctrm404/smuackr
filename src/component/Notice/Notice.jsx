@@ -4,14 +4,16 @@ import Classes from './_Notice.module.scss';
 const Notice = ({ className, title, date, prefix, href, onClickCb }) => {
   return (
     <a
-      className={`${Classes.notice} ${className}`}
+      className={`${Classes.notice} ${Classes.areaInteraction} ${className}`}
       href={href}
       onClick={onClickCb}>
-      <div className={Classes.grpTitle}>
-        <span className={Classes.prefix}>{prefix}</span>
-        <span className={Classes.title}>{title}</span>
+      <div className={Classes.areaVisible}>
+        <div className={Classes.grpTitle}>
+          <span className={Classes.prefix}>{prefix}</span>
+          <span className={Classes.title}>{title}</span>
+        </div>
+        <span className={Classes.date}>{date}</span>
       </div>
-      <span className={Classes.date}>{date}</span>
     </a>
   );
 };

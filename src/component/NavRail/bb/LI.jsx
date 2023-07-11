@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Classes from '../_NavRail.module.scss';
-import Btn from '../../Btn/Btn';
+import Button from '../../Button/Button';
 
 const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
   const [, setNthOfSelected] = stateNthOfSelected;
@@ -9,13 +9,11 @@ const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
   };
   return (
     <li className={`${Classes[`liDp${depth}`]} ${Classes[`liNth${depth}`]}`}>
-      <Btn
-        type="text"
-        overrideClasses={Classes}
-        overrideClassName={Classes.btnTypeText}
+      <Button
+        overridingClasses={Classes}
         onClickCb={depth === 1 ? onClickCb : null}>
-        {listItem.label}
-      </Btn>
+        <span>{listItem.label}</span>
+      </Button>
       {children}
     </li>
   );

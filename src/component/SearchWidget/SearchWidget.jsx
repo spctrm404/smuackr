@@ -3,21 +3,21 @@ import Classes from './_SearchWidget.module.scss';
 import Search from '../Search/Search';
 import Chip from '../Chip/Chip';
 
-const SearchWidget = ({ className, chipList, length }) => {
+const SearchWidget = ({ className, listChip, length }) => {
   return (
     <div className={`${Classes.searchWidget} ${className}`}>
       <div className={Classes.title}>
-        Dream <span className="nowrap"> Hiker 상명</span>
+        Dream <span className={Classes.nowrap}> Hiker 상명</span>
       </div>
       <form className={Classes.form} action="">
         <Search></Search>
       </form>
       <div className={Classes.chips}>
-        {chipList.map((eachChipItem, idx) => {
+        {listChip.map((eachChipItem, idx) => {
           if (idx >= length) return;
           return (
-            <Chip key={eachChipItem.key} className={Classes.chip}>
-              {eachChipItem.label}
+            <Chip key={eachChipItem.key} overridingClasses={Classes}>
+              <span>{eachChipItem.label}</span>
             </Chip>
           );
         })}
@@ -28,7 +28,7 @@ const SearchWidget = ({ className, chipList, length }) => {
 
 SearchWidget.propTypes = {
   className: PropTypes.string,
-  chipList: PropTypes.array,
+  listChip: PropTypes.array,
   length: PropTypes.number,
 };
 

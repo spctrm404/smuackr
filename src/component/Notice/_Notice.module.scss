@@ -2,33 +2,25 @@
 @use '../../style/base';
 
 .Notice {
-  position: relative;
+  @include base.style-buttonize;
+  @include base.type-body-out;
+}
+
+.area-visible {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   align-items: baseline;
-  padding-block: 4px;
-  padding-inline: 4px;
-  overflow: hidden;
+  width: 100%;
+  padding: 4px;
   word-break: break-all;
   overflow-wrap: anywhere;
-  border-radius: 4px;
 
-  @include base.type-body-out;
   @include base.style-set-states(transparent, base.thm-get-color('on-surface'));
-
-  &::before {
-    position: absolute;
-    inset: 0;
-    display: block;
-    content: '';
-  }
 }
 
 .grp-title {
   display: -webkit-box;
   flex-grow: 1;
-
-  // max-height: 3rem;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -50,7 +42,4 @@
 .date {
   flex-shrink: 0;
   color: base.thm-get-color('on-surface-variant');
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'md')) {
 }

@@ -1,0 +1,105 @@
+@use 'sass:selector';
+@use '../../style/base';
+
+@mixin apply() {
+  @include base.style-buttonize;
+  @include base.type-label;
+
+  @at-root {
+    .area {
+      $root-selector: &;
+
+      &-interaction {
+        min-width: 3rem;
+        height: 3rem;
+
+        &[data-button-type='standard'] {
+          #{selector.append($root-selector, '-visible')} {
+            @include base.style-set-states(
+              transparent,
+              base.thm-get-color('primary')
+            );
+          }
+        }
+
+        &[data-button-type='outline'] {
+          #{selector.append($root-selector, '-visible')} {
+            border: 0.0625rem solid base.thm-get-color('outline');
+
+            @include base.style-set-states(
+              transparent,
+              base.thm-get-color('primary')
+            );
+            @include base.style-set-transition(border-color);
+
+            &:active {
+              border-color: base.thm-get-color('primary');
+            }
+          }
+        }
+
+        &[data-button-type='tonal'] {
+          #{selector.append($root-selector, '-visible')} {
+            @include base.style-set-states(
+              base.thm-get-color('secondary-container'),
+              base.thm-get-color('on-secondary-container')
+            );
+            @include base.style-set-transition(box-shadow);
+
+            &:hover {
+              box-shadow: base.thm-get-color('elevation-1');
+            }
+
+            &:active {
+              box-shadow: unset;
+            }
+          }
+        }
+
+        &[data-button-type='filled'] {
+          #{selector.append($root-selector, '-visible')} {
+            @include base.style-set-states(
+              base.thm-get-color('primary'),
+              base.thm-get-color('on-primary')
+            );
+            @include base.style-set-transition(box-shadow);
+
+            &:hover {
+              box-shadow: base.thm-get-color('elevation-1');
+            }
+
+            &:active {
+              box-shadow: unset;
+            }
+          }
+        }
+
+        &[data-button-type='elevated'] {
+          #{selector.append($root-selector, '-visible')} {
+            box-shadow: base.thm-get-color('elevation-1');
+
+            @include base.style-set-states(
+              base.thm-get-color('surface-container-low'),
+              base.thm-get-color('primary')
+            );
+            @include base.style-set-transition(box-shadow);
+
+            &:hover {
+              box-shadow: base.thm-get-color('elevation-2');
+            }
+
+            &:active {
+              box-shadow: base.thm-get-color('elevation-1');
+            }
+          }
+        }
+      }
+
+      &-visible {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

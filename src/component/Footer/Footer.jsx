@@ -3,10 +3,10 @@ import Classes from './_Footer.module.scss';
 import FooterInfo from './FooterInfo';
 import FooterLink from './FooterLink';
 
-const Footer = ({ className, linkList }) => {
+const Footer = ({ className, listLink }) => {
   return (
     <footer className={`${Classes.footer} ${className}`}>
-      <FooterLink linkList={linkList}></FooterLink>
+      <FooterLink listLink={listLink}></FooterLink>
       <FooterInfo></FooterInfo>
     </footer>
   );
@@ -14,7 +14,7 @@ const Footer = ({ className, linkList }) => {
 
 Footer.propTypes = {
   className: PropTypes.string,
-  linkList: PropTypes.array,
+  listLink: PropTypes.array,
 };
 
 export default Footer;

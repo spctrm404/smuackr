@@ -8,19 +8,18 @@ const TabBtn = ({ children, nth, stateNthOfSelected }) => {
   };
   return (
     <div
-      className={`${Classes.tabBtn} ${
+      className={`${Classes.tabBtn} ${Classes.areaInteraction} ${
         nthOfSelected === nth ? Classes.selected : null
       }`}
       onClick={onClickCb}>
-      <span className={Classes.content}>{children}</span>
+      <span className={Classes.areaVisible}>{children}</span>
     </div>
   );
 };
 
 TabBtn.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.element,
   nth: PropTypes.number,
-  onClickCb: PropTypes.func,
   stateNthOfSelected: PropTypes.array,
 };
 

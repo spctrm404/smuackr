@@ -1,3 +1,5 @@
+@use 'type-semantic';
+
 *,
 *::before,
 *::after {
@@ -30,6 +32,24 @@ video {
   white-space: nowrap;
 }
 
+// .area {
+//   &-interaction {
+//     min-width: 3rem;
+//     min-height: 3rem;
+//   }
+
+//   &-visible {
+//     position: relative;
+//     overflow: hidden;
+
+//     &::before {
+//       position: absolute;
+//       inset: 0;
+//       transition: background-color 200ms cubic-bezier(0.2, 0, 0, 1);
+//     }
+//   }
+// }
+
 h1,
 h2,
 h3,
@@ -41,25 +61,25 @@ h6 {
 }
 
 h1 {
-  @include base.type-title-3;
+  @include type-semantic.title-3;
 }
 
 h2 {
-  @include base.type-title-2;
+  @include type-semantic.title-2;
 }
 
 h3 {
-  @include base.type-title-1;
+  @include type-semantic.title-1;
 }
 
 h4 {
-  @include base.type-title;
+  @include type-semantic.title;
 }
 
 h5 {
-  @include base.type-title--1;
+  @include type-semantic.title--1;
 }
 
 h6 {
-  @include base.type-title--2;
+  @include type-semantic.title--2;
 }

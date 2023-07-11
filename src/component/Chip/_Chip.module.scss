@@ -1,19 +1,72 @@
+@use 'sass:selector';
 @use '../../style/base';
 
-.Chip {
-  height: 3rem;
-
+.chip {
   @include base.style-buttonize;
+  @include base.type-label;
+}
 
-  > .content {
+.area {
+  $root-selector: &;
+
+  &-interaction {
+    width: fit-content;
+    height: 3rem;
+
+    &[data-has-icon='true'] {
+      #{selector.append($root-selector, '-visible')} {
+        padding-inline: 0.5rem 1rem;
+      }
+    }
+
+    &[data-chip-type='standard'] {
+      #{selector.append($root-selector, '-visible')} {
+        border: 0.0625rem solid base.thm-get-color('outline');
+
+        @include base.style-set-states(
+          transparent,
+          base.thm-get-color('on-surface-variant')
+        );
+      }
+    }
+
+    &[data-chip-type='elevated'] {
+      #{selector.append($root-selector, '-visible')} {
+        box-shadow: base.thm-get-color('elevation-1');
+
+        @include base.style-set-states(
+          base.thm-get-color('surface-container-low'),
+          base.thm-get-color('on-surface-variant')
+        );
+        @include base.style-set-transition(box-shadow);
+
+        &:hover {
+          box-shadow: base.thm-get-color('elevation-2');
+        }
+
+        &:active {
+          box-shadow: base.thm-get-color('elevation-1');
+        }
+      }
+    }
+  }
+
+  &-visible {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
     height: 2rem;
-    padding-inline: 0.75rem;
-    border: 0.0625rem solid base.thm-get-color('outline');
+    padding-inline: 1rem;
     border-radius: 256rem;
 
-    @include base.style-set-states(
-      transparent,
-      base.thm-get-color('on-surface-variant')
-    );
+    > * {
+      white-space: nowrap;
+    }
   }
+}
+
+.icon {
+  font-size: 1.125rem;
+  color: base.thm-get-color('primary');
 }

@@ -1,0 +1,17 @@
+.button-like {
+  &-area {
+    &-interaction {
+    }
+
+    &-visible {
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        inset: 0;
+        content: '';
+      }
+    }
+  }
+}

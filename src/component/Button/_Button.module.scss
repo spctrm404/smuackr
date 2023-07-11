@@ -1,0 +1,49 @@
+@use 'sass:selector';
+@use '../../style/base';
+@use 'common';
+
+.button {
+  @include common.apply;
+}
+
+.area {
+  $root-selector: &;
+
+  &-interaction {
+    &[data-is-fixed-width='true'] {
+      width: fit-content;
+    }
+
+    &[data-has-icon='true'] {
+      #{selector.append($root-selector, '-visible')} {
+        padding-inline: 1rem 1.5rem;
+      }
+
+      &[data-button-type='standard'] {
+        #{selector.append($root-selector, '-visible')} {
+          padding-inline: 0.75rem 1rem;
+        }
+      }
+    }
+
+    &[data-button-type='standard'] {
+      #{selector.append($root-selector, '-visible')} {
+        padding-inline: 0.75rem;
+      }
+    }
+  }
+
+  &-visible {
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding-inline: 1.5rem;
+
+    > * {
+      white-space: nowrap;
+    }
+  }
+}
+
+.icon {
+  font-size: 1.125rem;
+}

@@ -29,9 +29,9 @@ $py: (
 $gap-x: (
   'sm': 1.5rem,
   'md': 2.5rem,
-  'lg': 2.5rem,
-  'xl': 2.5rem,
-  'xxl': 2.5rem,
+  'lg': 3.5rem,
+  'xl': 3.5rem,
+  'xxl': 3.5rem,
 );
 $gap-y: (
   'sm': 2.5rem,
@@ -58,6 +58,8 @@ $notice-widget-w: (
   '70': 3.5 * $body-out-20ch,
   '80': 4 * $body-out-20ch,
 );
-$static-w-mx: 75rem;
+
+// $static-w-mx: 75rem;
+$static-w-mx: 90rem;
 $static-nav-bar-h: 3.5rem;
 $static-nav-rail-w: 7.5rem;

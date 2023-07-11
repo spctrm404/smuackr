@@ -13,6 +13,10 @@
     align-items: baseline;
     width: 100%;
     margin-bottom: 15px;
+
+    > .button {
+      margin-right: -8px;
+    }
   }
 
   &-notice {
@@ -28,14 +32,6 @@
 
 .tab {
   flex-grow: 1;
-}
-
-.btn {
-  margin-right: -8px;
-
-  > .content {
-    @include base.style-set-states(transparent, base.thm-get-color('primary'));
-  }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {

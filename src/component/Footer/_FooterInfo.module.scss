@@ -58,6 +58,10 @@ $cert-gap-y: 16px;
   }
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .cert {
   display: flex;
   flex-direction: column;

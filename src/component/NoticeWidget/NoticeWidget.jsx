@@ -1,24 +1,21 @@
 import PropTypes from 'prop-types';
 import Classes from './_NoticeWidget.module.scss';
 import Tab from '../Tab/Tab';
-import Btn from '../Btn/Btn';
+import Button from '../Button/Button';
 import Notice from '../Notice/Notice';
 
-const NoticeWidget = ({ className, tabList, noticeList, length }) => {
+const NoticeWidget = ({ className, listTab, listNotice, length }) => {
   return (
     <div className={`${Classes.noticeWidget} ${className}`}>
       <h4 className={Classes.title}>공지사항</h4>
       <div className={Classes.grpControl}>
-        <Tab className={Classes.tab} tabList={tabList}></Tab>
-        <Btn
-          type="text"
-          overrideClasses={Classes}
-          overrideClassName={Classes.btn}>
+        <Tab className={Classes.tab} listTab={listTab}></Tab>
+        <Button overridingClasses={Classes}>
           <span>더보기</span>
-        </Btn>
+        </Button>
       </div>
       <div className={Classes.grpNotice}>
-        {noticeList.map((eachListItem, idx) => {
+        {listNotice.map((eachListItem, idx) => {
           if (idx >= length) return;
           return (
             <Notice
@@ -36,8 +33,8 @@ const NoticeWidget = ({ className, tabList, noticeList, length }) => {
 
 NoticeWidget.propTypes = {
   className: PropTypes.string,
-  tabList: PropTypes.array,
-  noticeList: PropTypes.array,
+  listTab: PropTypes.array,
+  listNotice: PropTypes.array,
   length: PropTypes.number,
 };
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Classes from '../_NavRail.module.scss';
 import Li from './LI';
-import Btn from '../../Btn/Btn';
+import IconButton from '../../Button/IconButton';
 
 const Ol = ({ list, depth, nthOfParent, stateNthOfSelected }) => {
   if (!list || !list.length) return null;
@@ -32,15 +32,11 @@ const Ol = ({ list, depth, nthOfParent, stateNthOfSelected }) => {
   if (depth === 2) {
     if (nthOfParent === nthOfSelected) {
       return (
-        <ol className={`${Classes[`olDp${depth}`]} ${Classes.drawer}`}>
-          <div className={Classes.drawerScroll}>{recursiveLiOl}</div>
-          <Btn
-            type="icon"
-            overrideClasses={Classes}
-            overrideClassName={Classes.btnTypeIcon}
-            onClickCb={onClickCb}>
+        <ol className={`${Classes[`olDp${depth}`]} ${Classes.viewportDrawer}`}>
+          <div className={Classes.scrollDrawer}>{recursiveLiOl}</div>
+          <IconButton overridingClasses={Classes} onClickCb={onClickCb}>
             <span className="material-symbols-outlined">close</span>
-          </Btn>
+          </IconButton>
         </ol>
       );
     }

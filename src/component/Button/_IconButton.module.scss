@@ -1,0 +1,18 @@
+@use '../../style/base';
+@use 'common';
+
+.icon-button {
+  @include common.apply;
+}
+
+.area {
+  &-interaction {
+    width: 3rem;
+  }
+
+  &-visible {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 256rem;
+  }
+}
