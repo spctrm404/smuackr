@@ -4,6 +4,7 @@ import DB from './DB';
 import NavRail from './component/NavRail/NavRail';
 import SearchWidget from './component/SearchWidget/SearchWidget';
 import NoticeWidget from './component/NoticeWidget/NoticeWidget';
+import NewsWidget from './component/NewsWidget/NewsWidget';
 import Footer from './component/Footer/Footer';
 
 function App() {
@@ -11,6 +12,11 @@ function App() {
     eachNoticeItem.prefix =
       DB.noticePrefixes[Math.floor(Math.random() * DB.noticePrefixes.length)];
     eachNoticeItem.date = `07-03`;
+  });
+
+  DB.news.forEach((eachNewsItem) => {
+    eachNewsItem.prefix =
+      DB.newsPrefixes[Math.floor(Math.random() * DB.newsPrefixes.length)];
   });
 
   return (
@@ -35,11 +41,7 @@ function App() {
           </div>
         </div>
         <main>
-          <section>
-            <div className="container">
-              <h2>this is main</h2>
-            </div>
-          </section>
+          <NewsWidget listNews={DB.news}></NewsWidget>
         </main>
         <Footer listLink={DB.footerLinks}></Footer>
       </div>

@@ -21,31 +21,31 @@
 
     &[data-chip-type='standard'] {
       #{selector.append($root-selector, '-visible')} {
-        border: 0.0625rem solid base.thm-get-color('outline');
+        border: 0.0625rem solid base.theme-get-val('outline');
 
         @include base.style-set-states(
           transparent,
-          base.thm-get-color('on-surface-variant')
+          base.theme-get-val('on-surface-variant')
         );
       }
     }
 
     &[data-chip-type='elevated'] {
       #{selector.append($root-selector, '-visible')} {
-        box-shadow: base.thm-get-color('elevation-1');
+        box-shadow: base.theme-get-val('elevation-1');
 
         @include base.style-set-states(
-          base.thm-get-color('surface-container-low'),
-          base.thm-get-color('on-surface-variant')
+          base.theme-get-val('surface-container-low'),
+          base.theme-get-val('on-surface-variant')
         );
         @include base.style-set-transition(box-shadow);
 
         &:hover {
-          box-shadow: base.thm-get-color('elevation-2');
+          box-shadow: base.theme-get-val('elevation-2');
         }
 
         &:active {
-          box-shadow: base.thm-get-color('elevation-1');
+          box-shadow: base.theme-get-val('elevation-1');
         }
       }
     }
@@ -68,5 +68,5 @@
 
 .icon {
   font-size: 1.125rem;
-  color: base.thm-get-color('primary');
+  color: base.theme-get-val('primary');
 }

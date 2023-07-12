@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Classes from './_FooterLink.module.scss';
+
 const FooterLink = ({ className, listLink }) => {
   return (
     <section

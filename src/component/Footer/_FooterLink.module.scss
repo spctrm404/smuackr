@@ -8,10 +8,10 @@ $layout-link-gap-x: 2rem;
 $layout-link-gap-y: 1rem;
 
 .footer-link {
-  color: base.thm-get-color('on-surface');
+  color: base.theme-get-val('on-surface');
   word-break: keep-all;
   overflow-wrap: break-word;
-  background-color: base.thm-get-color('surface-dim');
+  background-color: base.theme-get-val('surface-dim');
 
   @include base.type-label;
 }
@@ -26,18 +26,18 @@ $layout-link-gap-y: 1rem;
 .a {
   min-width: min-content;
   max-width: fit-content;
-  color: base.thm-get-color('link');
+  color: base.theme-get-val('link');
 
   &:hover {
-    color: base.thm-get-color('link-hover');
+    color: base.theme-get-val('link-hover');
   }
 }
 
 .accent {
-  color: base.thm-get-color('link-variant');
+  color: base.theme-get-val('link-variant');
 
   &:hover {
-    color: base.thm-get-color('link-variant-hover');
+    color: base.theme-get-val('link-variant-hover');
   }
 }
 

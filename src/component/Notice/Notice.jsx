@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Classes from './_Notice.module.scss';
 
-const Notice = ({ className, title, date, prefix, href, onClickCb }) => {
+const Notice = ({ className, content, href, onClickCb }) => {
   return (
     <a
       className={`${Classes.notice} ${Classes.areaInteraction} ${className}`}
@@ -9,10 +9,10 @@ const Notice = ({ className, title, date, prefix, href, onClickCb }) => {
       onClick={onClickCb}>
       <div className={Classes.areaVisible}>
         <div className={Classes.grpTitle}>
-          <span className={Classes.prefix}>{prefix}</span>
-          <span className={Classes.title}>{title}</span>
+          <span className={Classes.prefix}>{content.prefix}</span>
+          <span className={Classes.title}>{content.title}</span>
         </div>
-        <span className={Classes.date}>{date}</span>
+        <span className={Classes.date}>{content.date}</span>
       </div>
     </a>
   );
@@ -20,9 +20,7 @@ const Notice = ({ className, title, date, prefix, href, onClickCb }) => {
 
 Notice.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.string,
-  date: PropTypes.string,
-  prefix: PropTypes.string,
+  content: PropTypes.object,
   href: PropTypes.string,
   onClickCb: PropTypes.func,
 };

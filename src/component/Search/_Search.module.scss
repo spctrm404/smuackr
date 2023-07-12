@@ -5,7 +5,7 @@
   align-items: center;
   height: 3rem;
   overflow: hidden;
-  background-color: base.thm-get-color('surface-container-highest');
+  background-color: base.theme-get-val('surface-container-highest');
 
   // border-radius: 0.25rem;
 
@@ -26,28 +26,39 @@
   @include base.style-set-transition(border-color);
 
   &:has(.input:focus-visible) {
-    border: 0.0625rem solid base.thm-get-color('primary');
+    border: 0.0625rem solid base.theme-get-val('primary');
   }
 }
 
 .input {
   flex-grow: 1;
   width: 100%;
-  color: base.thm-get-color('on-surface');
+  height: 100%;
+  color: base.theme-get-val('on-surface');
   background-color: transparent;
   border: 0;
 
   &::placeholder {
-    color: base.thm-get-color('on-surface-variant');
+    color: base.theme-get-val('on-surface-variant');
 
     @include base.style-set-transition(color);
+  }
+
+  &:autofill,
+  &:autofill:hover,
+  &:autofill:focus,
+  &:autofill:active {
+    -webkit-text-fill-color: base.theme-get-val('on-surface-variant');
+    box-shadow: 0 0 0 1000px base.theme-get-val('surface-container-highest')
+      inset;
+    transition: background-color 5000s ease-in-out 0s;
   }
 
   &:focus-visible {
     outline: none;
 
     &::placeholder {
-      color: base.thm-get-color('outline-variant');
+      color: base.theme-get-val('outline-variant');
     }
   }
 }
@@ -68,8 +79,8 @@
     height: 100%;
 
     @include base.style-set-states(
-      base.thm-get-color('primary'),
-      base.thm-get-color('on-primary')
+      base.theme-get-val('primary'),
+      base.theme-get-val('on-primary')
     );
   }
 }

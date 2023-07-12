@@ -3,6 +3,8 @@
 
 $theme: color-semantic.$light;
 
-@function get-color($key) {
+// $theme: color-semantic.$dark;
+
+@function get-val($key) {
   @return map.get($theme, $key);
 }

@@ -1,0 +1,56 @@
+@use '../../style/base';
+
+.card {
+  @include base.style-buttonize;
+}
+
+.area {
+  &-interaction {
+    // max-width: 40rem;
+    height: fit-content;
+
+    // box-shadow: base.theme-get-val('elevation-1');
+  }
+
+  &-visible {
+    width: 100%;
+
+    @include base.style-set-states(
+      base.theme-get-val('surface'),
+      base.theme-get-val('primary')
+    );
+  }
+}
+
+.photo {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 24px;
+  color: base.theme-get-val('on-surface');
+}
+
+.prefix {
+  @include base.type-label;
+
+  &::before {
+    content: '[';
+  }
+
+  &::after {
+    content: ']';
+  }
+}
+
+.title {
+  @include base.type-title-out;
+}
+
+.preview {
+  @include base.type-body-out;
+}

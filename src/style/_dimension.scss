@@ -50,13 +50,14 @@ $gap-y: (
 //   '80': 4 * $body-out-20ch-sm,
 // );
 $body-out-20ch: 18.4004rem;
+$han-20ch: 30.873ch;
 $notice-widget-w: (
-  '30': 1.5 * $body-out-20ch,
-  '40': 2 * $body-out-20ch,
-  '50': 2.5 * $body-out-20ch,
-  '60': 3 * $body-out-20ch,
-  '70': 3.5 * $body-out-20ch,
-  '80': 4 * $body-out-20ch,
+  '30': 1.5 * $han-20ch,
+  '40': 2 * $han-20ch,
+  '50': 2.5 * $han-20ch,
+  '60': 3 * $han-20ch,
+  '70': 3.5 * $han-20ch,
+  '80': 4 * $han-20ch,
 );
 
 // $static-w-mx: 75rem;

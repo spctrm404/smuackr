@@ -21,9 +21,7 @@ const NoticeWidget = ({ className, listTab, listNotice, length }) => {
             <Notice
               key={eachListItem.key}
               className={Classes.notice}
-              title={eachListItem.title}
-              date={eachListItem.date}
-              prefix={eachListItem.prefix}></Notice>
+              content={eachListItem}></Notice>
           );
         })}
       </div>

@@ -4,18 +4,21 @@
 .Notice {
   @include base.style-buttonize;
   @include base.type-body-out;
-}
 
-.area-visible {
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
-  width: 100%;
-  padding: 4px;
-  word-break: break-all;
-  overflow-wrap: anywhere;
+  .area-visible {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    width: 100%;
+    padding: 4px;
+    word-break: break-all;
+    overflow-wrap: anywhere;
 
-  @include base.style-set-states(transparent, base.thm-get-color('on-surface'));
+    @include base.style-set-states(
+      transparent,
+      base.theme-get-val('on-surface')
+    );
+  }
 }
 
 .grp-title {
@@ -41,5 +44,5 @@
 
 .date {
   flex-shrink: 0;
-  color: base.thm-get-color('on-surface-variant');
+  color: base.theme-get-val('on-surface-variant');
 }

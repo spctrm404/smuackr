@@ -1,6 +1,5 @@
 @use 'common';
 @forward 'style' as style-*;
-@forward 'theme' as thm-*;
+@forward 'theme' as theme-*;
 @forward 'dimension' as dim-*;
 @forward 'type-semantic' as type-*;
-@forward 'util' as util-*;

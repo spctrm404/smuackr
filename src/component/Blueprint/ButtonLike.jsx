@@ -5,13 +5,13 @@ const ButtonLike = ({ children, overridingClasses, href, onClickCb }) => {
   return (
     <a
       className={`${Classes.buttonLike} ${Classes.areaInteraction} ${
-        overridingClasses[`areaInteraction`]
+        overridingClasses?.[`areaInteraction`]
       }`}
       href={href}
       onClick={onClickCb}>
       <span
         className={`${Classes.areaVisible} ${
-          overridingClasses[`areaVisible`]
+          overridingClasses?.[`areaVisible`]
         } `}>
         {children}
       </span>

@@ -3,7 +3,7 @@
 
 .title {
   margin-bottom: 4px;
-  color: base.thm-get-color('on-surface-variant');
+  color: base.theme-get-val('on-surface-variant');
 
   @include base.type-title-2;
 }

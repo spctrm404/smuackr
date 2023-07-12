@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../../style/base';
+
+$px: 0.5rem;
+
+@media (width <= map.get(base.$dim-bp-gt, 'lg')) {
+  .container {
+    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(map.get(base.$dim-bp-gt, 'sm') - 2 * $px, 1fr)
+  );
+  gap: 0.5rem;
+}

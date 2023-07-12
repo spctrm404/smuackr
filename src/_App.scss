@@ -2,10 +2,10 @@
 @use './style/base';
 
 body {
-  color: base.thm-get-color('on-surface');
+  color: base.theme-get-val('on-surface');
   word-break: break-all;
   overflow-wrap: anywhere;
-  background-color: base.thm-get-color('surface-container-highest');
+  background-color: base.theme-get-val('surface-container-highest');
 
   @include base.type-body-out;
 }
@@ -24,7 +24,7 @@ body {
   top: 0;
   z-index: 1024;
   height: base.$dim-static-nav-bar-h;
-  background-color: base.thm-get-color('primary-seed');
+  background-color: base.theme-get-val('primary-seed');
 }
 
 .nav-rail {
@@ -40,7 +40,7 @@ body {
 .imagery {
   // 1:1 < height < 3:4
   height: clamp(100vw, 100dvh, calc(100vw * 4 / 3));
-  background-color: base.thm-get-color('surface-dim');
+  background-color: base.theme-get-val('surface-dim');
 
   img {
     width: 100%;
@@ -55,7 +55,7 @@ body {
 
   padding-block: $py;
   padding-inline: $px;
-  background-color: base.thm-get-color('surface');
+  background-color: base.theme-get-val('surface');
 
   &__wrap {
     $gap-x: map.get(base.$dim-gap-x, 'sm');
@@ -82,7 +82,7 @@ body {
 
 main,
 footer {
-  background-color: base.thm-get-color('surface-container');
+  background-color: base.theme-get-val('surface-container-highest');
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {

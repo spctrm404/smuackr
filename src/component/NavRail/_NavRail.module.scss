@@ -2,16 +2,16 @@
 @use 'sass:selector';
 @use '../../style/base';
 
-$rail-bg: base.thm-get-color('primary-seed');
-$rail-fg: base.thm-get-color('on-primary-seed');
+$rail-bg: base.theme-get-val('primary-seed');
+$rail-fg: base.theme-get-val('on-primary-seed');
 $drawer-bg: base.style-get-transparent(
-  base.thm-get-color('primary-seed'),
+  base.theme-get-val('primary-seed'),
   0.87
 );
-$drawer-fg: base.thm-get-color('on-primary-seed');
+$drawer-fg: base.theme-get-val('on-primary-seed');
 
 .NavRail {
-  @include base.util-hide-scroll;
+  @include base.style-hide-scrollbar;
 }
 
 .viewport {
@@ -21,7 +21,7 @@ $drawer-fg: base.thm-get-color('on-primary-seed');
     background-color: $rail-bg;
 
     &.collapsed {
-      box-shadow: base.thm-get-color('elevation-2');
+      box-shadow: base.theme-get-val('elevation-2');
     }
   }
 
@@ -40,23 +40,23 @@ $drawer-fg: base.thm-get-color('on-primary-seed');
     overflow-y: scroll;
     background-color: $drawer-bg;
     border-left: 0.0625rem solid
-      base.style-get-transparent(base.thm-get-color('on-primary'), 0.16);
-    box-shadow: base.thm-get-color('elevation-2');
+      base.style-get-transparent(base.theme-get-val('on-primary'), 0.16);
+    box-shadow: base.theme-get-val('elevation-2');
 
-    @include base.util-hide-scroll;
+    @include base.style-hide-scrollbar;
 
     .icon-button {
-      $my: 2.75rem;
-
-      position: sticky;
-      top: $my;
-      margin-top: $my;
-
       &.area-interaction {
+        $my: 2.75rem;
+
+        position: sticky;
+        top: $my;
+        margin-top: $my;
+
         .area-visible {
           @include base.style-set-states(
             transparent,
-            base.thm-get-color('on-primary-seed')
+            base.theme-get-val('on-primary-seed')
           );
         }
       }
@@ -112,7 +112,7 @@ $drawer-fg: base.thm-get-color('on-primary-seed');
 
           @include base.style-set-states(
             transparent,
-            base.thm-get-color('on-primary-seed')
+            base.theme-get-val('on-primary-seed')
           );
 
           svg {
@@ -135,7 +135,7 @@ $drawer-fg: base.thm-get-color('on-primary-seed');
         .area-visible {
           @include base.style-set-states(
             transparent,
-            base.thm-get-color('on-primary-seed')
+            base.theme-get-val('on-primary-seed')
           );
         }
       }
@@ -172,7 +172,7 @@ $drawer-fg: base.thm-get-color('on-primary-seed');
 
         @include base.style-set-states(
           transparent,
-          base.thm-get-color('on-primary-seed')
+          base.theme-get-val('on-primary-seed')
         );
       }
     }
@@ -189,7 +189,7 @@ $drawer-fg: base.thm-get-color('on-primary-seed');
       .area-visible {
         @include base.style-set-states(
           transparent,
-          base.thm-get-color('on-primary-seed')
+          base.theme-get-val('on-primary-seed')
         );
       }
     }
