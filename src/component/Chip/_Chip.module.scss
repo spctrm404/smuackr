@@ -13,12 +13,6 @@
     width: fit-content;
     height: 3rem;
 
-    &[data-has-icon='true'] {
-      #{selector.append($root-selector, '-visible')} {
-        padding-inline: 0.5rem 1rem;
-      }
-    }
-
     &[data-chip-type='standard'] {
       #{selector.append($root-selector, '-visible')} {
         border: 0.0625rem solid base.theme-get-val('outline');
@@ -32,6 +26,7 @@
 
     &[data-chip-type='elevated'] {
       #{selector.append($root-selector, '-visible')} {
+        padding-inline: 1rem;
         box-shadow: base.theme-get-val('elevation-1');
 
         @include base.style-set-states(
@@ -49,6 +44,18 @@
         }
       }
     }
+
+    &[data-has-icon='true'] {
+      #{selector.append($root-selector, '-visible')} {
+        padding-inline: 0.5rem 1rem;
+      }
+
+      &[data-button-type='standard'] {
+        #{selector.append($root-selector, '-visible')} {
+          padding-inline: 0.4375rem 0.9375rem;
+        }
+      }
+    }
   }
 
   &-visible {
@@ -57,7 +64,7 @@
     align-items: center;
     justify-content: center;
     height: 2rem;
-    padding-inline: 1rem;
+    padding-inline: 15px;
     border-radius: 256rem;
 
     > * {

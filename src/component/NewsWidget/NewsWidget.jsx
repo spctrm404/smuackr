@@ -12,7 +12,7 @@ const NewsWidget = ({ className, listNews }) => {
             return (
               <Card
                 key={eachNewsItem.key}
-                className={Classes.card}
+                overridingClasses={Classes}
                 content={eachNewsItem}></Card>
             );
           })}

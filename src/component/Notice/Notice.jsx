@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 import Classes from './_Notice.module.scss';
 
 const Notice = ({ className, content, href, onClickCb }) => {
+  const extractMDfromYMD = (dateYMD) => {
+    const [, m, d, ...rest] = dateYMD.split('-');
+    return `${m}-${d}`;
+  };
   return (
     <a
       className={`${Classes.notice} ${Classes.areaInteraction} ${className}`}
@@ -9,10 +13,10 @@ const Notice = ({ className, content, href, onClickCb }) => {
       onClick={onClickCb}>
       <div className={Classes.areaVisible}>
         <div className={Classes.grpTitle}>
-          <span className={Classes.prefix}>{content.prefix}</span>
-          <span className={Classes.title}>{content.title}</span>
+          <span className={Classes.prefix}>{content?.prefix}</span>
+          <span className={Classes.title}>{content?.title}</span>
         </div>
-        <span className={Classes.date}>{content.date}</span>
+        <span className={Classes.date}>{extractMDfromYMD(content?.date)}</span>
       </div>
     </a>
   );

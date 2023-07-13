@@ -7,23 +7,35 @@ import photo_4 from '../../assets/news (4).jpg';
 import photo_5 from '../../assets/news (5).jpg';
 import photo_6 from '../../assets/news (6).jpg';
 
-const Card = ({ className, content, href, onClickCb }) => {
+const Card = ({ overridingClasses, content, href, onClickCb }) => {
   const photo = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6];
 
   return (
     <div
-      className={`${Classes.card} ${Classes.areaInteraction} ${className}`}
+      className={`${Classes.card} ${Classes.areaInteraction} ${
+        overridingClasses?.[`card`]
+      } ${overridingClasses?.[`areaInteraction`]}`}
       href={href}
       onClick={onClickCb}>
-      <div className={Classes.areaVisible}>
+      <div
+        className={`${Classes.areaVisible} ${
+          overridingClasses?.[`areaVisible`]
+        }`}>
         <img
-          className={Classes.photo}
+          className={`${Classes.photo} ${overridingClasses?.[`photo`]}`}
           src={photo[Math.floor(Math.random() * photo.length)]}
         />
-        <div className={Classes.text}>
-          <div className={Classes.prefix}>{content.prefix}</div>
-          <div className={Classes.title}>{content.title}</div>
-          <div className={Classes.preview}>{content.preview}</div>
+        <div className={`${Classes.text} ${overridingClasses?.[`text`]}`}>
+          <div className={`${Classes.prefix} ${overridingClasses?.[`prefix`]}`}>
+            {content?.prefix}
+          </div>
+          <div className={`${Classes.title} ${overridingClasses?.[`title`]}`}>
+            {content?.title}
+          </div>
+          <div
+            className={`${Classes.preview} ${overridingClasses?.[`preview`]}`}>
+            {content?.preview}
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +43,7 @@ const Card = ({ className, content, href, onClickCb }) => {
 };
 
 Card.propTypes = {
-  className: PropTypes.string,
+  overridingClasses: PropTypes.object,
   content: PropTypes.object,
   href: PropTypes.string,
   onClickCb: PropTypes.func,

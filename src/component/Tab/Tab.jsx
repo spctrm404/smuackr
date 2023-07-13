@@ -11,7 +11,7 @@ const Tab = ({ className, listTab }) => {
       className={`${Classes.tab} ${
         Classes[`tabSel${nthOfSelected}`]
       } ${className}`}>
-      {listTab.map((eachTabItem, idx) => {
+      {listTab?.map((eachTabItem, idx) => {
         return (
           <TabBtn
             key={eachTabItem.key}

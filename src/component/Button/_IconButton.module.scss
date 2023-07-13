@@ -1,3 +1,4 @@
+@use 'sass:selector';
 @use '../../style/base';
 @use 'common';
 
@@ -6,8 +7,17 @@
 }
 
 .area {
+  $root-selector: &;
+
   &-interaction {
     width: 3rem;
+
+    &[data-button-type='outline'] {
+      #{selector.append($root-selector, '-visible')} {
+        width: 2.375rem;
+        height: 2.375rem;
+      }
+    }
   }
 
   &-visible {

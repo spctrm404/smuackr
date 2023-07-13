@@ -14,6 +14,18 @@
       width: fit-content;
     }
 
+    &[data-button-type='standard'] {
+      #{selector.append($root-selector, '-visible')} {
+        padding-inline: 0.75rem;
+      }
+    }
+
+    &[data-button-type='outline'] {
+      #{selector.append($root-selector, '-visible')} {
+        padding-inline: 1.4375rem;
+      }
+    }
+
     &[data-has-icon='true'] {
       #{selector.append($root-selector, '-visible')} {
         padding-inline: 1rem 1.5rem;
@@ -24,11 +36,11 @@
           padding-inline: 0.75rem 1rem;
         }
       }
-    }
 
-    &[data-button-type='standard'] {
-      #{selector.append($root-selector, '-visible')} {
-        padding-inline: 0.75rem;
+      &[data-button-type='outline'] {
+        #{selector.append($root-selector, '-visible')} {
+          padding-inline: 0.9375rem 1.4375rem;
+        }
       }
     }
   }

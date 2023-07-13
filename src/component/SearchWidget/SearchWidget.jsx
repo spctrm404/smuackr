@@ -13,7 +13,7 @@ const SearchWidget = ({ className, listChip, length }) => {
         <Search></Search>
       </form>
       <div className={Classes.chips}>
-        {listChip.map((eachChipItem, idx) => {
+        {listChip?.map((eachChipItem, idx) => {
           if (idx >= length) return;
           return (
             <Chip key={eachChipItem.key} overridingClasses={Classes}>

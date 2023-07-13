@@ -15,7 +15,7 @@ const NoticeWidget = ({ className, listTab, listNotice, length }) => {
         </Button>
       </div>
       <div className={Classes.grpNotice}>
-        {listNotice.map((eachListItem, idx) => {
+        {listNotice?.map((eachListItem, idx) => {
           if (idx >= length) return;
           return (
             <Notice

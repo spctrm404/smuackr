@@ -1,6 +1,7 @@
 import './_App.scss';
 import photo from './assets/photo.jpg';
 import DB from './DB';
+import Components from './Components';
 import NavRail from './component/NavRail/NavRail';
 import SearchWidget from './component/SearchWidget/SearchWidget';
 import NoticeWidget from './component/NoticeWidget/NoticeWidget';
@@ -11,7 +12,7 @@ function App() {
   DB.notices.forEach((eachNoticeItem) => {
     eachNoticeItem.prefix =
       DB.noticePrefixes[Math.floor(Math.random() * DB.noticePrefixes.length)];
-    eachNoticeItem.date = `07-03`;
+    eachNoticeItem.date = `2023-07-03`;
   });
 
   DB.news.forEach((eachNewsItem) => {
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+      {/* <Components></Components> */}
       <div className="grid">
         <div className="nav-bar"></div>
         <NavRail className="nav-rail" listNav={DB.navV1}></NavRail>
