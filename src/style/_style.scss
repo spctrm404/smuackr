@@ -6,6 +6,7 @@
 @use 'type-semantic';
 
 @mixin buttonize() {
+  text-decoration: none;
   cursor: pointer;
   user-select: none;
 

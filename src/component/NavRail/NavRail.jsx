@@ -16,9 +16,7 @@ const NavRail = ({ className, listNav }) => {
       }`}>
       <div className={Classes.scrollRail}>
         <div className={Classes.grpTop}>
-          <Button
-            href={`${import.meta.env.BASE_URL}`}
-            overridingClasses={Classes}>
+          <Button to="/" overridingClasses={Classes}>
             <LogoVert />
           </Button>
           <Ol
@@ -38,9 +36,7 @@ const NavRail = ({ className, listNav }) => {
             <IconButton overridingClasses={Classes}>
               <span>EN</span>
             </IconButton>
-            <IconButton
-              href={`${import.meta.env.BASE_URL}components`}
-              overridingClasses={Classes}>
+            <IconButton to="/components" overridingClasses={Classes}>
               <span>中文</span>
             </IconButton>
           </div>
