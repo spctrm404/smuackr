@@ -21,10 +21,9 @@ const Card = ({ overridingClasses, content, href, onClickCb }) => {
         className={`${Classes.areaVisible} ${
           overridingClasses?.[`areaVisible`]
         }`}>
-        <img
-          className={`${Classes.photo} ${overridingClasses?.[`photo`]}`}
-          src={photo[Math.floor(Math.random() * photo.length)]}
-        />
+        <div className={`${Classes.photo} ${overridingClasses?.[`photo`]}`}>
+          <img src={photo[Math.floor(Math.random() * photo.length)]} />
+        </div>
         <div className={`${Classes.text} ${overridingClasses?.[`text`]}`}>
           <div className={`${Classes.prefix} ${overridingClasses?.[`prefix`]}`}>
             {content?.prefix}

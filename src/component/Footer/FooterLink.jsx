@@ -3,9 +3,8 @@ import Classes from './_FooterLink.module.scss';
 
 const FooterLink = ({ className, listLink }) => {
   return (
-    <section
-      className={`${Classes.footerLink} ${Classes.section} ${className}`}>
-      <div className={`${Classes.container} container`}>
+    <section className={`${Classes.footerLink}  ${className}`}>
+      <div className="container">
         <div className={Classes.layout}>
           {listLink.map((eachLinkItem) => {
             return (

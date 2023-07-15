@@ -1,0 +1,62 @@
+@use 'sass:map';
+@use './style/base';
+
+.grid {
+  position: relative;
+}
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1024;
+  height: base.$dim-static-nav-bar-h;
+  background-color: base.theme-get-val('primary-seed');
+}
+
+.nav-rail {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  z-index: 1024;
+  display: none;
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'md')) {
+  $px: map.get(base.$dim-px, 'md');
+  $py: map.get(base.$dim-py, 'md');
+  $gap-x: map.get(base.$dim-gap-x, 'md');
+  $gap-y: map.get(base.$dim-gap-y, 'md');
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'lg')) {
+  $px: map.get(base.$dim-px, 'lg');
+  $py: map.get(base.$dim-py, 'lg');
+  $gap-x: map.get(base.$dim-gap-x, 'lg');
+  $gap-y: map.get(base.$dim-gap-y, 'lg');
+
+  .grid {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-rail {
+    display: block;
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .content {
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'xl')) {
+}
+
+@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
+}

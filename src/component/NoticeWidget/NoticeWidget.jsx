@@ -7,7 +7,7 @@ import Notice from '../Notice/Notice';
 const NoticeWidget = ({ className, listTab, listNotice, length }) => {
   return (
     <div className={`${Classes.noticeWidget} ${className}`}>
-      <h4 className={Classes.title}>공지사항</h4>
+      <h4 className={Classes.title}>학생공지</h4>
       <div className={Classes.grpControl}>
         <Tab className={Classes.tab} listTab={listTab}></Tab>
         <Button overridingClasses={Classes}>

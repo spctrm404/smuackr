@@ -1,6 +1,6 @@
 @use '../../style/base';
 
-.Tab {
+.tab {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));

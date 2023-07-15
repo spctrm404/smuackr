@@ -1,1 +1,17 @@
-@use './style/common';
+@use './style/reset';
+@use './style/base';
+
+body {
+  color: base.theme-get-val('on-surface');
+  background-color: base.theme-get-val('surface-container-highest');
+
+  @include base.type-body-out;
+}
+
+#root {
+  position: relative;
+  min-width: 20rem;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

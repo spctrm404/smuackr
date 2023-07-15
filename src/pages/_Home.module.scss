@@ -1,40 +1,5 @@
 @use 'sass:map';
-@use './style/base';
-
-body {
-  color: base.theme-get-val('on-surface');
-  word-break: break-all;
-  overflow-wrap: anywhere;
-  background-color: base.theme-get-val('surface-container-highest');
-
-  @include base.type-body-out;
-}
-
-#root {
-  position: relative;
-  min-width: 20rem;
-  height: 100dvh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 1024;
-  height: base.$dim-static-nav-bar-h;
-  background-color: base.theme-get-val('primary-seed');
-}
-
-.nav-rail {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1024;
-  display: none;
-  width: base.$dim-static-nav-rail-w;
-}
+@use '../style/base';
 
 .imagery {
   // 1:1 < height < 3:4
@@ -65,7 +30,7 @@ body {
     grid-template-columns: minmax(0, 1fr);
     row-gap: $gap-y;
     column-gap: $gap-x;
-    max-width: base.$dim-static-w-mx;
+    max-width: base.$dim-static-w-max;
     margin-inline: auto;
   }
 }
@@ -74,7 +39,7 @@ body {
   $px: map.get(base.$dim-px, 'sm');
   $py: map.get(base.$dim-py, 'sm');
 
-  width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+  width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
   padding-block: $py;
   margin-inline: auto;
 }
@@ -106,7 +71,7 @@ footer {
   }
 
   .container {
-    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }
@@ -156,7 +121,7 @@ footer {
   }
 
   .container {
-    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }
@@ -183,7 +148,7 @@ footer {
   }
 
   .container {
-    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }
@@ -229,7 +194,7 @@ footer {
   }
 
   .container {
-    width: min(base.$dim-static-w-mx, calc(100% - 2 * $px));
+    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
     padding-block: $py;
   }
 }

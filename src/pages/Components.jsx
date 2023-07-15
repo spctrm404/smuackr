@@ -42,7 +42,7 @@ const Components = () => {
   };
 
   return (
-    <>
+    <main className="container">
       <Button>
         <span>버튼</span>
       </Button>
@@ -108,7 +108,7 @@ const Components = () => {
       <Search></Search>
       <SearchWidget listChip={DB.chips}></SearchWidget>
       <Card content={cardContent}></Card>
-    </>
+    </main>
   );
 };
 

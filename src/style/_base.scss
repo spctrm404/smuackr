@@ -1,5 +1,7 @@
-// remove it later (duplication)
 @use 'common';
+
+// remove it later (duplication)
+@use 'reset';
 @forward 'style' as style-*;
 @forward 'theme' as theme-*;
 @forward 'dimension' as dim-*;

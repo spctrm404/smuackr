@@ -1,7 +1,12 @@
 @use 'sass:map';
 @use '../../style/base';
 
+.notice-widget {
+  margin-inline: -4px;
+}
+
 .title {
+  margin-inline: 4px;
   margin-bottom: 4px;
   color: base.theme-get-val('on-surface');
 }
@@ -12,10 +17,11 @@
     gap: 12px;
     align-items: baseline;
     width: 100%;
+    margin-inline: 4px;
     margin-bottom: 15px;
 
     > .button {
-      margin-right: -8px;
+      margin-right: -4px;
     }
   }
 

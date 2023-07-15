@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import Classes from './_NewsWidget.module.scss';
 import Card from '../Card/Card';
 
-const NewsWidget = ({ className, listNews }) => {
+const NewsWidget = ({ className, listNews, length }) => {
   return (
-    <section
-      className={`${Classes.newsWidget} ${Classes.section} ${className}`}>
-      <div className={`${Classes.container} container`}>
+    <div className={`${Classes.newsWidget}  ${className}`}>
+      <div className="container container--width-expand">
         <div className={Classes.layout}>
-          {listNews.map((eachNewsItem) => {
+          <h4 className={Classes.widgetTitle}>상명소식</h4>
+          {listNews.map((eachNewsItem, idx) => {
+            if (idx >= length) return;
             return (
               <Card
                 key={eachNewsItem.key}
@@ -18,7 +19,7 @@ const NewsWidget = ({ className, listNews }) => {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

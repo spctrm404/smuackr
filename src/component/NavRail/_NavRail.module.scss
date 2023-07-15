@@ -10,27 +10,32 @@ $drawer-bg: base.style-get-transparent(
 );
 $drawer-fg: base.theme-get-val('on-primary-seed');
 
-.NavRail {
-  @include base.style-hide-scrollbar;
+.nav-rail {
+  position: relative;
+  width: min-content;
+  height: 100dvh;
+
+  &.collapsed {
+    box-shadow: base.theme-get-val('elevation-2');
+  }
 }
 
 .viewport {
   &-rail {
-    overflow-x: hidden;
+    @include base.style-hide-scrollbar;
+
+    height: 100%;
+    overflow-x: visible;
     overflow-y: scroll;
     background-color: $rail-bg;
-
-    &.collapsed {
-      box-shadow: base.theme-get-val('elevation-2');
-    }
   }
 
   &-drawer {
     backdrop-filter: blur(0.25rem);
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
-    left: base.$dim-static-nav-rail-w;
+    left: 100%;
     z-index: -1;
     display: flex;
     gap: 0.25rem;
@@ -79,7 +84,6 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
   &-drawer {
     $column-w: 12.25rem;
     $gap-w: 0.5rem;
-    $column-n: 2;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($column-w, 1fr));
@@ -217,5 +221,4 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
 }
 
 .li-dp-3 {
-  width: 100%;
 }

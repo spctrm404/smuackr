@@ -19,6 +19,13 @@ $px: (
   'xl': 5.5rem,
   'xxl': 5.5rem,
 );
+$px-variant: (
+  'sm': 0.5rem,
+  'md': 1rem,
+  'lg': 4rem,
+  'xl': 4rem,
+  'xxl': 4rem,
+);
 $py: (
   'sm': 2.5rem,
   'md': 2.5rem,
@@ -60,7 +67,9 @@ $notice-widget-w: (
   '80': 4 * $han-20ch,
 );
 
-// $static-w-mx: 75rem;
-$static-w-mx: 90rem;
+// $static-w-max: 75rem;
+$static-px-min: 0.5rem;
+$static-w-max: 90rem;
+$static-w-variant-max: 93rem;
 $static-nav-bar-h: 3.5rem;
 $static-nav-rail-w: 7.5rem;

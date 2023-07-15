@@ -1,3 +1,4 @@
+import Classes from './_Home.module.scss';
 import DB from '../DB';
 import photo from '../assets/photo.jpg';
 import SearchWidget from '../component/SearchWidget/SearchWidget';
@@ -17,27 +18,25 @@ function Home() {
   });
 
   return (
-    <>
-      <div className="imagery">
+    <main>
+      <div className={Classes.imagery}>
         <img src={photo} alt="" />
       </div>
-      <div className="widget">
-        <div className="widget__wrap">
+      <div className={Classes.widget}>
+        <div className={Classes.widgetWrap}>
           <SearchWidget
-            className="widget__search"
+            className={Classes.widgetSearch}
             listChip={DB.chips}
             length={20}></SearchWidget>
           <NoticeWidget
-            className="widget__notice"
+            className={Classes.widgetNotice}
             listTab={DB.noticeTabs}
             listNotice={DB.notices}
             length={20}></NoticeWidget>
         </div>
       </div>
-      <main>
-        <NewsWidget listNews={DB.news}></NewsWidget>
-      </main>
-    </>
+      <NewsWidget listNews={DB.news} length={12}></NewsWidget>
+    </main>
   );
 }
 

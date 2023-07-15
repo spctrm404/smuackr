@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../../style/base';
 
-.Notice {
+.notice {
   @include base.style-buttonize;
   @include base.type-body-out;
 

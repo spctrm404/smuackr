@@ -1,28 +1,8 @@
+@use 'sass:map';
+@use 'style';
+@use 'theme';
+@use 'dimension';
 @use 'type-semantic';
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  font: inherit;
-}
-
-img,
-picture,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
 
 h1,
 h2,
@@ -30,6 +10,7 @@ h3,
 h4,
 h5,
 h6 {
+  text-wrap: balance;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -56,4 +37,110 @@ h5 {
 
 h6 {
   @include type-semantic.title--2;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.container {
+  $px: map.get(dimension.$px, 'sm');
+  $py: map.get(dimension.$py, 'sm');
+
+  width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+  padding-block: $py;
+  margin-inline: auto;
+
+  &--width {
+    &-expand {
+      width: min(
+        dimension.$static-w-variant-max,
+        calc(100% - 2 * map.get(dimension.$px-variant, 'sm'))
+      );
+    }
+  }
+}
+
+@media (width > map.get(dimension.$bp-gt, 'md')) {
+  $px: map.get(dimension.$px, 'md');
+  $py: map.get(dimension.$py, 'md');
+  $gap-x: map.get(dimension.$gap-x, 'md');
+  $gap-y: map.get(dimension.$gap-y, 'md');
+
+  .container {
+    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    padding-block: $py;
+
+    &--width {
+      &-expand {
+        width: min(
+          dimension.$static-w-variant-max,
+          calc(100% - 2 * map.get(dimension.$px-variant, 'md'))
+        );
+      }
+    }
+  }
+}
+
+@media (width > map.get(dimension.$bp-gt, 'lg')) {
+  $px: map.get(dimension.$px, 'lg');
+  $py: map.get(dimension.$py, 'lg');
+  $gap-x: map.get(dimension.$gap-x, 'lg');
+  $gap-y: map.get(dimension.$gap-y, 'lg');
+
+  .container {
+    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    padding-block: $py;
+
+    &--width {
+      &-expand {
+        width: min(
+          dimension.$static-w-variant-max,
+          calc(100% - 2 * map.get(dimension.$px-variant, 'lg'))
+        );
+      }
+    }
+  }
+}
+
+@media (width > map.get(dimension.$bp-gt, 'xl')) {
+  $px: map.get(dimension.$px, 'xl');
+  $py: map.get(dimension.$py, 'xl');
+  $gap-x: map.get(dimension.$gap-x, 'xl');
+  $gap-y: map.get(dimension.$gap-y, 'xl');
+
+  .container {
+    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    padding-block: $py;
+
+    &--width {
+      &-expand {
+        width: min(
+          dimension.$static-w-variant-max,
+          calc(100% - 2 * map.get(dimension.$px-variant, 'xl'))
+        );
+      }
+    }
+  }
+}
+
+@media (width > map.get(dimension.$bp-gt, 'xxl')) {
+  $px: map.get(dimension.$px, 'xxl');
+  $py: map.get(dimension.$py, 'xxl');
+  $gap-x: map.get(dimension.$gap-x, 'xxl');
+  $gap-y: map.get(dimension.$gap-y, 'xxl');
+
+  .container {
+    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    padding-block: $py;
+
+    &--width {
+      &-expand {
+        width: min(
+          dimension.$static-w-variant-max,
+          calc(100% - 2 * map.get(dimension.$px-variant, 'xxl'))
+        );
+      }
+    }
+  }
 }
