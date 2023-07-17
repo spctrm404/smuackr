@@ -14,25 +14,31 @@ const Card = ({ overridingClasses, content, href, onClickCb }) => {
     <div
       className={`${Classes.card} ${Classes.areaInteraction} ${
         overridingClasses?.[`card`]
-      } ${overridingClasses?.[`areaInteraction`]}`}
+      } ${overridingClasses?.[`cardAreaInteraction`]}`}
       href={href}
       onClick={onClickCb}>
       <div
         className={`${Classes.areaVisible} ${
-          overridingClasses?.[`areaVisible`]
+          overridingClasses?.[`cardAreaVisible`]
         }`}>
-        <div className={`${Classes.photo} ${overridingClasses?.[`photo`]}`}>
+        <div className={`${Classes.photo} ${overridingClasses?.[`cardPhoto`]}`}>
           <img src={photo[Math.floor(Math.random() * photo.length)]} />
         </div>
-        <div className={`${Classes.text} ${overridingClasses?.[`text`]}`}>
-          <div className={`${Classes.prefix} ${overridingClasses?.[`prefix`]}`}>
+        <div className={`${Classes.text} ${overridingClasses?.[`cardText`]}`}>
+          <div
+            className={`${Classes.prefix} ${
+              overridingClasses?.[`cardPrefix`]
+            }`}>
             {content?.prefix}
           </div>
-          <div className={`${Classes.title} ${overridingClasses?.[`title`]}`}>
+          <div
+            className={`${Classes.title} ${overridingClasses?.[`cardTitle`]}`}>
             {content?.title}
           </div>
           <div
-            className={`${Classes.preview} ${overridingClasses?.[`preview`]}`}>
+            className={`${Classes.preview} ${
+              overridingClasses?.[`cardPreview`]
+            }`}>
             {content?.preview}
           </div>
         </div>

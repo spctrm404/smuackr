@@ -4,6 +4,21 @@
 @use 'dimension';
 @use 'type-semantic';
 
+body {
+  color: theme.get-val('on-surface');
+  background-color: theme.get-val('surface-container-highest');
+
+  @include type-semantic.body-out;
+}
+
+#root {
+  position: relative;
+  min-width: 20rem;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 h1,
 h2,
 h3,

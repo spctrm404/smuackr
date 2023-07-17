@@ -4,6 +4,7 @@ import DB from './DB';
 import NavRail from './component/NavRail/NavRail';
 import Home from './pages/Home';
 import Components from './pages/Components';
+import Page from './pages/Page';
 import Footer from './component/Footer/Footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/components" element={<Components />} />
+          <Route path="/page" element={<Page />} />
         </Routes>
         <Footer className={Classes.footer} listLink={DB.footerLinks}></Footer>
       </div>

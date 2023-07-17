@@ -16,18 +16,18 @@ const IconButton = ({
       <Link
         className={`${Classes.iconButton} ${Classes.areaInteraction} ${
           overridingClasses?.[`iconButton`]
-        } ${overridingClasses?.[`areaInteraction`]} `}
+        } ${overridingClasses?.[`iconButtonAreaInteraction`]} `}
         to={to}
         onClick={onClickCb}
         data-button-type={buttonType}>
         <span
           className={`${Classes.areaVisible} ${
-            overridingClasses?.[`areaVisible`]
+            overridingClasses?.[`iconButtonAreaVisible`]
           }`}>
           {icon ? (
             <span
               className={`${Classes.icon} ${
-                overridingClasses?.[`icon`]
+                overridingClasses?.[`iconButtonIcon`]
               } material-symbols-outlined`}>
               {icon}
             </span>
@@ -42,18 +42,18 @@ const IconButton = ({
     <a
       className={`${Classes.iconButton} ${Classes.areaInteraction} ${
         overridingClasses?.[`iconButton`]
-      } ${overridingClasses?.[`areaInteraction`]} `}
+      } ${overridingClasses?.[`iconButtonAreaInteraction`]} `}
       href={href}
       onClick={onClickCb}
       data-button-type={buttonType}>
       <span
         className={`${Classes.areaVisible} ${
-          overridingClasses?.[`areaVisible`]
+          overridingClasses?.[`iconButtonAreaVisible`]
         }`}>
         {icon ? (
           <span
             className={`${Classes.icon} ${
-              overridingClasses?.[`icon`]
+              overridingClasses?.[`iconButtonIcon`]
             } material-symbols-outlined`}>
             {icon}
           </span>

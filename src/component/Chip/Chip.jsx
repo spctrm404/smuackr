@@ -15,20 +15,20 @@ const Chip = ({
     return (
       <Link
         className={`${Classes.chip} ${Classes.areaInteraction} ${
-          overridingClasses?.[`chip`]
-        } ${overridingClasses?.[`areaInteraction`]} `}
+          overridingClasses?.[`chipchip`]
+        } ${overridingClasses?.[`chipAreaInteraction`]} `}
         to={to}
         onClick={onClickCb}
         data-chip-type={chipType}
         data-has-icon={icon ? true : false}>
         <span
           className={`${Classes.areaVisible} ${
-            overridingClasses?.[`areaVisible`]
+            overridingClasses?.[`chipAreaVisible`]
           } `}>
           {icon ? (
             <span
               className={`${Classes.icon} ${
-                overridingClasses?.[`icon`]
+                overridingClasses?.[`chipIcon`]
               } material-symbols-outlined`}>
               {icon}
             </span>
@@ -41,20 +41,20 @@ const Chip = ({
   return (
     <a
       className={`${Classes.chip} ${Classes.areaInteraction} ${
-        overridingClasses?.[`chip`]
-      } ${overridingClasses?.[`areaInteraction`]} `}
+        overridingClasses?.[`chipchip`]
+      } ${overridingClasses?.[`chipAreaInteraction`]} `}
       href={href}
       onClick={onClickCb}
       data-chip-type={chipType}
       data-has-icon={icon ? true : false}>
       <span
         className={`${Classes.areaVisible} ${
-          overridingClasses?.[`areaVisible`]
+          overridingClasses?.[`chipAreaVisible`]
         } `}>
         {icon ? (
           <span
             className={`${Classes.icon} ${
-              overridingClasses?.[`icon`]
+              overridingClasses?.[`chipIcon`]
             } material-symbols-outlined`}>
             {icon}
           </span>

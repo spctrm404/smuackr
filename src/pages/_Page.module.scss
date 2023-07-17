@@ -1,0 +1,38 @@
+@use '../style/base';
+
+.layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, base.$dim-han-20ch * 3) 1fr;
+  column-gap: 56px;
+
+  @include base.type-body;
+}
+
+.article {
+  // display: contents;
+}
+
+.breadcrumb {
+  position: sticky;
+  top: 0;
+  grid-row: 1;
+  grid-column: 2;
+  height: fit-content;
+  background-color: burlywood;
+
+  ol,
+  ul {
+    list-style: none;
+  }
+}
+
+.article {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.article-tab {
+  min-height: 3.5rem;
+  background-color: aqua;
+}

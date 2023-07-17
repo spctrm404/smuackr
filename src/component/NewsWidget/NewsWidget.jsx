@@ -7,7 +7,7 @@ const NewsWidget = ({ className, listNews, length }) => {
     <div className={`${Classes.newsWidget}  ${className}`}>
       <div className="container container--width-expand">
         <div className={Classes.layout}>
-          <h4 className={Classes.widgetTitle}>상명소식</h4>
+          <h4 className={Classes.title}>상명소식</h4>
           {listNews.map((eachNewsItem, idx) => {
             if (idx >= length) return;
             return (

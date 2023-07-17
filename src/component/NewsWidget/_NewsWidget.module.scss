@@ -13,14 +13,14 @@
   align-items: stretch;
 }
 
-.widget-title {
+.title {
   grid-column: 1 / -1;
   padding-inline: 1rem;
   margin-bottom: 0.25rem;
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
-  .widget-title {
+  .title {
     padding-inline: 1.5rem;
     margin-bottom: 0.5rem;
   }

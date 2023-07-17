@@ -1,5 +1,3 @@
-@use 'sass:list';
-@use 'sass:selector';
 @use '../../style/base';
 
 $rail-bg: base.theme-get-val('primary-seed');
@@ -51,14 +49,14 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
     @include base.style-hide-scrollbar;
 
     .icon-button {
-      &.area-interaction {
+      &.icon-button-area-interaction {
         $my: 2.75rem;
 
         position: sticky;
         top: $my;
         margin-top: $my;
 
-        .area-visible {
+        .icon-button-area-visible {
           @include base.style-set-states(
             transparent,
             base.theme-get-val('on-primary-seed')
@@ -105,11 +103,11 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
     width: 100%;
 
     > .button {
-      &.area-interaction {
+      &.button-area-interaction {
         width: 100%;
         height: fit-content;
 
-        .area-visible {
+        .button-area-visible {
           width: 100%;
           height: fit-content;
           padding: 0.75rem;
@@ -135,8 +133,8 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
     width: 100%;
 
     .icon-button {
-      &.area-interaction {
-        .area-visible {
+      &.icon-button-area-interaction {
+        .icon-button-area-visible {
           @include base.style-set-states(
             transparent,
             base.theme-get-val('on-primary-seed')
@@ -166,11 +164,11 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
   width: 100%;
 
   > .button {
-    &.area-interaction {
+    &.button-area-interaction {
       width: 100%;
       height: 3rem;
 
-      .area-visible {
+      .button-area-visible {
         width: 100%;
         height: 100%;
 
@@ -189,8 +187,8 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
 
 .li-dp-2 {
   .button {
-    &.area-interaction {
-      .area-visible {
+    &.button-area-interaction {
+      .button-area-visible {
         @include base.style-set-states(
           transparent,
           base.theme-get-val('on-primary-seed')
