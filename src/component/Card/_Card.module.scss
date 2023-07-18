@@ -6,6 +6,11 @@
   overflow-wrap: anywhere;
 
   @include base.style-buttonize;
+  @include base.style-set-transition(box-shadow);
+
+  &:hover {
+    box-shadow: base.theme-get-val('elevation-1');
+  }
 }
 
 .area {
@@ -16,11 +21,12 @@
   &-visible {
     width: 100%;
     height: 100%;
+    background-color: base.theme-get-val('surface');
 
-    @include base.style-set-states(
-      base.theme-get-val('surface'),
-      base.theme-get-val('primary')
-    );
+    // @include base.style-set-states(
+    //   base.theme-get-val('surface'),
+    //   base.theme-get-val('primary')
+    // );
   }
 }
 

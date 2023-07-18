@@ -88,7 +88,10 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
     grid-auto-rows: min-content;
     row-gap: 6rem;
     column-gap: $gap-w;
-    max-width: calc(60vw - base.$dim-static-nav-rail-w);
+    max-width: min(
+      60vw - base.$dim-static-nav-rail-w,
+      4 * $column-w + 3 * $gap-w
+    );
     min-height: 100%;
     padding-block: 11.25rem 3.25rem;
   }
