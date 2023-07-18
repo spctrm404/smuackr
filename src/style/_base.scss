@@ -1,7 +1,16 @@
-// remove it later (duplication)
+// previewjs에서 inherit되지 않을 수 있어 포함하나 추후 제거할 것.
 // @use 'common';
+// previewjs에서 inherit되지 않을 수 있어 포함하나 추후 제거할 것.
 // @use 'reset';
-@forward 'style' as style-*;
-@forward 'theme' as theme-*;
-@forward 'dimension' as dim-*;
+
+//문자 스타일 관련 함수, 믹스인
 @forward 'type-semantic' as type-*;
+
+// 색상 관련 변수, 함수, 믹스인
+@forward 'theme' as theme-*;
+
+// 색상 외 모든 스타일관련 함수, 믹스인
+@forward 'style' as style-*;
+
+// 크기관련 변수
+@forward 'dimension' as dim-*;

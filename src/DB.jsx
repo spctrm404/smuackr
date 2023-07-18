@@ -887,6 +887,7 @@ const DB = {
     '진로취업',
     '비교과',
   ],
+  noticeRegions: ['sangmyung', 'seoul', 'cheonan'],
   notices: [
     {
       key: uuidv4(),

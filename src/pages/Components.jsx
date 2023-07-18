@@ -14,6 +14,8 @@ const Components = () => {
   DB.notices.forEach((eachNoticeItem) => {
     eachNoticeItem.prefix =
       DB.noticePrefixes[Math.floor(Math.random() * DB.noticePrefixes.length)];
+    eachNoticeItem.region =
+      DB.noticeRegions[Math.floor(Math.random() * DB.noticeRegions.length)];
     eachNoticeItem.date = `2023-07-03`;
   });
 

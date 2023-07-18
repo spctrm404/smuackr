@@ -21,7 +21,7 @@
   padding-inline: $px;
   background-color: base.theme-get-val('surface');
 
-  &__wrap {
+  &-wrap {
     $gap-x: map.get(base.$dim-gap-x, 'sm');
     $gap-y: map.get(base.$dim-gap-y, 'sm');
 
@@ -30,24 +30,25 @@
     grid-template-columns: minmax(0, 1fr);
     row-gap: $gap-y;
     column-gap: $gap-x;
-    max-width: base.$dim-static-w-max;
+
+    // max-width: base.$dim-static-w-max;
     margin-inline: auto;
   }
 }
 
-.container {
-  $px: map.get(base.$dim-px, 'sm');
-  $py: map.get(base.$dim-py, 'sm');
+// .container {
+//   $px: map.get(base.$dim-px, 'sm');
+//   $py: map.get(base.$dim-py, 'sm');
 
-  width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
-  padding-block: $py;
-  margin-inline: auto;
-}
+//   width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
+//   padding-block: $py;
+//   margin-inline: auto;
+// }
 
-main,
-footer {
-  background-color: base.theme-get-val('surface-container-highest');
-}
+// main,
+// footer {
+//   background-color: base.theme-get-val('surface-container-highest');
+// }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
   $px: map.get(base.$dim-px, 'md');
@@ -55,25 +56,25 @@ footer {
   $gap-x: map.get(base.$dim-gap-x, 'md');
   $gap-y: map.get(base.$dim-gap-y, 'md');
 
-  body {
-    word-break: keep-all;
-    overflow-wrap: break-word;
-  }
+  // body {
+  //   word-break: keep-all;
+  //   overflow-wrap: break-word;
+  // }
 
   .widget {
     padding-block: $py;
     padding-inline: $px;
 
-    &__wrap {
+    &-wrap {
       row-gap: $gap-y;
       column-gap: $gap-x;
     }
   }
 
-  .container {
-    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
-    padding-block: $py;
-  }
+  // .container {
+  //   width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
+  //   padding-block: $py;
+  // }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'lg')) {
@@ -91,11 +92,12 @@ footer {
       100dvh,
       calc((100vw - base.$dim-static-nav-rail-w) * 3 / 4)
     );
-    grid-template-columns: base.$dim-static-nav-rail-w minmax(0, 1fr);
 
-    > * {
-      grid-column: 2;
-    }
+    // grid-template-columns: base.$dim-static-nav-rail-w minmax(0, 1fr);
+
+    // > * {
+    //   grid-column: 2;
+    // }
   }
 
   .nav-bar {
@@ -114,16 +116,16 @@ footer {
     padding-block: $py;
     padding-inline: $px;
 
-    &__wrap {
+    &-wrap {
       row-gap: $gap-y;
       column-gap: $gap-x;
     }
   }
 
-  .container {
-    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
-    padding-block: $py;
-  }
+  // .container {
+  //   width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
+  //   padding-block: $py;
+  // }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'xl')) {
@@ -136,7 +138,7 @@ footer {
     padding-block: $py;
     padding-inline: $px;
 
-    &__wrap {
+    &-wrap {
       grid-template-rows: min-content;
       grid-template-columns:
         minmax(20rem, 30rem)
@@ -147,10 +149,10 @@ footer {
     }
   }
 
-  .container {
-    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
-    padding-block: $py;
-  }
+  // .container {
+  //   width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
+  //   padding-block: $py;
+  // }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'xxl')) {
@@ -165,27 +167,27 @@ footer {
 
     // fix later
     grid-template-columns:
-      base.$dim-static-nav-rail-w minmax(0, 1fr)
+      minmax(0, 1fr)
       calc(map.get(base.$dim-notice-widget-w, '40') + 2 * $px);
 
-    > * {
-      grid-column: 2 / -1;
-    }
+    // > * {
+    //   grid-column: 2 / -1;
+    // }
   }
 
   .imagery {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .widget {
     display: flex;
     flex-direction: column;
-    grid-column: 3;
+    grid-column: 2;
     justify-content: center;
     padding-block: $py;
     padding-inline: $px;
 
-    &__wrap {
+    &-wrap {
       grid-template-rows: min-content min-content;
       grid-template-columns: minmax(0, 1fr);
       row-gap: $gap-y;
@@ -193,8 +195,8 @@ footer {
     }
   }
 
-  .container {
-    width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
-    padding-block: $py;
-  }
+  // .container {
+  //   width: min(base.$dim-static-w-max, calc(100% - 2 * $px));
+  //   padding-block: $py;
+  // }
 }

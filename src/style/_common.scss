@@ -1,14 +1,22 @@
 @use 'sass:map';
-@use 'style';
-@use 'theme';
-@use 'dimension';
+
+//문자 스타일 관련 함수, 믹스인
 @use 'type-semantic';
+
+// 색상 관련 변수, 함수, 믹스인
+@use 'theme';
+
+// 색상 외 모든 스타일관련 함수, 믹스인
+@use 'style';
+
+// 크기관련 변수
+@use 'dimension';
 
 body {
   color: theme.get-val('on-surface');
   background-color: theme.get-val('surface-container-highest');
 
-  @include type-semantic.body-out;
+  @include type-semantic.body-sm;
 }
 
 #root {
@@ -31,15 +39,15 @@ h6 {
 }
 
 h1 {
-  @include type-semantic.title-3;
+  @include type-semantic.title-xxl;
 }
 
 h2 {
-  @include type-semantic.title-2;
+  @include type-semantic.title-xl;
 }
 
 h3 {
-  @include type-semantic.title-1;
+  @include type-semantic.title-lg;
 }
 
 h4 {
@@ -47,11 +55,11 @@ h4 {
 }
 
 h5 {
-  @include type-semantic.title--1;
+  @include type-semantic.subtitle;
 }
 
 h6 {
-  @include type-semantic.title--2;
+  @include type-semantic.subtitle-sm;
 }
 
 .material-symbols-outlined {

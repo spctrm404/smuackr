@@ -1,3 +1,8 @@
+// 모듈화하지 않은 공통 스타일
 @use './style/common';
+
+// CSS 리셋
 @use './style/reset';
+
+// SCSS 변수, 함수, 믹스인 모음
 @use './style/base';

@@ -9,6 +9,8 @@ function Home() {
   DB.notices.forEach((eachNoticeItem) => {
     eachNoticeItem.prefix =
       DB.noticePrefixes[Math.floor(Math.random() * DB.noticePrefixes.length)];
+    eachNoticeItem.region =
+      DB.noticeRegions[Math.floor(Math.random() * DB.noticeRegions.length)];
     eachNoticeItem.date = `2023-07-03`;
   });
 
@@ -19,20 +21,22 @@ function Home() {
 
   return (
     <main>
-      <div className={Classes.imagery}>
-        <img src={photo} alt="" />
-      </div>
-      <div className={Classes.widget}>
-        <div className={Classes.widgetWrap}>
-          <SearchWidget
-            className={Classes.widgetSearch}
-            listChip={DB.chips}
-            length={20}></SearchWidget>
-          <NoticeWidget
-            className={Classes.widgetNotice}
-            listTab={DB.noticeTabs}
-            listNotice={DB.notices}
-            length={20}></NoticeWidget>
+      <div className={Classes.grid}>
+        <div className={Classes.imagery}>
+          <img src={photo} alt="" />
+        </div>
+        <div className={Classes.widget}>
+          <div className={Classes.widgetWrap}>
+            <SearchWidget
+              className={Classes.widgetSearch}
+              listChip={DB.chips}
+              length={20}></SearchWidget>
+            <NoticeWidget
+              className={Classes.widgetNotice}
+              listTab={DB.noticeTabs}
+              listNotice={DB.notices}
+              length={20}></NoticeWidget>
+          </div>
         </div>
       </div>
       <NewsWidget listNews={DB.news} length={12}></NewsWidget>

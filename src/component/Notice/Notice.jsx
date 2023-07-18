@@ -11,7 +11,9 @@ const Notice = ({ className, content, href, to, onClickCb }) => {
   if (to) {
     return (
       <Link
-        className={`${Classes.notice} ${Classes.areaInteraction} ${className}`}
+        className={`${Classes.notice} ${Classes[content?.region]} ${
+          Classes.areaInteraction
+        } ${className}`}
         to={to}
         onClick={onClickCb}>
         <div className={Classes.areaVisible}>
@@ -28,7 +30,9 @@ const Notice = ({ className, content, href, to, onClickCb }) => {
   }
   return (
     <a
-      className={`${Classes.notice} ${Classes.areaInteraction} ${className}`}
+      className={`${Classes.notice} ${Classes[content?.region]} ${
+        Classes.areaInteraction
+      } ${className}`}
       href={href}
       onClick={onClickCb}>
       <div className={Classes.areaVisible}>

@@ -1,6 +1,9 @@
 @use 'sass:selector';
 @use '../../style/base';
 
+$px: 1rem;
+$unbalanced-px: 0.75rem;
+
 .chip {
   @include base.style-buttonize;
   @include base.type-label;
@@ -26,7 +29,7 @@
 
     &[data-chip-type='elevated'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: 1rem;
+        padding-inline: $px;
         box-shadow: base.theme-get-val('elevation-1');
 
         @include base.style-set-states(
@@ -47,12 +50,12 @@
 
     &[data-has-icon='true'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: 0.5rem 1rem;
+        padding-inline: $unbalanced-px $px;
       }
 
       &[data-button-type='standard'] {
         #{selector.append($root-selector, '-visible')} {
-          padding-inline: 0.4375rem 0.9375rem;
+          padding-inline: $unbalanced-px - 0.0625rem $px - 0.0625rem;
         }
       }
     }
@@ -64,7 +67,7 @@
     align-items: center;
     justify-content: center;
     height: 2rem;
-    padding-inline: 15px;
+    padding-inline: $px - 0.0625rem;
     border-radius: 256rem;
 
     > * {

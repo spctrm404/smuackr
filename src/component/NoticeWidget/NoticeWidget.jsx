@@ -9,7 +9,7 @@ const NoticeWidget = ({ className, listTab, listNotice, length }) => {
     <div className={`${Classes.noticeWidget} ${className}`}>
       <h4 className={Classes.title}>학생공지</h4>
       <div className={Classes.grpControl}>
-        <Tab className={Classes.tab} listTab={listTab}></Tab>
+        <Tab overridingClasses={Classes} listTab={listTab}></Tab>
         <Button overridingClasses={Classes}>
           <span>더보기</span>
         </Button>

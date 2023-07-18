@@ -15,7 +15,7 @@ const Chip = ({
     return (
       <Link
         className={`${Classes.chip} ${Classes.areaInteraction} ${
-          overridingClasses?.[`chipchip`]
+          overridingClasses?.[`chip`]
         } ${overridingClasses?.[`chipAreaInteraction`]} `}
         to={to}
         onClick={onClickCb}
@@ -41,7 +41,7 @@ const Chip = ({
   return (
     <a
       className={`${Classes.chip} ${Classes.areaInteraction} ${
-        overridingClasses?.[`chipchip`]
+        overridingClasses?.[`chip`]
       } ${overridingClasses?.[`chipAreaInteraction`]} `}
       href={href}
       onClick={onClickCb}

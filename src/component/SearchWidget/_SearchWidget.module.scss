@@ -2,10 +2,10 @@
 @use '../../style/base';
 
 .title {
-  margin-bottom: 4px;
+  // margin-bottom: 16px;
   color: base.theme-get-val('on-surface-variant');
 
-  @include base.type-title-2;
+  @include base.type-title-xl;
 }
 
 .nowrap {
@@ -20,26 +20,34 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.5rem;
-}
-
-.chip:nth-of-type(n + 17) {
-  display: none;
+  max-height: 4 * 3rem;
+  overflow: hidden;
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
   .title {
-    margin-bottom: 8px;
+    // margin-bottom: 20px;
+  }
+
+  .chips {
+    max-height: 3 * 3rem;
   }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'lg')) {
+  .chips {
+    max-height: 2 * 3rem;
+  }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'xl')) {
+  .chips {
+    max-height: 6 * 3rem;
+  }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'xxl')) {
-  .chip:nth-of-type(n + 13) {
-    display: none;
+  .chips {
+    max-height: 2 * 3rem;
   }
 }

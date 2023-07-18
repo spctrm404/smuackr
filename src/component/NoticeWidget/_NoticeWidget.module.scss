@@ -7,7 +7,8 @@
 
 .title {
   margin-inline: 4px;
-  margin-bottom: 4px;
+
+  // margin-bottom: 8px;
   color: base.theme-get-val('on-surface');
 }
 
@@ -38,11 +39,37 @@
 
 .tab {
   flex-grow: 1;
+
+  .tab-btn:nth-of-type(2) {
+    &::after {
+      background-color: base.theme-get-val('tertiary');
+    }
+
+    .tab-btn-area-visible {
+      @include base.style-set-states(
+        transparent,
+        base.theme-get-val('tertiary')
+      );
+    }
+  }
+
+  .tab-btn:nth-of-type(3) {
+    &::after {
+      background-color: base.theme-get-val('quaternary');
+    }
+
+    .tab-btn-area-visible {
+      @include base.style-set-states(
+        transparent,
+        base.theme-get-val('quaternary')
+      );
+    }
+  }
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
   .title {
-    margin-bottom: 8px;
+    // margin-bottom: 0.75rem;
   }
 }
 

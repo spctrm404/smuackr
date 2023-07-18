@@ -3,7 +3,7 @@
 
 .notice {
   @include base.style-buttonize;
-  @include base.type-body-out;
+  @include base.type-body-sm;
 
   .area-visible {
     display: flex;
@@ -39,6 +39,24 @@
 
   &::after {
     content: ']';
+  }
+}
+
+.sangmyung {
+  .prefix {
+    color: base.theme-get-val('primary');
+  }
+}
+
+.seoul {
+  .prefix {
+    color: base.theme-get-val('tertiary');
+  }
+}
+
+.cheonan {
+  .prefix {
+    color: base.theme-get-val('quaternary');
   }
 }
 

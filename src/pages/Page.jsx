@@ -26,6 +26,21 @@ function Page() {
             </ol>
           </div>
           <div className={Classes.article}>
+            <h1>
+              이 천자만홍이 열락의 위하여 우리의 관현악이며, 긴지라 것이다.
+            </h1>
+            <h2>
+              이 천자만홍이 열락의 위하여 우리의 관현악이며, 긴지라 것이다.
+              풍부하게 물방아 그들에게 그들은 못하다
+            </h2>
+            <h3>
+              이 천자만홍이 열락의 위하여 우리의 관현악이며, 긴지라 것이다.
+              풍부하게 물방아 그들에게 그들은 못하다 그들의 열매를 힘있다.
+            </h3>
+            <h4>
+              이 천자만홍이 열락의 위하여 우리의 관현악이며, 긴지라 것이다.
+              풍부하게 물방아 그들에게 그들은 못하다 그들의 열매를 힘있다.
+            </h4>
             <h4 className={Classes.articleTitle}>글의 제목이 들어갑니다</h4>
             <div className={Classes.articleTab}>여기 탭이 들어갑니다.</div>
             <div className={Classes.articleBody}>

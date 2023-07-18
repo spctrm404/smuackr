@@ -2,6 +2,9 @@
 @use '../../style/base';
 @use 'common';
 
+$standard-px: 0.75rem;
+$px: 1rem;
+
 .button {
   @include common.apply;
 }
@@ -16,30 +19,30 @@
 
     &[data-button-type='standard'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: 0.75rem;
+        padding-inline: $standard-px;
       }
     }
 
     &[data-button-type='outline'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: 1.4375rem;
+        padding-inline: $px - 0.0625rem;
       }
     }
 
     &[data-has-icon='true'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: 1rem 1.5rem;
+        padding-inline: $px;
       }
 
       &[data-button-type='standard'] {
         #{selector.append($root-selector, '-visible')} {
-          padding-inline: 0.75rem 1rem;
+          padding-inline: $standard-px;
         }
       }
 
       &[data-button-type='outline'] {
         #{selector.append($root-selector, '-visible')} {
-          padding-inline: 0.9375rem 1.4375rem;
+          padding-inline: $px - 0.0625rem;
         }
       }
     }
@@ -48,7 +51,7 @@
   &-visible {
     gap: 0.5rem;
     height: 2.5rem;
-    padding-inline: 1.5rem;
+    padding-inline: $px;
 
     > * {
       white-space: nowrap;

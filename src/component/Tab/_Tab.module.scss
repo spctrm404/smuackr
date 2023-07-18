@@ -37,7 +37,7 @@
 
       @include base.style-set-states(
         transparent,
-        base.theme-get-val('on-surface')
+        base.theme-get-val('primary')
       );
     }
 

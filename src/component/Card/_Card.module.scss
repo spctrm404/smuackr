@@ -62,7 +62,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 
-  @include base.type-title-out;
+  @include base.type-title-sm;
 }
 
 .preview {
@@ -73,7 +73,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
 
-  @include base.type-body-out;
+  @include base.type-body-sm;
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {

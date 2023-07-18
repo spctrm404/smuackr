@@ -1,10 +1,17 @@
 @use 'sass:color';
 @use 'sass:list';
 @use 'sass:selector';
-@use 'theme';
-@use 'dimension';
+
+// 문자 스타일 관련 함수, 믹스인
 @use 'type-semantic';
 
+// 색상 관련 변수, 함수, 믹스인
+@use 'theme';
+
+// 크기관련 변수
+@use 'dimension';
+
+// .area-interaction > .area-visible 구조를 가진 유사 버튼 구조를 위한 믹스인
 @mixin buttonize() {
   text-decoration: none;
   cursor: pointer;
@@ -38,10 +45,12 @@
   }
 }
 
+// 투명화된 색상 반환
 @function get-transparent($col, $alp) {
   @return color.change($col, $alpha: $alp);
 }
 
+// state 표현을 위한 투명색들 반환
 @function get-states($fg) {
   $states: get-transparent($fg, 0), get-transparent($fg, 0.08),
     get-transparent($fg, 0.12), get-transparent($fg, 0.16);
@@ -49,11 +58,14 @@
   @return $states;
 }
 
+// 기본 트랜지션
 @mixin set-transition($prop, $dura: 200ms) {
   transition: $prop $dura cubic-bezier(0.2, 0, 0, 1);
 }
 
+// ::before에 state 표현을 위한 스타일링 부여
 @mixin set-states($bg, $fg) {
+  $root-selector: &;
   $states: get-states($fg);
 
   color: $fg;
@@ -78,14 +90,14 @@
   }
 
   @at-root {
-    .selected {
-      #{selector.unify(&, '::before')} {
-        background-color: list.nth($states, 4);
-      }
+    $appended-selector: selector.append('.selected', $root-selector);
+    #{selector.append($appended-selector, '::before')} {
+      background-color: list.nth($states, 4);
     }
   }
 }
 
+// 스크롤바 감추기 -- 추후 스크롤바를 스타일링해서 표현하는 것으로 조정할 것
 @mixin hide-scrollbar() {
   scrollbar-width: none;
   -ms-overflow-style: none;

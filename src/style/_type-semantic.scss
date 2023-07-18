@@ -1,8 +1,12 @@
 @use 'sass:map';
+
+// 크기관련 변수
 @use 'dimension';
+
+// 모든 문자 변수를 묶은 믹스인
 @use 'type-token';
 
-@mixin detail--1($on-lg-screen: false) {
+@mixin detail-sm($on-lg-screen: false) {
   @if not($on-lg-screen) {
     @include type-token.type-scale--1; // 12px
   } @else {
@@ -56,7 +60,7 @@
   }
 }
 
-@mixin body-out($on-lg-screen: false) {
+@mixin body-sm($on-lg-screen: false) {
   @if not($on-lg-screen) {
     @include type-token.type-scale-0; // 14px
   } @else {
@@ -74,7 +78,7 @@
   }
 }
 
-@mixin label-1($on-lg-screen: false) {
+@mixin label-lg($on-lg-screen: false) {
   @if not($on-lg-screen) {
     @include type-token.type-scale-1(true); // 16px
   } @else {
@@ -92,7 +96,7 @@
   }
 }
 
-@mixin title-out($on-lg-screen: false) {
+@mixin title-sm($on-lg-screen: false) {
   @if not($on-lg-screen) {
     @include type-token.type-scale-1(true); // 16px
   } @else {
@@ -128,11 +132,11 @@
   }
 }
 
-@mixin title--2($on-lg-screen: false) {
+@mixin subtitle-sm($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-1(true); // 16px
+    @include type-token.type-scale-1(true, true); // 16px
   } @else {
-    @include type-token.type-scale-4(true); // 20px
+    @include type-token.type-scale-4(true, true); // 20px
   }
 
   font-weight: 500;
@@ -140,17 +144,17 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-4(true); // 20px
+        @include type-token.type-scale-4(true, true); // 20px
       }
     }
   }
 }
 
-@mixin title--1($on-lg-screen: false) {
+@mixin subtitle($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-2(true); // 18px
+    @include type-token.type-scale-2(true, true); // 18px
   } @else {
-    @include type-token.type-scale-5(true); // 22px
+    @include type-token.type-scale-5(true, true); // 22px
   }
 
   font-weight: 500;
@@ -158,7 +162,7 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-5(true); // 22px
+        @include type-token.type-scale-5(true, true); // 22px
       }
     }
   }
@@ -166,9 +170,9 @@
 
 @mixin title($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-3(true); // 20px
+    @include type-token.type-scale-3(true, true); // 20px
   } @else {
-    @include type-token.type-scale-7(true); // 28px
+    @include type-token.type-scale-7(true, true); // 28px
   }
 
   font-weight: 700;
@@ -176,17 +180,17 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-7(true); // 28px
+        @include type-token.type-scale-7(true, true); // 28px
       }
     }
   }
 }
 
-@mixin title-1($on-lg-screen: false) {
+@mixin title-lg($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-5(true); // 25px
+    @include type-token.type-scale-5(true, true); // 25px
   } @else {
-    @include type-token.type-scale-9(true); // 36px
+    @include type-token.type-scale-9(true, true); // 36px
   }
 
   font-weight: 700;
@@ -194,17 +198,17 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-9(true); // 36px
+        @include type-token.type-scale-9(true, true); // 36px
       }
     }
   }
 }
 
-@mixin title-2($on-lg-screen: false) {
+@mixin title-xl($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-8(true); // 36px
+    @include type-token.type-scale-8(true, true); // 36px
   } @else {
-    @include type-token.type-scale-12(true); // 58px
+    @include type-token.type-scale-12(true, true); // 58px
   }
 
   font-weight: 700;
@@ -212,17 +216,17 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-12(true); // 58px
+        @include type-token.type-scale-12(true, true); // 58px
       }
     }
   }
 }
 
-@mixin title-3($on-lg-screen: false) {
+@mixin title-xxl($on-lg-screen: false) {
   @if not($on-lg-screen) {
-    @include type-token.type-scale-12(true); // 58px
+    @include type-token.type-scale-12(true, true); // 58px
   } @else {
-    @include type-token.type-scale-16(true); // 92px
+    @include type-token.type-scale-16(true, true); // 92px
   }
 
   font-weight: 700;
@@ -230,7 +234,7 @@
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
-        @include type-token.type-scale-16(true); // 92px
+        @include type-token.type-scale-16(true, true); // 92px
       }
     }
   }
