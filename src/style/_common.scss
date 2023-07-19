@@ -14,7 +14,7 @@
 
 body {
   color: theme.get-val('on-surface');
-  background-color: theme.get-val('surface-container');
+  background-color: theme.get-val('surface');
 
   @include type-semantic.body-sm;
 }

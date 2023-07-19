@@ -20,7 +20,7 @@ $px: (
   'xxl': 5rem,
   // 'lg': 5.5rem,
   // 'xl': 5.5rem,
-  // 'xxl': 5.5rem,,,,,,,,,,,,,,,,,
+  // 'xxl': 5.5rem,,,,,,,,,,,,,,,,,,,,
 );
 $px-variant: (
   'sm': 0.25rem,
@@ -60,6 +60,7 @@ $gap-y: (
 //   '80': 4 * $body-sm-20ch-sm,
 // );
 $body-sm-20ch: 18.4004rem;
+$han-20ch-px: 20.7105rem;
 $han-20ch: 30.873ch;
 $notice-widget-w: (
   '30': 1.5 * $han-20ch,
@@ -70,12 +71,14 @@ $notice-widget-w: (
   '80': 4 * $han-20ch,
 );
 $static-px-min: 0.5rem;
-$static-w-max: 75rem;
+
+// $static-w-max: 75rem;
+$static-w-max: 64rem;
 
 // $static-w-max: 90rem;
 // $static-w-max: 80rem;
 
 // $static-w-variant-max: 93rem;
-$static-w-variant-max: 78rem;
+$static-w-variant-max: 67rem;
 $static-nav-bar-h: 3.5rem;
 $static-nav-rail-w: 7.5rem;

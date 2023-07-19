@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Classes from './_FooterInfo.module.scss';
-import { ReactComponent as LogoHori } from '../../assets/logo-w-hori.svg';
+import './_FooterInfo.scss';
+import { ReactComponent as LogoHori } from '../../assets/logo-hori.svg';
 import mark1 from '../../assets/cert-mark-1.png';
 import mark2 from '../../assets/cert-mark-2.png';
 
@@ -9,7 +10,7 @@ const FooterInfo = ({ className }) => {
     <section className={`${Classes.footerInfo}  ${className}`}>
       <div className="container">
         <div className={Classes.layout}>
-          <div className={Classes.logo}>
+          <div className={`${Classes.logo} footer-info-logo`}>
             <LogoHori></LogoHori>
           </div>
           <div className={Classes.addr}>

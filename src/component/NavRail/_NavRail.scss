@@ -1,0 +1,13 @@
+@use '../../style/base';
+
+.nav-rail-logo {
+  svg {
+    .symbol {
+      fill: base.theme-get-val('logo-on-seed');
+    }
+
+    .symbol-bg {
+      fill: base.theme-get-val('logo-bg-on-seed');
+    }
+  }
+}

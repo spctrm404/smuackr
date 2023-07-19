@@ -1,0 +1,13 @@
+@use '../../style/base';
+
+.footer-info-logo {
+  svg {
+    .symbol {
+      fill: base.theme-get-val('logo-on-surface');
+    }
+
+    .symbol-bg {
+      fill: base.theme-get-val('logo-bg-on-surface');
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import Classes from './_NavRail.module.scss';
+import './_NavRail.scss';
 import { useState } from 'react';
-import { ReactComponent as LogoVert } from '../../assets/logo-w-vert.svg';
+import { ReactComponent as LogoVert } from '../../assets/logo-vert.svg';
 import Button from '../Button/Button';
 import IconButton from '../Button/IconButton';
 import Ol from './bb/Ol';
@@ -17,7 +18,10 @@ const NavRail = ({ className, listNav }) => {
       <div className={Classes.viewportRail}>
         <div className={Classes.scrollRail}>
           <div className={Classes.grpTop}>
-            <Button to="/" overridingClasses={Classes}>
+            <Button
+              to="/"
+              className={`nav-rail-logo`}
+              overridingClasses={Classes}>
               <LogoVert />
             </Button>
             <Ol

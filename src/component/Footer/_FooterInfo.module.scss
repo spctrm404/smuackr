@@ -14,10 +14,10 @@ $cert-info-gap-y: 4px;
 $cert-gap-y: 16px;
 
 .footer-info {
-  color: base.theme-get-val('on-primary-seed');
+  color: base.theme-get-val('on-surface');
   word-break: keep-all;
   overflow-wrap: break-word;
-  background-color: base.theme-get-val('primary-seed');
+  background-color: base.theme-get-val('surface-container');
 
   @include base.type-body-sm;
 }

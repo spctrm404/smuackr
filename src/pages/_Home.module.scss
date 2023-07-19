@@ -19,7 +19,7 @@
 
   padding-block: $py;
   padding-inline: $px;
-  background-color: base.theme-get-val('surface');
+  background-color: base.theme-get-val('surface-container-low');
 
   &-wrap {
     $gap-x: map.get(base.$dim-gap-x, 'sm');

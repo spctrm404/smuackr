@@ -11,7 +11,7 @@ $layout-link-gap-y: 1rem;
   color: base.theme-get-val('on-surface');
   word-break: keep-all;
   overflow-wrap: break-word;
-  background-color: base.theme-get-val('surface-dim');
+  background-color: base.theme-get-val('surface-container-low');
 
   @include base.type-label;
 }

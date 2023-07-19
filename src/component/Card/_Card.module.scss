@@ -21,7 +21,7 @@
   &-visible {
     width: 100%;
     height: 100%;
-    background-color: base.theme-get-val('surface');
+    background-color: base.theme-get-val('surface-container-low');
 
     // @include base.style-set-states(
     //   base.theme-get-val('surface'),

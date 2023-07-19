@@ -4,6 +4,7 @@ import Classes from './_Button.module.scss';
 
 const Button = ({
   children,
+  className,
   overridingClasses,
   href,
   to,
@@ -17,7 +18,7 @@ const Button = ({
       <Link
         className={`${Classes.button} ${Classes.areaInteraction} ${
           overridingClasses?.[`button`]
-        } ${overridingClasses?.[`buttonAreaInteraction`]}`}
+        } ${overridingClasses?.[`buttonAreaInteraction`]} ${className}`}
         to={to}
         onClick={onClickCb}
         data-button-type={buttonType}
@@ -44,7 +45,7 @@ const Button = ({
     <a
       className={`${Classes.button} ${Classes.areaInteraction} ${
         overridingClasses?.[`button`]
-      } ${overridingClasses?.[`buttonAreaInteraction`]}`}
+      } ${overridingClasses?.[`buttonAreaInteraction`]} ${className}`}
       href={href}
       onClick={onClickCb}
       data-button-type={buttonType}
@@ -70,6 +71,7 @@ const Button = ({
 
 Button.propTypes = {
   children: PropTypes.element,
+  className: PropTypes.string,
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
   to: PropTypes.string,
