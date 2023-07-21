@@ -30,12 +30,12 @@ function Home() {
             <SearchWidget
               className={Classes.widgetSearch}
               listChip={DB.chips}
-              length={20}></SearchWidget>
+              chipLength={20}></SearchWidget>
             <NoticeWidget
               className={Classes.widgetNotice}
               listTab={DB.noticeTabs}
               listNotice={DB.notices}
-              length={20}></NoticeWidget>
+              noticeLength={20}></NoticeWidget>
           </div>
         </div>
       </div>

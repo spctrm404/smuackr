@@ -1,23 +1,24 @@
 import PropTypes from 'prop-types';
 import Classes from './_Search.module.scss';
+import IconButton from '../Button/IconButton';
 
-const Search = ({ className }) => {
+// memo:
+// 클리어버튼 추가하지 못함
+const Search = ({ className, overridingClasses }) => {
   return (
-    <div className={`${Classes.search} ${className}`} action="">
-      <div className={Classes.border}>
-        <input
-          className={Classes.input}
-          type="search"
-          placeholder="검색"
-          name="search"
-        />
+    <div
+      className={`${Classes.search} ${
+        overridingClasses?.[`search`]
+      } ${className}`}
+      action="">
+      <div
+        className={`${Classes.border} ${overridingClasses?.[`searchBorder`]}`}>
+        <input type="search" placeholder="검색" name="search" />
       </div>
-      <button
-        className={`${Classes.button}  ${Classes.areaInteraction}`}
-        type="submit">
-        <span className={Classes.areaVisible}>
+      <button>
+        <IconButton overridingClasses={Classes}>
           <span className="material-symbols-outlined">Search</span>
-        </span>
+        </IconButton>
       </button>
     </div>
   );
@@ -25,6 +26,7 @@ const Search = ({ className }) => {
 
 Search.propTypes = {
   className: PropTypes.string,
+  overridingClasses: PropTypes.object,
 };
 
 export default Search;

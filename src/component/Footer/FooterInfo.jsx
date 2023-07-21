@@ -7,7 +7,7 @@ import mark2 from '../../assets/cert-mark-2.png';
 
 const FooterInfo = ({ className }) => {
   return (
-    <section className={`${Classes.footerInfo}  ${className}`}>
+    <section className={`${Classes.footerInfo} ${className}`}>
       <div className="container">
         <div className={Classes.layout}>
           <div className={`${Classes.logo} footer-info-logo`}>

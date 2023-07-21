@@ -10,9 +10,9 @@ const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
   return (
     <li className={`${Classes[`liDp${depth}`]} ${Classes[`liNth${depth}`]}`}>
       <Button
-        to={depth >= 2 ? '/page' : null}
+        to={depth >= 2 && '/page'}
         overridingClasses={Classes}
-        onClickCallback={depth === 1 ? onClickCallback : null}>
+        onClickCallback={depth === 1 && onClickCallback}>
         <span>{listItem.label}</span>
       </Button>
       {children}

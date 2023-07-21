@@ -7,7 +7,7 @@ import TabControlButton from './bb/TabControlButton';
 // memo:
 // 목록이 지나치게 많을 때 너비가 너무 커지는 문제가 있음
 // 컨트롤로 탭 이동시 scrollintoview되도록 구현되어야함.
-const Tab = ({ overridingClasses, listTab, hasControl = false }) => {
+const Tab = ({ className, overridingClasses, listTab, hasControl = false }) => {
   const stateNthOfSelected = useState(1);
   const [nthOfSelected, setNthOfSelected] = stateNthOfSelected;
   let nthMax = listTab?.length;
@@ -23,17 +23,17 @@ const Tab = ({ overridingClasses, listTab, hasControl = false }) => {
   };
   return (
     <div
-      className={`${Classes.tab} ${Classes[`tabSel${nthOfSelected}`]} ${
-        overridingClasses?.[`tab`]
-      }`}
+      className={`${Classes.tab} ${overridingClasses?.[`tab`]} ${
+        Classes[`tabSel${nthOfSelected}`]
+      } ${className}`}
       data-has-control={hasControl}>
       <TabControlButton
         overridingClasses={overridingClasses}
         onClickCallback={decrease}>
         <span className="material-symbols-outlined">arrow_left_alt</span>
       </TabControlButton>
-      <div className={Classes.tabViewport}>
-        <div className={Classes.tabScroll}>
+      <div className={Classes.tabWrap}>
+        <div className={Classes.tabViewport}>
           {listTab?.map((eachTabItem, idx) => {
             return (
               <TabButton
@@ -57,6 +57,7 @@ const Tab = ({ overridingClasses, listTab, hasControl = false }) => {
 };
 
 Tab.propTypes = {
+  className: PropTypes.string,
   overridingClasses: PropTypes.object,
   listTab: PropTypes.array,
   hasControl: PropTypes.bool,

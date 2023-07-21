@@ -1,86 +1,97 @@
+@use 'sass:list';
 @use 'sass:map';
 @use '../../style/base';
 
+$notice-widget-offset-x: -1 * base.$dim-static-notice-px;
+$grp-control-gx: base.$dim-static-notice-gx;
+$grp-control-mb: 1rem;
+$button-mr: -1 * base.$dim-static-button-standard-px;
+$grp-notice-gy: 0;
+
 .notice-widget {
-  margin-inline: -4px;
+  margin-inline: $notice-widget-offset-x;
 }
 
 .title {
-  margin-inline: 4px;
-
-  // margin-bottom: 8px;
+  margin-inline: -1 * $notice-widget-offset-x;
   color: base.theme-get-val('on-surface');
 }
 
 .grp {
   &-control {
     display: flex;
-    gap: 12px;
+    gap: $grp-control-gx;
     align-items: baseline;
-    width: 100%;
-    margin-inline: 4px;
-    margin-bottom: 15px;
+    margin-inline: -1 * $notice-widget-offset-x;
+    margin-bottom: $grp-control-mb - 0.0625rem;
 
-    > .button {
-      margin-right: -4px;
+    .tab {
+      flex-grow: 1;
+
+      .tab-button {
+        &:nth-of-type(2) {
+          &::after {
+            background-color: base.theme-get-val('tertiary');
+          }
+
+          .tab-button-area-visible {
+            @include base.style-set-states(
+              transparent,
+              base.theme-get-val('tertiary')
+            );
+          }
+        }
+
+        &:nth-of-type(3) {
+          &::after {
+            background-color: base.theme-get-val('quaternary');
+          }
+
+          .tab-button-area-visible {
+            @include base.style-set-states(
+              transparent,
+              base.theme-get-val('quaternary')
+            );
+          }
+        }
+      }
+
+      .selected {
+        &.tab-button {
+          &:nth-of-type(2) {
+            .tab-button-area-visible::before {
+              background-color: list.nth(
+                base.style-get-states(base.theme-get-val('tertiary')),
+                4
+              );
+            }
+          }
+
+          &:nth-of-type(3) {
+            .tab-button-area-visible::before {
+              background-color: list.nth(
+                base.style-get-states(base.theme-get-val('quaternary')),
+                4
+              );
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      flex-shrink: 0;
+      margin-right: $button-mr;
     }
   }
-
-  &-notice {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
 }
 
-.notice:nth-of-type(n + 9) {
-  display: none;
-}
+.notices {
+  display: flex;
+  flex-direction: column;
+  gap: $grp-notice-gy;
 
-.tab {
-  flex-grow: 1;
-
-  .tab-btn:nth-of-type(2) {
-    &::after {
-      background-color: base.theme-get-val('tertiary');
-    }
-
-    .tab-btn-area-visible {
-      @include base.style-set-states(
-        transparent,
-        base.theme-get-val('tertiary')
-      );
-    }
-  }
-
-  .tab-btn:nth-of-type(3) {
-    &::after {
-      background-color: base.theme-get-val('quaternary');
-    }
-
-    .tab-btn-area-visible {
-      @include base.style-set-states(
-        transparent,
-        base.theme-get-val('quaternary')
-      );
-    }
-  }
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'md')) {
-  .title {
-    // margin-bottom: 0.75rem;
-  }
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'lg')) {
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'xl')) {
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
-  .notice:nth-of-type(n + 7) {
+  .notice:nth-of-type(n + 9) {
     display: none;
   }
 }

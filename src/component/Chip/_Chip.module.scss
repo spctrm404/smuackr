@@ -1,8 +1,14 @@
 @use 'sass:selector';
 @use '../../style/base';
 
+$interaction-h: base.$dim-static-chip-interaction-h;
+$visible-h: 2rem;
+$t: 0.0625rem;
 $px: 1rem;
-$unbalanced-px: 0.75rem;
+$unbalance-pl: 0.75rem;
+$gx: 0.5rem;
+$icon-font-size: 1.125rem;
+$r: 256rem;
 
 .chip {
   @include base.style-buttonize;
@@ -14,11 +20,12 @@ $unbalanced-px: 0.75rem;
 
   &-interaction {
     width: fit-content;
-    height: 3rem;
+    min-width: fit-content;
+    height: $interaction-h;
 
     &[data-chip-type='standard'] {
       #{selector.append($root-selector, '-visible')} {
-        border: 0.0625rem solid base.theme-get-val('outline');
+        border: $t solid base.theme-get-val('outline');
 
         @include base.style-set-states(
           transparent,
@@ -50,12 +57,12 @@ $unbalanced-px: 0.75rem;
 
     &[data-has-icon='true'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: $unbalanced-px $px;
+        padding-inline: $unbalance-pl $px;
       }
 
       &[data-button-type='standard'] {
         #{selector.append($root-selector, '-visible')} {
-          padding-inline: $unbalanced-px - 0.0625rem $px - 0.0625rem;
+          padding-inline: $unbalance-pl - $t $px - $t;
         }
       }
     }
@@ -63,12 +70,12 @@ $unbalanced-px: 0.75rem;
 
   &-visible {
     display: flex;
-    gap: 0.5rem;
+    gap: $gx;
     align-items: center;
     justify-content: center;
-    height: 2rem;
-    padding-inline: $px - 0.0625rem;
-    border-radius: 256rem;
+    height: $visible-h;
+    padding-inline: $px - $t;
+    border-radius: $r;
 
     > * {
       white-space: nowrap;
@@ -77,6 +84,6 @@ $unbalanced-px: 0.75rem;
 }
 
 .icon {
-  font-size: 1.125rem;
+  font-size: $icon-font-size;
   color: base.theme-get-val('primary');
 }

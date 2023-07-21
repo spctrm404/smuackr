@@ -3,10 +3,9 @@
 @use 'common';
 
 $visible-h: 2.5rem;
+$t: 0.0625rem;
 $px: 1rem;
-$py: 0;
-$standard-px: 0.75rem;
-$standard-py: 0;
+$standard-px: base.$dim-static-button-standard-px;
 $gx: 0.5rem;
 $icon-font-size: 1.125rem;
 
@@ -31,7 +30,7 @@ $icon-font-size: 1.125rem;
 
     &[data-button-type='outline'] {
       #{selector.append($root-selector, '-visible')} {
-        padding-inline: $px - 0.0625rem;
+        padding-inline: $px - $t;
       }
     }
 
@@ -48,7 +47,7 @@ $icon-font-size: 1.125rem;
 
       &[data-button-type='outline'] {
         #{selector.append($root-selector, '-visible')} {
-          padding-inline: $px - 0.0625rem;
+          padding-inline: $px - $t;
         }
       }
     }

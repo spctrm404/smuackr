@@ -1,6 +1,8 @@
 @use 'sass:color';
 @use 'sass:list';
+@use 'sass:map';
 @use 'sass:selector';
+@use 'sass:string';
 
 // 문자 스타일 관련 함수, 믹스인
 @use 'type-semantic';
@@ -90,8 +92,12 @@
   }
 
   @at-root {
-    $appended-selector: selector.append('.selected', $root-selector);
-    #{selector.append($appended-selector, '::before')} {
+    $split: string.split(#{$root-selector}, ' ');
+    $last-index: list.length($split);
+    $pick: list.nth($split, $last-index);
+    $nest: selector.nest('.selected', $pick);
+    $appended: selector.append($nest, '::before');
+    #{$appended} {
       background-color: list.nth($states, 4);
     }
   }
@@ -106,5 +112,45 @@
     width: 0;
     height: 0;
     background-color: transparent;
+  }
+}
+
+@mixin md() {
+  @media (width > map.get(dimension.$bp-gt, 'md')) {
+    @at-root {
+      & {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin lg() {
+  @media (width > map.get(dimension.$bp-gt, 'lg')) {
+    @at-root {
+      & {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin xl() {
+  @media (width > map.get(dimension.$bp-gt, 'xl')) {
+    @at-root {
+      & {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin xxl() {
+  @media (width > map.get(dimension.$bp-gt, 'xxl')) {
+    @at-root {
+      & {
+        @content;
+      }
+    }
   }
 }

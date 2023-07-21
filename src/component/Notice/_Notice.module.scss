@@ -1,16 +1,25 @@
 @use 'sass:map';
 @use '../../style/base';
 
+$gx: base.$dim-static-notice-gx;
+$px: base.$dim-static-notice-px;
+$py: 0.25rem;
+$prefix-mr: 0.25rem;
+$line-n: 2;
+
 .notice {
+  min-width: fit-content;
+
   @include base.style-buttonize;
   @include base.type-body-sm;
 
   .area-visible {
     display: flex;
-    gap: 1rem;
+    gap: $gx;
     align-items: baseline;
     width: 100%;
-    padding: 4px;
+    padding-block: $py;
+    padding-inline: $px;
     word-break: break-all;
     overflow-wrap: anywhere;
 
@@ -26,11 +35,11 @@
   flex-grow: 1;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: $line-n;
 }
 
 .prefix {
-  margin-right: 0.25rem;
+  margin-right: $prefix-mr;
   font-weight: 500;
 
   &::before {

@@ -3,6 +3,7 @@
 
 $interaction-w: 3rem;
 $interaction-h: 3rem;
+$t: 0.0625rem;
 
 @mixin apply() {
   @include base.style-buttonize;
@@ -27,7 +28,7 @@ $interaction-h: 3rem;
 
         &[data-button-type='outline'] {
           #{selector.append($root-selector, '-visible')} {
-            border: 0.0625rem solid base.theme-get-val('outline');
+            border: $t solid base.theme-get-val('outline');
 
             @include base.style-set-states(
               transparent,

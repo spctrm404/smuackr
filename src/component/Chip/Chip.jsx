@@ -4,6 +4,7 @@ import Classes from './_Chip.module.scss';
 
 const Chip = ({
   children,
+  className,
   overridingClasses,
   href,
   to,
@@ -16,7 +17,7 @@ const Chip = ({
       <Link
         className={`${Classes.chip} ${Classes.areaInteraction} ${
           overridingClasses?.[`chip`]
-        } ${overridingClasses?.[`chipAreaInteraction`]} `}
+        } ${overridingClasses?.[`chipAreaInteraction`]} ${className}`}
         to={to}
         onClick={onClickCallback}
         data-chip-type={chipType}
@@ -25,14 +26,14 @@ const Chip = ({
           className={`${Classes.areaVisible} ${
             overridingClasses?.[`chipAreaVisible`]
           } `}>
-          {icon ? (
+          {icon && (
             <span
               className={`${Classes.icon} ${
                 overridingClasses?.[`chipIcon`]
               } material-symbols-outlined`}>
               {icon}
             </span>
-          ) : null}
+          )}
           {children}
         </span>
       </Link>
@@ -42,7 +43,7 @@ const Chip = ({
     <a
       className={`${Classes.chip} ${Classes.areaInteraction} ${
         overridingClasses?.[`chip`]
-      } ${overridingClasses?.[`chipAreaInteraction`]} `}
+      } ${overridingClasses?.[`chipAreaInteraction`]} ${className}`}
       href={href}
       onClick={onClickCallback}
       data-chip-type={chipType}
@@ -51,14 +52,14 @@ const Chip = ({
         className={`${Classes.areaVisible} ${
           overridingClasses?.[`chipAreaVisible`]
         } `}>
-        {icon ? (
+        {icon && (
           <span
             className={`${Classes.icon} ${
               overridingClasses?.[`chipIcon`]
             } material-symbols-outlined`}>
             {icon}
           </span>
-        ) : null}
+        )}
         {children}
       </span>
     </a>
@@ -67,6 +68,7 @@ const Chip = ({
 
 Chip.propTypes = {
   children: PropTypes.element,
+  className: PropTypes.string,
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
   to: PropTypes.string,

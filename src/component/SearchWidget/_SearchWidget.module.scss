@@ -1,8 +1,17 @@
 @use 'sass:map';
 @use '../../style/base';
 
+$form-mb: 0.5rem;
+$chips-gx: 0.5rem;
+$chips-n: 2;
+
+.search-widget {
+  form {
+    margin-bottom: $form-mb;
+  }
+}
+
 .title {
-  // margin-bottom: 16px;
   color: base.theme-get-val('on-surface-variant');
 
   @include base.type-title-xl;
@@ -12,42 +21,10 @@
   white-space: nowrap;
 }
 
-.form {
-  margin-bottom: 8px;
-}
-
 .chips {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 0.5rem;
-  max-height: 4 * 3rem;
+  column-gap: $chips-gx;
+  max-height: base.$dim-static-chip-interaction-h * $chips-n;
   overflow: hidden;
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'md')) {
-  .title {
-    // margin-bottom: 20px;
-  }
-
-  .chips {
-    max-height: 3 * 3rem;
-  }
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'lg')) {
-  .chips {
-    max-height: 2 * 3rem;
-  }
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'xl')) {
-  .chips {
-    max-height: 6 * 3rem;
-  }
-}
-
-@media (width > map.get(base.$dim-bp-gt, 'xxl')) {
-  .chips {
-    max-height: 2 * 3rem;
-  }
 }

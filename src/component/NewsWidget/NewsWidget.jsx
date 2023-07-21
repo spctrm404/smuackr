@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 
 const NewsWidget = ({ className, listNews, length }) => {
   return (
-    <div className={`${Classes.newsWidget}  ${className}`}>
+    <div className={`${Classes.newsWidget} ${className}`}>
       <div className="container container--width-expand">
         <div className={Classes.layout}>
           <h4 className={Classes.title}>상명소식</h4>

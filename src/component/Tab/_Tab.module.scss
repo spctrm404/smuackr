@@ -1,16 +1,27 @@
 @use '../../style/base';
 
+$tab-h: 3.0625rem;
+$control-button-interaction-w: 3rem;
+$control-button-interaction-h: 3rem;
+$control-button-visible-w: 2.5rem;
+$control-button-visible-h: 2.5rem;
+$control-button-r: 256rem;
+$button-interaction-h: 3rem;
+$button-px: 1rem;
+$tab-t: 0.0625rem;
+$button-t: 0.0625rem;
+
 .tab {
   display: flex;
   align-items: start;
   justify-content: center;
-  height: 3.0625rem;
+  height: $tab-h;
 
   &-control-button {
     position: relative;
-    flex-basis: 3rem;
     flex-shrink: 0;
-    height: 3rem;
+    min-width: $control-button-interaction-w;
+    height: $control-button-interaction-h;
 
     @include base.style-buttonize;
 
@@ -18,8 +29,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
+      width: $control-button-visible-w;
+      height: $control-button-visible-h;
+      border-radius: $control-button-r;
 
       @include base.style-set-states(
         transparent,
@@ -28,10 +40,10 @@
     }
   }
 
-  &-viewport {
+  &-wrap {
     position: relative;
     flex-grow: 1;
-    height: 3.0625rem;
+    height: 100%;
     overflow: hidden;
 
     &::after {
@@ -40,17 +52,16 @@
       bottom: 0;
       left: 0;
       display: block;
-      height: 0.0625rem;
+      height: $tab-t;
       content: '';
       background-color: base.theme-get-val('outline');
     }
   }
 
-  &-scroll {
+  &-viewport {
     display: flex;
     justify-content: start;
-    max-width: 100%;
-    height: 3rem;
+    height: $control-button-interaction-h;
     overflow-x: scroll;
 
     @include base.style-hide-scrollbar;
@@ -66,18 +77,18 @@
     position: relative;
     flex-grow: 1;
     min-width: fit-content;
-    height: 3rem;
+    height: $button-interaction-h;
 
     @include base.style-buttonize;
     @include base.type-label;
 
     .area-visible {
       display: flex;
+      flex-grow: 1;
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 100%;
-      padding-inline: 1rem;
+      padding-inline: $button-px;
 
       @include base.style-set-states(
         transparent,
@@ -87,10 +98,11 @@
 
     &::after {
       position: absolute;
+      right: 0;
       bottom: 0;
+      left: 0;
       display: block;
-      width: 100%;
-      height: 0.0625rem;
+      height: $button-t;
       content: '';
       background-color: base.theme-get-val('primary');
       transform: scaleX(0);

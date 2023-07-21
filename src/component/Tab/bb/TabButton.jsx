@@ -3,6 +3,7 @@ import Classes from '../_Tab.module.scss';
 
 const TabButton = ({
   children,
+  className,
   overridingClasses,
   nth,
   stateNthOfSelected,
@@ -14,10 +15,10 @@ const TabButton = ({
   return (
     <div
       className={`${Classes.tabButton} ${Classes.areaInteraction} ${
-        nthOfSelected === nth ? Classes.selected : null
-      } ${overridingClasses?.[`tabButton`]} ${
-        overridingClasses?.[`tabButtonAreaInteraction`]
-      } `}
+        overridingClasses?.[`tabButton`]
+      } ${overridingClasses?.[`tabButtonAreaInteraction`]} ${className} ${
+        nthOfSelected === nth && Classes.selected
+      } ${nthOfSelected === nth && overridingClasses?.[`selected`]}`}
       onClick={onClickCallback}>
       <span
         className={`${Classes.areaVisible} ${
@@ -31,6 +32,7 @@ const TabButton = ({
 
 TabButton.propTypes = {
   children: PropTypes.element,
+  className: PropTypes.string,
   overridingClasses: PropTypes.object,
   nth: PropTypes.number,
   stateNthOfSelected: PropTypes.array,

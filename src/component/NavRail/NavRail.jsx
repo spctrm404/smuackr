@@ -12,8 +12,8 @@ const NavRail = ({ className, listNav }) => {
   const [nthOfSelected] = stateNthOfSelected;
   return (
     <nav
-      className={`${Classes.navRail} ${className}  ${
-        nthOfSelected === 0 ? Classes.collapsed : null
+      className={`${Classes.navRail} ${className} ${
+        nthOfSelected === 0 && Classes.collapsed
       }`}>
       <div className={Classes.viewportRail}>
         <div className={Classes.scrollRail}>

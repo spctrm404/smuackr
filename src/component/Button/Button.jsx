@@ -28,14 +28,14 @@ const Button = ({
           className={`${Classes.areaVisible} ${
             overridingClasses?.[`buttonAreaVisible`]
           } `}>
-          {icon ? (
+          {icon && (
             <span
               className={`${Classes.icon} ${
                 overridingClasses?.[`buttonIcon`]
               } material-symbols-outlined`}>
               {icon}
             </span>
-          ) : null}
+          )}
           {children}
         </span>
       </Link>
@@ -55,14 +55,14 @@ const Button = ({
         className={`${Classes.areaVisible} ${
           overridingClasses?.[`buttonAreaVisible`]
         } `}>
-        {icon ? (
+        {icon && (
           <span
             className={`${Classes.icon} ${
               overridingClasses?.[`buttonIcon`]
             } material-symbols-outlined`}>
             {icon}
           </span>
-        ) : null}
+        )}
         {children}
       </span>
     </a>

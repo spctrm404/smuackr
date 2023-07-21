@@ -5,7 +5,7 @@
 $interaction-w: 3rem;
 $visible-w: 2.5rem;
 $visible-h: 2.5rem;
-$icon-font-size: 1.125rem;
+$t: 0.0625rem;
 $r: 256rem;
 
 .icon-button {
@@ -20,8 +20,8 @@ $r: 256rem;
 
     &[data-button-type='outline'] {
       #{selector.append($root-selector, '-visible')} {
-        width: $visible-w - 2 * 0.0625rem;
-        height: $visible-h - 2 * 0.0625rem;
+        width: $visible-w - 2 * $t;
+        height: $visible-h - 2 * $t;
       }
     }
   }

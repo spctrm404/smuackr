@@ -3,7 +3,7 @@ import Classes from './_FooterLink.module.scss';
 
 const FooterLink = ({ className, listLink }) => {
   return (
-    <section className={`${Classes.footerLink}  ${className}`}>
+    <section className={`${Classes.footerLink} ${className}`}>
       <div className="container">
         <div className={Classes.layout}>
           {listLink.map((eachLinkItem) => {
@@ -11,9 +11,7 @@ const FooterLink = ({ className, listLink }) => {
               <a
                 key={eachLinkItem.key}
                 className={`${Classes.a} ${
-                  eachLinkItem.label === '개인정보처리방침'
-                    ? Classes.accent
-                    : null
+                  eachLinkItem.label === '개인정보처리방침' && Classes.accent
                 }`}
                 href="#">
                 {eachLinkItem.label}
