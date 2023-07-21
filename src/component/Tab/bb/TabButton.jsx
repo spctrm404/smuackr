@@ -1,22 +1,27 @@
 import PropTypes from 'prop-types';
 import Classes from '../_Tab.module.scss';
 
-const TabBtn = ({ children, overridingClasses, nth, stateNthOfSelected }) => {
+const TabButton = ({
+  children,
+  overridingClasses,
+  nth,
+  stateNthOfSelected,
+}) => {
   const [nthOfSelected, setNthOfSelected] = stateNthOfSelected;
-  const onClickCb = () => {
+  const onClickCallback = () => {
     setNthOfSelected(nth);
   };
   return (
     <div
-      className={`${Classes.tabBtn} ${Classes.areaInteraction} ${
+      className={`${Classes.tabButton} ${Classes.areaInteraction} ${
         nthOfSelected === nth ? Classes.selected : null
-      } ${overridingClasses?.[`tabBtn`]} ${
-        overridingClasses?.[`tabBtnAreaInteraction`]
+      } ${overridingClasses?.[`tabButton`]} ${
+        overridingClasses?.[`tabButtonAreaInteraction`]
       } `}
-      onClick={onClickCb}>
+      onClick={onClickCallback}>
       <span
         className={`${Classes.areaVisible} ${
-          overridingClasses?.[`tabBtnAreaVisible`]
+          overridingClasses?.[`tabButtonAreaVisible`]
         }`}>
         {children}
       </span>
@@ -24,11 +29,11 @@ const TabBtn = ({ children, overridingClasses, nth, stateNthOfSelected }) => {
   );
 };
 
-TabBtn.propTypes = {
+TabButton.propTypes = {
   children: PropTypes.element,
   overridingClasses: PropTypes.object,
   nth: PropTypes.number,
   stateNthOfSelected: PropTypes.array,
 };
 
-export default TabBtn;
+export default TabButton;

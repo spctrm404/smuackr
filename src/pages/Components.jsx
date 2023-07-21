@@ -34,6 +34,22 @@ const Components = () => {
     { key: uuidv4(), label: '상명' },
     { key: uuidv4(), label: '서울' },
     { key: uuidv4(), label: '천안' },
+    { key: uuidv4(), label: 'Lorem.' },
+    { key: uuidv4(), label: 'Quod?' },
+    { key: uuidv4(), label: 'Ea.' },
+    { key: uuidv4(), label: 'Excepturi!' },
+    { key: uuidv4(), label: 'Deleniti?' },
+    { key: uuidv4(), label: 'Tenetur.' },
+    { key: uuidv4(), label: 'Tempore?' },
+    { key: uuidv4(), label: 'Iste?' },
+    { key: uuidv4(), label: 'In.' },
+    { key: uuidv4(), label: 'Qui.' },
+    { key: uuidv4(), label: 'Ea.' },
+    { key: uuidv4(), label: 'Nobis.' },
+    { key: uuidv4(), label: 'Laudantium!' },
+    { key: uuidv4(), label: 'Quos!' },
+    { key: uuidv4(), label: 'Maiores?' },
+    { key: uuidv4(), label: 'Ex.' },
   ];
   const cardContent = {
     prefix: '연구성과',
@@ -103,7 +119,7 @@ const Components = () => {
         <span>칩버튼</span>
       </Chip>
       <Notice content={noticeContent}></Notice>
-      <Tab listTab={listTab}></Tab>
+      <Tab listTab={listTab} hasControl={true}></Tab>
       <NoticeWidget
         listTab={DB.noticeTabs}
         listNotice={DB.notices}></NoticeWidget>

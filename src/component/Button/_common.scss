@@ -1,6 +1,9 @@
 @use 'sass:selector';
 @use '../../style/base';
 
+$interaction-w: 3rem;
+$interaction-h: 3rem;
+
 @mixin apply() {
   @include base.style-buttonize;
   @include base.type-label;
@@ -10,8 +13,8 @@
       $root-selector: &;
 
       &-interaction {
-        min-width: 3rem;
-        height: 3rem;
+        min-width: $interaction-w;
+        height: $interaction-h;
 
         &[data-button-type='standard'] {
           #{selector.append($root-selector, '-visible')} {

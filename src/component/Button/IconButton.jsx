@@ -4,10 +4,11 @@ import Classes from './_IconButton.module.scss';
 
 const IconButton = ({
   children,
+  className,
   overridingClasses,
   href,
   to,
-  onClickCb,
+  onClickCallback,
   buttonType = 'standard',
   icon,
 }) => {
@@ -16,9 +17,9 @@ const IconButton = ({
       <Link
         className={`${Classes.iconButton} ${Classes.areaInteraction} ${
           overridingClasses?.[`iconButton`]
-        } ${overridingClasses?.[`iconButtonAreaInteraction`]} `}
+        } ${overridingClasses?.[`iconButtonAreaInteraction`]} ${className}`}
         to={to}
-        onClick={onClickCb}
+        onClick={onClickCallback}
         data-button-type={buttonType}>
         <span
           className={`${Classes.areaVisible} ${
@@ -42,9 +43,9 @@ const IconButton = ({
     <a
       className={`${Classes.iconButton} ${Classes.areaInteraction} ${
         overridingClasses?.[`iconButton`]
-      } ${overridingClasses?.[`iconButtonAreaInteraction`]} `}
+      } ${overridingClasses?.[`iconButtonAreaInteraction`]} ${className}`}
       href={href}
-      onClick={onClickCb}
+      onClick={onClickCallback}
       data-button-type={buttonType}>
       <span
         className={`${Classes.areaVisible} ${
@@ -66,10 +67,11 @@ const IconButton = ({
 
 IconButton.propTypes = {
   children: PropTypes.element,
+  className: PropTypes.string,
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
   to: PropTypes.string,
-  onClickCb: PropTypes.func,
+  onClickCallback: PropTypes.func,
   buttonType: PropTypes.string,
   fitWidth: PropTypes.bool,
   icon: PropTypes.string,

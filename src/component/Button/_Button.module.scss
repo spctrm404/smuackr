@@ -2,8 +2,13 @@
 @use '../../style/base';
 @use 'common';
 
-$standard-px: 0.75rem;
+$visible-h: 2.5rem;
 $px: 1rem;
+$py: 0;
+$standard-px: 0.75rem;
+$standard-py: 0;
+$gx: 0.5rem;
+$icon-font-size: 1.125rem;
 
 .button {
   @include common.apply;
@@ -15,6 +20,7 @@ $px: 1rem;
   &-interaction {
     &[data-is-fixed-width='true'] {
       width: fit-content;
+      min-width: fit-content;
     }
 
     &[data-button-type='standard'] {
@@ -49,8 +55,8 @@ $px: 1rem;
   }
 
   &-visible {
-    gap: 0.5rem;
-    height: 2.5rem;
+    gap: $gx;
+    height: $visible-h;
     padding-inline: $px;
 
     > * {
@@ -60,5 +66,5 @@ $px: 1rem;
 }
 
 .icon {
-  font-size: 1.125rem;
+  font-size: $icon-font-size;
 }

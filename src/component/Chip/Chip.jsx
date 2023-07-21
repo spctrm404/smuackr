@@ -7,7 +7,7 @@ const Chip = ({
   overridingClasses,
   href,
   to,
-  onClickCb,
+  onClickCallback,
   chipType = 'standard',
   icon,
 }) => {
@@ -18,7 +18,7 @@ const Chip = ({
           overridingClasses?.[`chip`]
         } ${overridingClasses?.[`chipAreaInteraction`]} `}
         to={to}
-        onClick={onClickCb}
+        onClick={onClickCallback}
         data-chip-type={chipType}
         data-has-icon={icon ? true : false}>
         <span
@@ -44,7 +44,7 @@ const Chip = ({
         overridingClasses?.[`chip`]
       } ${overridingClasses?.[`chipAreaInteraction`]} `}
       href={href}
-      onClick={onClickCb}
+      onClick={onClickCallback}
       data-chip-type={chipType}
       data-has-icon={icon ? true : false}>
       <span
@@ -70,7 +70,7 @@ Chip.propTypes = {
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
   to: PropTypes.string,
-  onClickCb: PropTypes.func,
+  onClickCallback: PropTypes.func,
   chipType: PropTypes.string,
   icon: PropTypes.string,
 };

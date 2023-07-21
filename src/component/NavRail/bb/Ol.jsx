@@ -7,7 +7,7 @@ const Ol = ({ list, depth, nthOfParent, stateNthOfSelected }) => {
   if (!list || !list.length) return null;
   if (depth >= 4) return null;
   const [nthOfSelected, setNthOfSelected] = stateNthOfSelected;
-  const onClickCb = () => {
+  const onClickCallback = () => {
     setTimeout(() => {
       setNthOfSelected(0);
     }, 50);
@@ -34,7 +34,9 @@ const Ol = ({ list, depth, nthOfParent, stateNthOfSelected }) => {
       return (
         <ol className={`${Classes[`olDp${depth}`]} ${Classes.viewportDrawer}`}>
           <div className={Classes.scrollDrawer}>{recursiveLiOl}</div>
-          <IconButton overridingClasses={Classes} onClickCb={onClickCb}>
+          <IconButton
+            overridingClasses={Classes}
+            onClickCallback={onClickCallback}>
             <span className="material-symbols-outlined">close</span>
           </IconButton>
         </ol>

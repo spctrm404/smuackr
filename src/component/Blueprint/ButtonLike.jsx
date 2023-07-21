@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import Classes from './_ButtonLike.module.scss';
 
-const ButtonLike = ({ children, overridingClasses, href, onClickCb }) => {
+const ButtonLike = ({ children, overridingClasses, href, onClickCallback }) => {
   return (
     <a
       className={`${Classes.buttonLike} ${Classes.areaInteraction} ${
         overridingClasses?.[`areaInteraction`]
       }`}
       href={href}
-      onClick={onClickCb}>
+      onClick={onClickCallback}>
       <span
         className={`${Classes.areaVisible} ${
           overridingClasses?.[`areaVisible`]
@@ -23,7 +23,7 @@ ButtonLike.propTypes = {
   children: PropTypes.element,
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
-  onClickCb: PropTypes.func,
+  onClickCallback: PropTypes.func,
 };
 
 export default ButtonLike;

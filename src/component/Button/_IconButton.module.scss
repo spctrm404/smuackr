@@ -2,6 +2,12 @@
 @use '../../style/base';
 @use 'common';
 
+$interaction-w: 3rem;
+$visible-w: 2.5rem;
+$visible-h: 2.5rem;
+$icon-font-size: 1.125rem;
+$r: 256rem;
+
 .icon-button {
   @include common.apply;
 }
@@ -10,19 +16,19 @@
   $root-selector: &;
 
   &-interaction {
-    width: 3rem;
+    width: $interaction-w;
 
     &[data-button-type='outline'] {
       #{selector.append($root-selector, '-visible')} {
-        width: 2.375rem;
-        height: 2.375rem;
+        width: $visible-w - 2 * 0.0625rem;
+        height: $visible-h - 2 * 0.0625rem;
       }
     }
   }
 
   &-visible {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 256rem;
+    width: $visible-w;
+    height: $visible-h;
+    border-radius: $r;
   }
 }

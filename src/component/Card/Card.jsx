@@ -7,7 +7,7 @@ import photo_4 from '../../assets/news (4).jpg';
 import photo_5 from '../../assets/news (5).jpg';
 import photo_6 from '../../assets/news (6).jpg';
 
-const Card = ({ overridingClasses, content, href, onClickCb }) => {
+const Card = ({ overridingClasses, content, href, onClickCallback }) => {
   const photo = [photo_1, photo_2, photo_3, photo_4, photo_5, photo_6];
 
   return (
@@ -16,7 +16,7 @@ const Card = ({ overridingClasses, content, href, onClickCb }) => {
         overridingClasses?.[`card`]
       } ${overridingClasses?.[`cardAreaInteraction`]}`}
       href={href}
-      onClick={onClickCb}>
+      onClick={onClickCallback}>
       <div
         className={`${Classes.areaVisible} ${
           overridingClasses?.[`cardAreaVisible`]
@@ -51,7 +51,7 @@ Card.propTypes = {
   overridingClasses: PropTypes.object,
   content: PropTypes.object,
   href: PropTypes.string,
-  onClickCb: PropTypes.func,
+  onClickCallback: PropTypes.func,
 };
 
 export default Card;

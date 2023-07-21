@@ -4,7 +4,7 @@ import Button from '../../Button/Button';
 
 const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
   const [, setNthOfSelected] = stateNthOfSelected;
-  const onClickCb = () => {
+  const onClickCallback = () => {
     setNthOfSelected(nth);
   };
   return (
@@ -12,7 +12,7 @@ const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
       <Button
         to={depth >= 2 ? '/page' : null}
         overridingClasses={Classes}
-        onClickCb={depth === 1 ? onClickCb : null}>
+        onClickCallback={depth === 1 ? onClickCallback : null}>
         <span>{listItem.label}</span>
       </Button>
       {children}

@@ -8,7 +8,7 @@ const Button = ({
   overridingClasses,
   href,
   to,
-  onClickCb,
+  onClickCallback,
   buttonType = 'standard',
   fitWidth = true,
   icon,
@@ -20,7 +20,7 @@ const Button = ({
           overridingClasses?.[`button`]
         } ${overridingClasses?.[`buttonAreaInteraction`]} ${className}`}
         to={to}
-        onClick={onClickCb}
+        onClick={onClickCallback}
         data-button-type={buttonType}
         data-is-fixed-width={fitWidth}
         data-has-icon={icon ? true : false}>
@@ -47,7 +47,7 @@ const Button = ({
         overridingClasses?.[`button`]
       } ${overridingClasses?.[`buttonAreaInteraction`]} ${className}`}
       href={href}
-      onClick={onClickCb}
+      onClick={onClickCallback}
       data-button-type={buttonType}
       data-is-fixed-width={fitWidth}
       data-has-icon={icon ? true : false}>
@@ -75,7 +75,7 @@ Button.propTypes = {
   overridingClasses: PropTypes.object,
   href: PropTypes.string,
   to: PropTypes.string,
-  onClickCb: PropTypes.func,
+  onClickCallback: PropTypes.func,
   buttonType: PropTypes.string,
   fitWidth: PropTypes.bool,
   icon: PropTypes.string,

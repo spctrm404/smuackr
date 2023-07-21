@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Classes from './_Notice.module.scss';
 
-const Notice = ({ className, content, href, to, onClickCb }) => {
+const Notice = ({ className, content, href, to, onClickCallback }) => {
   const extractMDfromYMD = (dateYMD) => {
     const [, m, d, ...rest] = dateYMD.split('-');
     return `${m}-${d}`;
@@ -15,7 +15,7 @@ const Notice = ({ className, content, href, to, onClickCb }) => {
           Classes.areaInteraction
         } ${className}`}
         to={to}
-        onClick={onClickCb}>
+        onClick={onClickCallback}>
         <div className={Classes.areaVisible}>
           <div className={Classes.grpTitle}>
             <span className={Classes.prefix}>{content?.prefix}</span>
@@ -34,7 +34,7 @@ const Notice = ({ className, content, href, to, onClickCb }) => {
         Classes.areaInteraction
       } ${className}`}
       href={href}
-      onClick={onClickCb}>
+      onClick={onClickCallback}>
       <div className={Classes.areaVisible}>
         <div className={Classes.grpTitle}>
           <span className={Classes.prefix}>{content?.prefix}</span>
@@ -51,7 +51,7 @@ Notice.propTypes = {
   content: PropTypes.object,
   href: PropTypes.string,
   to: PropTypes.string,
-  onClickCb: PropTypes.func,
+  onClickCallback: PropTypes.func,
 };
 
 export default Notice;
