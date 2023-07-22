@@ -1,10 +1,52 @@
 @use 'sass:map';
 @use '../style/base';
 
-.layout {
+$widget-container-px: (
+  'sm': map.get(base.$dim-container-px, 'sm'),
+  'md': map.get(base.$dim-container-px, 'md'),
+  'lg': map.get(base.$dim-container-px, 'lg'),
+  'xl': map.get(base.$dim-container-px, 'xl'),
+  'xxl': map.get(base.$dim-container-px, 'xxl'),
+);
+$widget-container-py: (
+  'sm': map.get(base.$dim-container-py, 'sm'),
+  'md': map.get(base.$dim-container-py, 'md'),
+  'lg': map.get(base.$dim-container-py, 'lg'),
+  'xl': map.get(base.$dim-container-py, 'xl'),
+  'xxl': map.get(base.$dim-container-py, 'xxl'),
+);
+$widget-container-gx: (
+  'sm': map.get(base.$dim-container-gx, 'sm'),
+  'md': map.get(base.$dim-container-gx, 'md'),
+  'lg': map.get(base.$dim-container-gx, 'lg'),
+  'xl': map.get(base.$dim-container-gx, 'xl'),
+  'xxl': map.get(base.$dim-container-gx, 'xxl'),
+);
+$widget-container-gy: (
+  'sm': map.get(base.$dim-container-gy, 'sm'),
+  'md': map.get(base.$dim-container-gy, 'md'),
+  'lg': map.get(base.$dim-container-gy, 'lg'),
+  'xl': map.get(base.$dim-container-gy, 'xl'),
+  'xxl': map.get(base.$dim-container-gy, 'xxl'),
+);
+$widget-container-w-max-gte-xxl: 0;
+$search-widget-w-min: base.$dim-search-widget-w-min;
+$notice-widget-w-min: base.$dim-notice-widget-w-min;
+
+.hero {
+  &-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include base.style-xxl {
+      flex-wrap: nowrap;
+    }
+  }
 }
 
 .image {
+  flex-grow: 1;
   aspect-ratio: 16 / 9;
 
   img {
@@ -14,60 +56,77 @@
   }
 }
 
-.widget-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: map.get(base.$dim-gap-y, 'sm');
-  column-gap: map.get(base.$dim-gap-x, 'sm');
-  align-items: center;
-  justify-content: center;
-  padding-block: map.get(base.$dim-py, 'sm');
-  padding-inline: map.get(base.$dim-px, 'sm');
-  background-color: base.theme-get-val('surface-container');
+.widget {
+  &-container {
+    padding-block: map.get($widget-container-py, 'sm');
+    padding-inline: map.get($widget-container-px, 'sm');
+    margin-inline: auto;
+    background-color: base.theme-get-val('surface-container');
 
-  @include base.style-md {
-    row-gap: map.get(base.$dim-gap-y, 'md');
-    column-gap: map.get(base.$dim-gap-x, 'md');
-    padding-block: map.get(base.$dim-py, 'md');
-    padding-inline: map.get(base.$dim-px, 'md');
+    @include base.style-md {
+      padding-block: map.get($widget-container-py, 'md');
+      padding-inline: map.get($widget-container-px, 'md');
+    }
+
+    @include base.style-lg {
+      padding-block: map.get($widget-container-py, 'lg');
+      padding-inline: map.get($widget-container-px, 'lg');
+    }
+
+    @include base.style-xl {
+      padding-block: map.get($widget-container-py, 'xl');
+      padding-inline: map.get($widget-container-px, 'xl');
+    }
+
+    @include base.style-xxl {
+      flex: 1 0
+        calc($notice-widget-w-min + 2 * map.get($widget-container-px, 'xxl'));
+      padding-block: map.get($widget-container-py, 'xxl');
+      padding-inline: map.get($widget-container-px, 'xxl');
+
+      @include base.type-body-sm;
+    }
   }
 
-  @include base.style-lg {
-    row-gap: map.get(base.$dim-gap-y, 'lg');
-    column-gap: map.get(base.$dim-gap-x, 'lg');
-    padding-block: map.get(base.$dim-py, 'lg');
-    padding-inline: map.get(base.$dim-px, 'lg');
+  &-layout {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: map.get(base.$dim-container-gy, 'sm');
+    column-gap: map.get(base.$dim-container-gx, 'sm');
+    align-items: center;
+    justify-content: center;
+    background-color: base.theme-get-val('surface-container');
+
+    @include base.style-md {
+      row-gap: map.get(base.$dim-container-gy, 'md');
+      column-gap: map.get(base.$dim-container-gx, 'md');
+    }
+
+    @include base.style-lg {
+      row-gap: map.get(base.$dim-container-gy, 'lg');
+      column-gap: map.get(base.$dim-container-gx, 'lg');
+    }
+
+    @include base.style-xl {
+      row-gap: map.get(base.$dim-container-gy, 'xl');
+      column-gap: map.get(base.$dim-container-gx, 'xl');
+    }
+
+    @include base.style-xxl {
+      row-gap: map.get(base.$dim-container-gy, 'xxl');
+      column-gap: map.get(base.$dim-container-gx, 'xxl');
+    }
   }
 
-  @include base.style-xl {
-    row-gap: map.get(base.$dim-gap-y, 'xl');
-    column-gap: map.get(base.$dim-gap-x, 'xl');
-    padding-block: map.get(base.$dim-py, 'xl');
-    padding-inline: map.get(base.$dim-px, 'xl');
+  &-search {
+    flex: 1 1 $search-widget-w-min;
   }
 
-  @include base.style-xxl {
-    row-gap: map.get(base.$dim-gap-y, 'xxl');
-    column-gap: map.get(base.$dim-gap-x, 'xxl');
-    padding-block: map.get(base.$dim-py, 'xxl');
-    padding-inline: map.get(base.$dim-px, 'xxl');
+  &-notice {
+    flex: 1 1 $notice-widget-w-min;
+
+    @include base.type-body-sm;
   }
-}
-
-.search-widget {
-  flex: 1 1 base.$dim-static-search-widget-w-min;
-
-  // @include base.style-md {
-  // }
-}
-
-.notice-widget {
-  flex: 1 1 base.$dim-static-notice-widget-w-min;
-
-  @include base.type-body-sm;
-
-  // @include base.style-md {
-  // }
 }
 
 .shortcut {

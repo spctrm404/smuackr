@@ -67,10 +67,10 @@ h6 {
 }
 
 .container {
-  $px: map.get(dimension.$px, 'sm');
-  $py: map.get(dimension.$py, 'sm');
+  $px: map.get(dimension.$container-px, 'sm');
+  $py: map.get(dimension.$container-py, 'sm');
 
-  width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+  width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
   padding-block: $py;
   margin-inline: auto;
 
@@ -78,27 +78,27 @@ h6 {
     &-expand {
       width: min(
         dimension.$static-w-variant-max,
-        calc(100% - 2 * map.get(dimension.$px-variant, 'sm'))
+        calc(100% - 2 * map.get(dimension.$container-px-variant, 'sm'))
       );
     }
   }
 }
 
 @media (width > map.get(dimension.$bp-gt, 'md')) {
-  $px: map.get(dimension.$px, 'md');
-  $py: map.get(dimension.$py, 'md');
-  $gap-x: map.get(dimension.$gap-x, 'md');
-  $gap-y: map.get(dimension.$gap-y, 'md');
+  $px: map.get(dimension.$container-px, 'md');
+  $py: map.get(dimension.$container-py, 'md');
+  $gap-x: map.get(dimension.$container-gx, 'md');
+  $gap-y: map.get(dimension.$container-gy, 'md');
 
   .container {
-    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
       &-expand {
         width: min(
           dimension.$static-w-variant-max,
-          calc(100% - 2 * map.get(dimension.$px-variant, 'md'))
+          calc(100% - 2 * map.get(dimension.$container-px-variant, 'md'))
         );
       }
     }
@@ -106,20 +106,20 @@ h6 {
 }
 
 @media (width > map.get(dimension.$bp-gt, 'lg')) {
-  $px: map.get(dimension.$px, 'lg');
-  $py: map.get(dimension.$py, 'lg');
-  $gap-x: map.get(dimension.$gap-x, 'lg');
-  $gap-y: map.get(dimension.$gap-y, 'lg');
+  $px: map.get(dimension.$container-px, 'lg');
+  $py: map.get(dimension.$container-py, 'lg');
+  $gap-x: map.get(dimension.$container-gx, 'lg');
+  $gap-y: map.get(dimension.$container-gy, 'lg');
 
   .container {
-    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
       &-expand {
         width: min(
           dimension.$static-w-variant-max,
-          calc(100% - 2 * map.get(dimension.$px-variant, 'lg'))
+          calc(100% - 2 * map.get(dimension.$container-px-variant, 'lg'))
         );
       }
     }
@@ -127,20 +127,20 @@ h6 {
 }
 
 @media (width > map.get(dimension.$bp-gt, 'xl')) {
-  $px: map.get(dimension.$px, 'xl');
-  $py: map.get(dimension.$py, 'xl');
-  $gap-x: map.get(dimension.$gap-x, 'xl');
-  $gap-y: map.get(dimension.$gap-y, 'xl');
+  $px: map.get(dimension.$container-px, 'xl');
+  $py: map.get(dimension.$container-py, 'xl');
+  $gap-x: map.get(dimension.$container-gx, 'xl');
+  $gap-y: map.get(dimension.$container-gy, 'xl');
 
   .container {
-    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
       &-expand {
         width: min(
           dimension.$static-w-variant-max,
-          calc(100% - 2 * map.get(dimension.$px-variant, 'xl'))
+          calc(100% - 2 * map.get(dimension.$container-px-variant, 'xl'))
         );
       }
     }
@@ -148,20 +148,20 @@ h6 {
 }
 
 @media (width > map.get(dimension.$bp-gt, 'xxl')) {
-  $px: map.get(dimension.$px, 'xxl');
-  $py: map.get(dimension.$py, 'xxl');
-  $gap-x: map.get(dimension.$gap-x, 'xxl');
-  $gap-y: map.get(dimension.$gap-y, 'xxl');
+  $px: map.get(dimension.$container-px, 'xxl');
+  $py: map.get(dimension.$container-py, 'xxl');
+  $gap-x: map.get(dimension.$container-gx, 'xxl');
+  $gap-y: map.get(dimension.$container-gy, 'xxl');
 
   .container {
-    width: min(dimension.$static-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
       &-expand {
         width: min(
           dimension.$static-w-variant-max,
-          calc(100% - 2 * map.get(dimension.$px-variant, 'xxl'))
+          calc(100% - 2 * map.get(dimension.$container-px-variant, 'xxl'))
         );
       }
     }

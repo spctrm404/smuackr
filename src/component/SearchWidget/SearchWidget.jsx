@@ -5,7 +5,7 @@ import Chip from '../Chip/Chip';
 
 const SearchWidget = ({ className, listChip, chipLength }) => {
   return (
-    <div className={`${Classes.searchWidget} ${className}`}>
+    <section className={`${Classes.searchWidget} ${className}`}>
       <div className={Classes.title}>
         Dream <span className={Classes.nowrap}>Hiker 상명</span>
       </div>
@@ -22,7 +22,7 @@ const SearchWidget = ({ className, listChip, chipLength }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

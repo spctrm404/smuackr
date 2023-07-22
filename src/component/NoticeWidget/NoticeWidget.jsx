@@ -12,7 +12,7 @@ const NoticeWidget = ({ className, listNotice, noticeLength }) => {
     { key: uuidv4(), label: '천안' },
   ];
   return (
-    <div className={`${Classes.noticeWidget} ${className}`}>
+    <section className={`${Classes.noticeWidget} ${className}`}>
       <h4 className={Classes.title}>학생공지</h4>
       <div className={Classes.grpControl}>
         <Tab overridingClasses={Classes} listTab={listTab}></Tab>
@@ -31,7 +31,7 @@ const NoticeWidget = ({ className, listNotice, noticeLength }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

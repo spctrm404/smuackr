@@ -22,17 +22,17 @@
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'md')) {
-  $px: map.get(base.$dim-px, 'md');
-  $py: map.get(base.$dim-py, 'md');
-  $gap-x: map.get(base.$dim-gap-x, 'md');
-  $gap-y: map.get(base.$dim-gap-y, 'md');
+  $px: map.get(base.$dim-container-px, 'md');
+  $py: map.get(base.$dim-container-py, 'md');
+  $gap-x: map.get(base.$dim-container-gx, 'md');
+  $gap-y: map.get(base.$dim-container-gy, 'md');
 }
 
 @media (width > map.get(base.$dim-bp-gt, 'lg')) {
-  $px: map.get(base.$dim-px, 'lg');
-  $py: map.get(base.$dim-py, 'lg');
-  $gap-x: map.get(base.$dim-gap-x, 'lg');
-  $gap-y: map.get(base.$dim-gap-y, 'lg');
+  $px: map.get(base.$dim-container-px, 'lg');
+  $py: map.get(base.$dim-container-py, 'lg');
+  $gap-x: map.get(base.$dim-container-gx, 'lg');
+  $gap-y: map.get(base.$dim-container-gy, 'lg');
 
   .grid {
     display: grid;

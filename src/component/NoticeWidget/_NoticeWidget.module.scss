@@ -3,11 +3,11 @@
 @use '../../style/base';
 
 $notice-widget-offset-x: -1 * base.$dim-static-notice-px;
-$grp-control-gx: base.$dim-static-notice-widget-grp-control-gx;
+$grp-control-gx: base.$dim-static-notice-gx;
 $grp-control-mb: 1rem;
 $button-mr: -1 * base.$dim-static-button-standard-px;
 $grp-notice-gy: 0;
-$w-min-gte-lg: base.$dim-static-notice-widget-w-min;
+$w-min: base.$dim-notice-widget-w-min;
 
 .notice-widget {
   margin-inline: $notice-widget-offset-x;
@@ -15,7 +15,7 @@ $w-min-gte-lg: base.$dim-static-notice-widget-w-min;
   @include base.type-body-sm;
 
   @include base.style-lg {
-    min-width: $w-min-gte-lg;
+    min-width: $w-min;
   }
 }
 

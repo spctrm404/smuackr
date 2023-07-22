@@ -20,24 +20,28 @@ function Home() {
   });
 
   return (
-    <div className={Classes.layout}>
-      <div className={Classes.image}>
-        <img src={photo} alt="" />
-      </div>
-      <div className={Classes.widgetWrap}>
-        <SearchWidget
-          className={Classes.searchWidget}
-          listChip={DB.chips}
-          chipLength={20}></SearchWidget>
-        <NoticeWidget
-          className={Classes.noticeWidget}
-          listTab={DB.noticeTabs}
-          listNotice={DB.notices}
-          noticeLength={20}></NoticeWidget>
+    <>
+      <div className={Classes.heroLayout}>
+        <div className={Classes.image}>
+          <img src={photo} alt="" />
+        </div>
+        <div className={Classes.widgetContainer}>
+          <div className={Classes.widgetLayout}>
+            <SearchWidget
+              className={Classes.widgetSearch}
+              listChip={DB.chips}
+              chipLength={20}></SearchWidget>
+            <NoticeWidget
+              className={Classes.widgetNotice}
+              listTab={DB.noticeTabs}
+              listNotice={DB.notices}
+              noticeLength={20}></NoticeWidget>
+          </div>
+        </div>
       </div>
       <div className={Classes.shortcut}></div>
       <NewsWidget listNews={DB.news} length={12}></NewsWidget>
-    </div>
+    </>
   );
 }
 

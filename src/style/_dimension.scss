@@ -12,35 +12,35 @@ $bp-gt: (
   'xxl': 100rem,
   // 1600px
 );
-$px: (
+$container-px: (
   'sm': 1.25rem,
   'md': 2.5rem,
   'lg': 5rem,
   'xl': 5rem,
   'xxl': 5rem,
 );
-$px-variant: (
+$container-px-variant: (
   'sm': 0.25rem,
   'md': 1rem,
   'lg': 3.5rem,
   'xl': 3.5rem,
   'xxl': 3.5rem,
 );
-$py: (
+$container-py: (
   'sm': 2.5rem,
   'md': 2.5rem,
   'lg': 2.5rem,
   'xl': 2.5rem,
   'xxl': 2.5rem,
 );
-$gap-x: (
+$container-gx: (
   'sm': 1.5rem,
   'md': 2.5rem,
   'lg': 3.5rem,
   'xl': 3.5rem,
   'xxl': 3.5rem,
 );
-$gap-y: (
+$container-gy: (
   'sm': 2.5rem,
   'md': 2.5rem,
   'lg': 2.5rem,
@@ -48,29 +48,26 @@ $gap-y: (
   'xxl': 2.5rem,
 );
 $han-20ch-px: 20.7105rem;
-$han-20ch: 30.873ch;
-$notice-widget-w: (
-  '30': 1.5 * $han-20ch,
-  '40': 2 * $han-20ch,
-  '50': 2.5 * $han-20ch,
-  '60': 3 * $han-20ch,
-  '70': 3.5 * $han-20ch,
-  '80': 4 * $han-20ch,
-);
+
+// $notice-widget-w: (
+//   '30': 1.5 * $han-20ch,
+//   '40': 2 * $han-20ch,
+//   '50': 2.5 * $han-20ch,
+//   '60': 3 * $han-20ch,
+//   '70': 3.5 * $han-20ch,
+//   '80': 4 * $han-20ch,
+// );
 $static-px-min: 0.5rem;
-$static-w-max: 64rem;
 $static-w-variant-max: 67rem;
 $static-nav-bar-h: 3.5rem;
 $static-nav-rail-w: 7.5rem;
+
+//ss
+$static-container-w-max: 64rem;
+$han-20ch: 30.873ch;
 $static-notice-px: 0.25rem;
 $static-notice-gx: 1rem;
 $static-button-standard-px: 0.75rem;
 $static-chip-interaction-h: 3rem;
-
-// $static-search-widget-w-min: 20rem;
-// $static-search-widget-w-min: 30rem;
-$static-search-widget-w-min: 20rem;
-$static-notice-widget-grp-control-gx: $static-notice-gx;
-$static-notice-widget-w-min: calc(
-  $han-20ch * 2 + $static-notice-widget-grp-control-gx + 5ch
-);
+$search-widget-w-min: 20rem;
+$notice-widget-w-min: calc($han-20ch * 2 + $static-notice-gx + 5ch);
