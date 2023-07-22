@@ -116,8 +116,8 @@
 }
 
 @mixin md() {
-  @media (width > map.get(dimension.$bp-gt, 'md')) {
-    @at-root {
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'md')) {
       & {
         @content;
       }
@@ -126,8 +126,8 @@
 }
 
 @mixin lg() {
-  @media (width > map.get(dimension.$bp-gt, 'lg')) {
-    @at-root {
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'lg')) {
       & {
         @content;
       }
@@ -136,8 +136,8 @@
 }
 
 @mixin xl() {
-  @media (width > map.get(dimension.$bp-gt, 'xl')) {
-    @at-root {
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'xl')) {
       & {
         @content;
       }
@@ -146,8 +146,8 @@
 }
 
 @mixin xxl() {
-  @media (width > map.get(dimension.$bp-gt, 'xxl')) {
-    @at-root {
+  @at-root {
+    @media (width > map.get(dimension.$bp-gt, 'xxl')) {
       & {
         @content;
       }

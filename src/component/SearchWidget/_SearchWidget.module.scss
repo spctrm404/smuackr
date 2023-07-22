@@ -5,9 +5,16 @@ $form-mb: 0.5rem;
 $chips-gx: 0.5rem;
 $chips-n: 2;
 
+// $min-width-gte-md: 29.75rem;
+$w-min-gte-md: base.$dim-static-search-widget-w-min;
+
 .search-widget {
   form {
     margin-bottom: $form-mb;
+  }
+
+  @include base.style-md {
+    min-width: $w-min-gte-md;
   }
 }
 

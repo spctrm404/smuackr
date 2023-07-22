@@ -59,6 +59,7 @@ $button-interaction-h: 3rem;
   input {
     flex-basis: 100%;
     flex-grow: 1;
+    width: 100%;
     color: base.theme-get-val('on-surface');
     background-color: transparent;
     border: 0;

@@ -66,3 +66,11 @@ $static-notice-px: 0.25rem;
 $static-notice-gx: 1rem;
 $static-button-standard-px: 0.75rem;
 $static-chip-interaction-h: 3rem;
+
+// $static-search-widget-w-min: 20rem;
+// $static-search-widget-w-min: 30rem;
+$static-search-widget-w-min: 20rem;
+$static-notice-widget-grp-control-gx: $static-notice-gx;
+$static-notice-widget-w-min: calc(
+  $han-20ch * 2 + $static-notice-widget-grp-control-gx + 5ch
+);

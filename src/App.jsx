@@ -13,11 +13,13 @@ function App() {
       <div className={Classes.navBar}></div>
       <NavRail className={Classes.navRail} listNav={DB.navV1}></NavRail>
       <div className={Classes.content}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/components" element={<Components />} />
-          <Route path="/page" element={<Page />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/components" element={<Components />} />
+            <Route path="/page" element={<Page />} />
+          </Routes>
+        </main>
         <Footer className={Classes.footer} listLink={DB.footerLinks}></Footer>
       </div>
     </div>
