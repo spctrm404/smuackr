@@ -1,6 +1,9 @@
 .button-like {
   &-area {
     &-interaction {
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     &-visible {

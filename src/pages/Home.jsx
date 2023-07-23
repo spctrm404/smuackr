@@ -39,6 +39,23 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className={Classes.shortcutContainer}>
+        <div className={Classes.shortcutLayout}>
+          <h4 className={Classes.nowrap}>Quick Menu</h4>
+          <div className={Classes.linkWrap}>
+            <a href="">샘물</a>
+            <a href="">캘린더</a>
+            <a href="">SM Webzine</a>
+            <a href="">사이트맵</a>
+            <a href="">그 외</a>
+            <a href="">편리한</a>
+            <a href="">링크들을</a>
+            <a href="">더 추가하면</a>
+            <a href="">좋을 것</a>
+            <a href="">같습니다</a>
+          </div>
+        </div>
+      </div>
       <NewsWidget listNews={DB.news} length={12}></NewsWidget>
     </>
   );

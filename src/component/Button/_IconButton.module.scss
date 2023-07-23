@@ -10,6 +10,10 @@ $r: 256rem;
 
 .icon-button {
   @include common.apply;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .area {

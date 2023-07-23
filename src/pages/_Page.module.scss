@@ -22,20 +22,43 @@ $container-py: (
   'xl': 3rem,
   'xxl': 3rem,
 );
-$container-gx: (
-  'sm': map.get(base.$dim-container-gx, 'sm'),
-  'md': map.get(base.$dim-container-gx, 'md'),
-  'lg': map.get(base.$dim-container-gx, 'lg'),
-  'xl': map.get(base.$dim-container-gx, 'xl'),
-  'xxl': map.get(base.$dim-container-gx, 'xxl'),
-);
-$container-gy: (
-  'sm': map.get(base.$dim-container-gy, 'sm'),
-  'md': map.get(base.$dim-container-gy, 'md'),
-  'lg': map.get(base.$dim-container-gy, 'lg'),
-  'xl': map.get(base.$dim-container-gy, 'xl'),
-  'xxl': map.get(base.$dim-container-gy, 'xxl'),
-);
+$title-mb: 12px;
+$title-mb-gte-md: 1rem;
+$article-py: 1rem;
+$article-py-gte-md: 1.5rem;
+$article-py-gte-xxl: 2rem;
+$article-index-py: 1rem;
+$article-index-py-gte-md: 1.5rem;
+$article-index-py-gte-xxl: $article-py-gte-xxl;
+$article-container-gx: 2rem;
+$article-text-w-max: base.$dim-hangul-20ch * 3;
+$between-paragraph-gy: 0.75rem;
+$between-paragraph-gy-gte-md: 1rem;
+$last-paragraph-mb: 1.5rem;
+$last-paragraph-mb-gte-md: 2rem;
+$first-paragraph-mb: 0.75rem;
+$first-paragraph-mb-gte-md: 1rem;
+$article-quote-w-max: base.$dim-hangul-20ch * 2;
+$article-quote-bl: 0.125rem;
+$article-quote-pl: 0.75rem;
+$article-quote-pl-gte-md: 1rem;
+$column-gx: 1.5rem;
+
+// $container-gx: (
+//   'sm': map.get(base.$dim-container-gx, 'sm'),
+//   'md': map.get(base.$dim-container-gx, 'md'),
+//   'lg': map.get(base.$dim-container-gx, 'lg'),
+//   'xl': map.get(base.$dim-container-gx, 'xl'),
+//   'xxl': map.get(base.$dim-container-gx, 'xxl'),
+// );
+// $container-gy: (
+//   'sm': map.get(base.$dim-container-gy, 'sm'),
+//   'md': map.get(base.$dim-container-gy, 'md'),
+//   'lg': map.get(base.$dim-container-gy, 'lg'),
+//   'xl': map.get(base.$dim-container-gy, 'xl'),
+//   'xxl': map.get(base.$dim-container-gy, 'xxl'),
+// );
+
 $w-max: base.$dim-container-w-max;
 
 .container {
@@ -45,22 +68,23 @@ $w-max: base.$dim-container-w-max;
 }
 
 .layout {
-  margin-block: map.get($container-py, 'sm');
+  margin-block: map.get($container-py, 'sm') 2 * map.get($container-py, 'sm');
 
   @include base.style-md {
-    margin-block: map.get($container-py, 'md');
+    margin-block: map.get($container-py, 'md') 2 * map.get($container-py, 'md');
   }
 
   @include base.style-lg {
-    margin-block: map.get($container-py, 'lg');
+    margin-block: map.get($container-py, 'lg') 2 * map.get($container-py, 'lg');
   }
 
   @include base.style-xl {
-    margin-block: map.get($container-py, 'xl');
+    margin-block: map.get($container-py, 'xl') 2 * map.get($container-py, 'xl');
   }
 
   @include base.style-xxl {
-    margin-block: map.get($container-py, 'xxl');
+    margin-block: map.get($container-py, 'xxl') 2 *
+      map.get($container-py, 'xxl');
   }
 }
 
@@ -131,6 +155,12 @@ $w-max: base.$dim-container-w-max;
       }
     }
   }
+
+  margin-bottom: $title-mb;
+
+  @include base.style-md {
+    margin-bottom: $title-mb-gte-md;
+  }
 }
 
 .article {
@@ -164,7 +194,7 @@ $w-max: base.$dim-container-w-max;
       grid-template-columns:
         minmax(map.get($container-px, 'xxl'), 1fr) minmax(auto, $w-max)
         minmax(map.get($container-px, 'xxl'), 1fr);
-      column-gap: 1.5rem;
+      column-gap: $article-container-gx;
     }
   }
 
@@ -181,21 +211,44 @@ $w-max: base.$dim-container-w-max;
 
   &-index {
     position: sticky;
-    top: 0;
+    top: 32px - 1px;
+    margin-top: $article-index-py - 0.0625rem;
 
-    @include base.type-label-lg;
+    @include base.type-label;
+
+    @include base.style-md {
+      margin-top: $article-index-py-gte-md;
+    }
+
+    @include base.style-xxl {
+      margin-top: $article-index-py-gte-xxl - 0.0625rem;
+    }
+
+    &-title {
+      margin-bottom: 0.25rem;
+    }
 
     ul {
       list-style: none;
+
+      @include base.type-label-lg;
+
+      li {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+      }
     }
   }
 
   grid-row: 2;
   grid-column: 2;
+  padding-block: $article-py;
   word-break: break-all;
   overflow-wrap: anywhere;
 
   @include base.style-md {
+    padding-block: $article-py-gte-md;
     word-break: keep-all;
     overflow-wrap: break-word;
   }
@@ -203,78 +256,71 @@ $w-max: base.$dim-container-w-max;
   @include base.style-xxl {
     grid-row: 1;
     grid-column: 2;
+    padding-block: $article-py-gte-xxl - 0.0625rem $article-py-gte-xxl;
   }
 
-  &-quote {
-    @include base.type-subtitle;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    max-width: $article-text-w-max;
+  }
 
-    &-text {
-      box-sizing: content-box;
-      max-width: base.$dim-hangul-20ch * 2;
-      padding-left: 12px - 2px;
-      text-wrap: balance;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-      border-left: 2px solid base.theme-get-val('primary');
+  h5,
+  h6 {
+    position: relative;
+    padding-left: 1.25rem;
 
-      @include base.style-md {
-        padding-left: 16px - 2px;
-      }
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 12px;
+      height: 12px;
+      content: '';
+      border: 0.25rem solid;
+      border-radius: 256rem;
+      transform: translateY(-50%);
     }
   }
 
-  &-column {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-
-    img {
-      align-self: start;
-      width: 360px;
-    }
-
-    &-text {
-      flex-basis: base.$dim-hangul-20ch;
-      flex-grow: 1;
-
-      @include base.type-body;
-    }
+  h5::before {
+    // border-color: base.theme-get-val('tertiary-outline');
+    color: base.theme-get-val('primary-outline');
   }
 
-  a {
-    color: base.theme-get-val('link');
-    text-decoration: none;
-
-    &:hover {
-      color: base.theme-get-val('link-hover');
-      text-decoration: underline;
-    }
+  h6::before {
+    // border-color: base.theme-get-val('quaternary-outline');
+    color: base.theme-get-val('quaternary-outline');
   }
 
-  strong {
+  strong,
+  em {
     font-weight: 500;
     color: base.theme-get-val('quaternary');
   }
 
   p {
-    max-width: base.$dim-hangul-20ch * 3;
+    max-width: $article-text-w-max;
 
     // p태그 직후의 p태그: 문단 사이
     + p {
-      margin-top: 8px;
+      margin-top: $between-paragraph-gy;
 
       @include base.style-md {
-        margin-top: 12px;
+        margin-top: $between-paragraph-gy-gte-md;
       }
     }
 
-    // p태그 직후의 div들: 문단 사이
+    // p태그 직후의 div; 들: 문단 사이
     + div {
-      margin-top: 8px;
+      margin-top: $between-paragraph-gy;
 
       @include base.style-md {
-        margin-top: 12px;
+        margin-top: $between-paragraph-gy-gte-md;
       }
     }
 
@@ -285,10 +331,10 @@ $w-max: base.$dim-container-w-max;
     &:has(+ h4),
     &:has(+ h5),
     &:has(+ h6) {
-      margin-bottom: 16px;
+      margin-bottom: $last-paragraph-mb;
 
       @include base.style-md {
-        margin-bottom: 24px;
+        margin-bottom: $last-paragraph-mb-gte-md;
       }
     }
   }
@@ -296,19 +342,19 @@ $w-max: base.$dim-container-w-max;
   div {
     // div태그 직후의 p태그: 문단 사이
     + p {
-      margin-top: 8px;
+      margin-top: $between-paragraph-gy;
 
       @include base.style-md {
-        margin-top: 12px;
+        margin-top: $between-paragraph-gy-gte-md;
       }
     }
 
     // div태그 직후의 div들: 문단 사이
     + div {
-      margin-top: 8px;
+      margin-top: $between-paragraph-gy;
 
       @include base.style-md {
-        margin-top: 12px;
+        margin-top: $between-paragraph-gy-gte-md;
       }
     }
 
@@ -319,10 +365,10 @@ $w-max: base.$dim-container-w-max;
     &:has(+ h4),
     &:has(+ h5),
     &:has(+ h6) {
-      margin-bottom: 16px;
+      margin-bottom: $last-paragraph-mb;
 
       @include base.style-md {
-        margin-bottom: 24px;
+        margin-bottom: $last-paragraph-mb-gte-md;
       }
     }
   }
@@ -332,15 +378,59 @@ $w-max: base.$dim-container-w-max;
     // h5, h6태그 직후의 p, div태그: 제목 후 첫 문단
     + p,
     + div {
-      padding-top: 8px;
-
-      // padding-top: 8px;
+      padding-top: $first-paragraph-mb;
       border-top: 1px solid base.theme-get-val('outline-variant');
 
       @include base.style-md {
-        // padding-top: 12px;
-        padding-top: 16px;
+        padding-top: $first-paragraph-mb-gte-md;
       }
+    }
+  }
+
+  &-quote {
+    @include base.type-subtitle;
+
+    &-text {
+      box-sizing: content-box;
+      max-width: $article-quote-w-max;
+      padding-left: $article-quote-pl - $article-quote-bl;
+      text-wrap: balance;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      border-left: $article-quote-bl solid base.theme-get-val('primary-outline');
+
+      @include base.style-md {
+        padding-left: $article-quote-pl-gte-md - $article-quote-bl;
+      }
+    }
+  }
+
+  &-column {
+    display: flex;
+    flex-flow: row-reverse wrap;
+
+    // 변수화
+    row-gap: $between-paragraph-gy;
+
+    // 변수화
+    column-gap: $column-gx;
+    justify-content: center;
+
+    @include base.style-md {
+      // 변수화
+      row-gap: $between-paragraph-gy-gte-md;
+    }
+
+    img {
+      align-self: center;
+      width: 360px;
+    }
+
+    &-text {
+      flex-basis: base.$dim-hangul-20ch;
+      flex-grow: 1;
+
+      @include base.type-body;
     }
   }
 }

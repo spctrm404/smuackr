@@ -13,6 +13,10 @@ $r: 256rem;
 .chip {
   @include base.style-buttonize;
   @include base.type-label;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .area {

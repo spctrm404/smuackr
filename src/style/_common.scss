@@ -62,6 +62,16 @@ h6 {
   @include type-semantic.subtitle-sm;
 }
 
+a {
+  color: theme.get-val('link');
+  text-decoration: none;
+
+  &:hover {
+    color: theme.get-val('link-hover');
+    text-decoration: underline;
+  }
+}
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }

@@ -13,6 +13,10 @@ $line-n: 2;
   @include base.style-buttonize;
   @include base.type-body-sm;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   .area-visible {
     display: flex;
     gap: $gx;

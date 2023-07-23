@@ -41,6 +41,21 @@ $notice-widget-w-min: base.$dim-notice-widget-w-min;
 $widget-container-w-max-gte-xxl: calc(
   $notice-widget-w-min + 2 * map.get($widget-container-px, 'xxl')
 );
+$shortcut-layout-w-max: base.$dim-container-w-max;
+$shortcut-container-px: (
+  'sm': map.get(base.$dim-container-px, 'sm'),
+  'md': map.get(base.$dim-container-px, 'md'),
+  'lg': map.get(base.$dim-container-px, 'lg'),
+  'xl': map.get(base.$dim-container-px, 'xl'),
+  'xxl': map.get(base.$dim-container-px, 'xxl'),
+);
+$shortcut-container-py: (
+  'sm': map.get(base.$dim-container-py, 'sm'),
+  'md': map.get(base.$dim-container-py, 'md'),
+  'lg': map.get(base.$dim-container-py, 'lg'),
+  'xl': map.get(base.$dim-container-py, 'xl'),
+  'xxl': map.get(base.$dim-container-py, 'xxl'),
+);
 
 .hero {
   &-layout {
@@ -78,7 +93,7 @@ $widget-container-w-max-gte-xxl: calc(
     padding-block: map.get($widget-container-py, 'sm');
     padding-inline: map.get($widget-container-px, 'sm');
     margin-inline: auto;
-    background-color: base.theme-get-val('surface-container');
+    background-color: base.theme-get-val('surface-container-high');
 
     @include base.style-md {
       padding-block: map.get($widget-container-py, 'md');
@@ -112,7 +127,6 @@ $widget-container-w-max-gte-xxl: calc(
     column-gap: map.get($widget-container-gx, 'sm');
     align-items: center;
     justify-content: center;
-    background-color: base.theme-get-val('surface-container');
 
     @include base.style-md {
       row-gap: map.get($widget-container-gy, 'md');
@@ -147,6 +161,65 @@ $widget-container-w-max-gte-xxl: calc(
 }
 
 .shortcut {
-  min-height: 6.25rem;
-  background-color: base.theme-get-val('surface-container-low');
+  &-container {
+    background-color: base.theme-get-val('surface-container');
+  }
+
+  &-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: baseline;
+    width: min(
+      $shortcut-layout-w-max,
+      100% - 2 * map.get($shortcut-container-px, 'sm')
+    );
+    padding-block: map.get($shortcut-container-py, 'sm');
+    margin-inline: auto;
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .link-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 16px;
+      column-gap: 36px;
+    }
+
+    @include base.style-md {
+      flex-direction: row;
+      gap: 48px;
+      width: min(
+        $shortcut-layout-w-max,
+        100% - 2 * map.get($shortcut-container-px, 'md')
+      );
+      padding-block: map.get($shortcut-container-py, 'md');
+    }
+
+    @include base.style-lg {
+      width: min(
+        $shortcut-layout-w-max,
+        100% - 2 * map.get($shortcut-container-px, 'lg')
+      );
+      padding-block: map.get($shortcut-container-py, 'lg');
+    }
+
+    @include base.style-xl {
+      width: min(
+        $shortcut-layout-w-max,
+        100% - 2 * map.get($shortcut-container-px, 'xl')
+      );
+      padding-block: map.get($shortcut-container-py, 'xl');
+    }
+
+    @include base.style-xxl {
+      width: min(
+        $shortcut-layout-w-max,
+        100% - 2 * map.get($shortcut-container-px, 'xxl')
+      );
+      padding-block: map.get($shortcut-container-py, 'xxl');
+    }
+  }
 }

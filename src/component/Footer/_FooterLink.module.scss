@@ -11,7 +11,7 @@ $layout-link-gap-y: 1rem;
   color: base.theme-get-val('on-surface');
   word-break: keep-all;
   overflow-wrap: break-word;
-  background-color: base.theme-get-val('surface-container-low');
+  background-color: base.theme-get-val('surface-container');
 
   @include base.type-label;
 }
@@ -26,13 +26,6 @@ $layout-link-gap-y: 1rem;
 .a {
   min-width: min-content;
   max-width: fit-content;
-  color: base.theme-get-val('link');
-  text-decoration: none;
-
-  &:hover {
-    color: base.theme-get-val('link-hover');
-    text-decoration: underline;
-  }
 }
 
 .accent {

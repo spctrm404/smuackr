@@ -17,7 +17,7 @@ $cert-gap-y: 16px;
   color: base.theme-get-val('on-surface');
   word-break: keep-all;
   overflow-wrap: break-word;
-  background-color: base.theme-get-val('surface-container');
+  background-color: base.theme-get-val('surface-container-high');
 
   @include base.type-body-sm;
 }
