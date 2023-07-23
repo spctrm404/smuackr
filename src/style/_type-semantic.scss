@@ -139,7 +139,7 @@
     @include type-token.type-scale-4(true, true); // 20px
   }
 
-  font-weight: 500;
+  font-weight: 700;
 
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {
@@ -157,7 +157,7 @@
     @include type-token.type-scale-5(true, true); // 22px
   }
 
-  font-weight: 500;
+  font-weight: 700;
 
   @at-root {
     @media (width > map.get(dimension.$bp-gt, 'md')) {

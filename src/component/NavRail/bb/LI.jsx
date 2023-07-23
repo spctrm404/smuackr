@@ -8,9 +8,9 @@ const Li = ({ children, listItem, depth, nth, stateNthOfSelected }) => {
     setNthOfSelected(nth);
   };
   return (
-    <li className={`${Classes[`liDp${depth}`]} ${Classes[`liNth${depth}`]}`}>
+    <li className={`${Classes[`liDp${depth}`]} ${Classes[`liNth${nth}`]}`}>
       <Button
-        to={depth >= 2 && '/page'}
+        to={depth >= 2 && `/page${nth}`}
         overridingClasses={Classes}
         onClickCallback={depth === 1 && onClickCallback}>
         <span>{listItem.label}</span>

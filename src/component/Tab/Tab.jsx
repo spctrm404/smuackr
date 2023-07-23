@@ -60,7 +60,7 @@ Tab.propTypes = {
   className: PropTypes.string,
   overridingClasses: PropTypes.object,
   listTab: PropTypes.array,
-  hasControl: PropTypes.bool,
+  hasControl: PropTypes.string,
 };
 
 export default Tab;

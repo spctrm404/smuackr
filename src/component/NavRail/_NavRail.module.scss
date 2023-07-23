@@ -119,6 +119,7 @@ $drawer-fg: base.theme-get-val('on-primary-seed');
 
           svg {
             height: 5rem;
+            overflow: visible;
           }
         }
       }

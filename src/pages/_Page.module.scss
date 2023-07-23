@@ -6,21 +6,21 @@ $container-px: (
   'md': map.get(base.$dim-container-px, 'md'),
   'lg': map.get(base.$dim-container-px, 'lg'),
   'xl': map.get(base.$dim-container-px, 'xl'),
-  'xxl': 3.75rem,
+  'xxl': map.get(base.$dim-container-px, 'xxl'),
 );
 $tab-px: (
   'sm': 0.5rem,
   'md': 1.75rem,
-  'lg': map.get(base.$dim-container-px, 'lg'),
-  'xl': map.get(base.$dim-container-px, 'xl'),
-  'xxl': 3.75rem,
+  'lg': 4.25rem,
+  'xl': 4.25rem,
+  'xxl': 4.25rem,
 );
 $container-py: (
-  'sm': map.get(base.$dim-container-py, 'sm'),
-  'md': map.get(base.$dim-container-py, 'md'),
-  'lg': map.get(base.$dim-container-py, 'lg'),
-  'xl': map.get(base.$dim-container-py, 'xl'),
-  'xxl': 3.5rem,
+  'sm': 1.25rem,
+  'md': 2.5rem,
+  'lg': 3rem,
+  'xl': 3rem,
+  'xxl': 3rem,
 );
 $container-gx: (
   'sm': map.get(base.$dim-container-gx, 'sm'),
@@ -42,6 +42,26 @@ $w-max: base.$dim-container-w-max;
   background-color: base.theme-get-val('surface');
 
   @include base.type-body;
+}
+
+.layout {
+  margin-block: map.get($container-py, 'sm');
+
+  @include base.style-md {
+    margin-block: map.get($container-py, 'md');
+  }
+
+  @include base.style-lg {
+    margin-block: map.get($container-py, 'lg');
+  }
+
+  @include base.style-xl {
+    margin-block: map.get($container-py, 'xl');
+  }
+
+  @include base.style-xxl {
+    margin-block: map.get($container-py, 'xxl');
+  }
 }
 
 .title {
@@ -66,27 +86,48 @@ $w-max: base.$dim-container-w-max;
     }
 
     .tab {
-      margin-inline: -1 *
-        (map.get($container-px, 'sm') - map.get($tab-px, 'sm'));
-
-      @include base.style-md {
+      &[data-has-control='responsive'] {
         margin-inline: -1 *
-          (map.get($container-px, 'md') - map.get($tab-px, 'md'));
+          (map.get($container-px, 'sm') - map.get($tab-px, 'sm'));
+
+        @include base.style-md {
+          margin-inline: -1 *
+            (map.get($container-px, 'md') - map.get($tab-px, 'md'));
+        }
+
+        @include base.style-lg {
+          margin-inline: -1 *
+            (map.get($container-px, 'lg') - map.get($tab-px, 'lg'));
+        }
+
+        @include base.style-xl {
+          margin-inline: unset;
+        }
       }
 
-      @include base.style-lg {
+      &[data-has-control='true'] {
         margin-inline: -1 *
-          (map.get($container-px, 'lg') - map.get($tab-px, 'lg'));
-      }
+          (map.get($container-px, 'sm') - map.get($tab-px, 'sm'));
 
-      @include base.style-xl {
-        margin-inline: -1 *
-          (map.get($container-px, 'xl') - map.get($tab-px, 'xl'));
-      }
+        @include base.style-md {
+          margin-inline: -1 *
+            (map.get($container-px, 'md') - map.get($tab-px, 'md'));
+        }
 
-      @include base.style-xxl {
-        margin-inline: -1 *
-          (map.get($container-px, 'xxl') - map.get($tab-px, 'xxl'));
+        @include base.style-lg {
+          margin-inline: -1 *
+            (map.get($container-px, 'lg') - map.get($tab-px, 'lg'));
+        }
+
+        @include base.style-xl {
+          margin-inline: -1 *
+            (map.get($container-px, 'xl') - map.get($tab-px, 'xl'));
+        }
+
+        @include base.style-xxl {
+          margin-inline: -1 *
+            (map.get($container-px, 'xxl') - map.get($tab-px, 'xxl'));
+        }
       }
     }
   }
@@ -141,6 +182,12 @@ $w-max: base.$dim-container-w-max;
   &-index {
     position: sticky;
     top: 0;
+
+    @include base.type-label-lg;
+
+    ul {
+      list-style: none;
+    }
   }
 
   grid-row: 2;
@@ -159,17 +206,20 @@ $w-max: base.$dim-container-w-max;
   }
 
   &-quote {
-    max-width: base.$dim-hangul-20ch * 2;
-    padding-left: 12px - 2px;
-    text-wrap: balance;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    border-left: 2px solid base.theme-get-val('primary');
-
     @include base.type-subtitle;
 
-    @include base.style-md {
-      padding-left: 16px - 2px;
+    &-text {
+      box-sizing: content-box;
+      max-width: base.$dim-hangul-20ch * 2;
+      padding-left: 12px - 2px;
+      text-wrap: balance;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      border-left: 2px solid base.theme-get-val('primary');
+
+      @include base.style-md {
+        padding-left: 16px - 2px;
+      }
     }
   }
 
@@ -181,7 +231,7 @@ $w-max: base.$dim-container-w-max;
 
     img {
       align-self: start;
-      width: 480px;
+      width: 360px;
     }
 
     &-text {
@@ -191,191 +241,106 @@ $w-max: base.$dim-container-w-max;
       @include base.type-body;
     }
   }
+
+  a {
+    color: base.theme-get-val('link');
+    text-decoration: none;
+
+    &:hover {
+      color: base.theme-get-val('link-hover');
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font-weight: 500;
+    color: base.theme-get-val('quaternary');
+  }
+
+  p {
+    max-width: base.$dim-hangul-20ch * 3;
+
+    // p태그 직후의 p태그: 문단 사이
+    + p {
+      margin-top: 8px;
+
+      @include base.style-md {
+        margin-top: 12px;
+      }
+    }
+
+    // p태그 직후의 div들: 문단 사이
+    + div {
+      margin-top: 8px;
+
+      @include base.style-md {
+        margin-top: 12px;
+      }
+    }
+
+    // h1, h2, h3, h4, h5, h6 직전의 p태그: 마지막 문단
+    &:has(+ h1),
+    &:has(+ h2),
+    &:has(+ h3),
+    &:has(+ h4),
+    &:has(+ h5),
+    &:has(+ h6) {
+      margin-bottom: 16px;
+
+      @include base.style-md {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  div {
+    // div태그 직후의 p태그: 문단 사이
+    + p {
+      margin-top: 8px;
+
+      @include base.style-md {
+        margin-top: 12px;
+      }
+    }
+
+    // div태그 직후의 div들: 문단 사이
+    + div {
+      margin-top: 8px;
+
+      @include base.style-md {
+        margin-top: 12px;
+      }
+    }
+
+    // h1, h2, h3, h4, h5, h6 직전의 div태그: 마지막 문단
+    &:has(+ h1),
+    &:has(+ h2),
+    &:has(+ h3),
+    &:has(+ h4),
+    &:has(+ h5),
+    &:has(+ h6) {
+      margin-bottom: 16px;
+
+      @include base.style-md {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  h5,
+  h6 {
+    // h5, h6태그 직후의 p, div태그: 제목 후 첫 문단
+    + p,
+    + div {
+      padding-top: 8px;
+
+      // padding-top: 8px;
+      border-top: 1px solid base.theme-get-val('outline-variant');
+
+      @include base.style-md {
+        // padding-top: 12px;
+        padding-top: 16px;
+      }
+    }
+  }
 }
-
-// .container {
-//   padding-block: $py;
-//   color: base.theme-get-val('on-surface');
-
-//   @include base.type-body;
-
-//   p {
-//     margin-bottom: 1em;
-//   }
-// }
-
-// .titles {
-//   // color: base.theme-get-val('primary-outline');
-// }
-
-// .grp {
-//   &-top {
-//     max-width: min($w-max, 100% - 2 * $px);
-//     margin-inline: auto;
-//     margin-bottom: 0.9375rem;
-//   }
-
-//   &-bottom {
-//     max-width: min($w-max, 100% - 2 * $px);
-//     margin-inline: auto;
-//   }
-// }
-
-// .nav {
-//   position: relative;
-//   margin-bottom: 1rem;
-
-//   @include base.type-label;
-// }
-
-// .table {
-//   width: fit-content;
-
-//   &-title {
-//     @include base.type-label-lg;
-//   }
-
-//   ul {
-//     padding-left: 0.4375rem;
-//     list-style: none;
-//     border-left: 1px solid base.theme-get-val('outline-variant');
-//   }
-// }
-
-// .article {
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6 {
-//     display: flex;
-//     gap: 0.5rem;
-//     align-items: center;
-
-//     // color: base.theme-get-val('primary-outline');
-//     &::before {
-//       display: block;
-//       width: 8px;
-//       height: 8px;
-//       content: '';
-//       border: 0.125rem solid base.theme-get-val('primary-outline');
-//       border-radius: 256rem;
-//     }
-//   }
-// }
-
-// .quote {
-//   max-width: base.$dim-hangul-20ch * 2;
-//   padding-left: 15px;
-//   color: base.theme-get-val('on-surface-variant');
-//   text-wrap: balance;
-//   border-left: 1px solid base.theme-get-val('primary-outline');
-
-//   @include base.type-subtitle;
-// }
-
-// .column {
-//   display: flex;
-//   flex-flow: column;
-//   gap: 24px;
-//   align-items: center;
-//   justify-content: start;
-
-//   > img {
-//     flex-shrink: 0;
-//     width: 640px;
-//   }
-
-//   &-text {
-//     flex: 1 0 0;
-//   }
-// }
-
-// @media (width > map.get(base.$dim-bp-gt, 'md')) {
-//   $px: map.get(base.$dim-container-px, 'md');
-//   $py: map.get(base.$dim-container-py, 'md');
-//   $gap-x: map.get(base.$dim-container-gx, 'md');
-//   $gap-y: map.get(base.$dim-container-gy, 'md');
-
-//   .container {
-//     padding-block: $py;
-//   }
-
-//   .grp {
-//     &-top {
-//       max-width: min($w-max, 100% - 2 * $px);
-//     }
-
-//     &-bottom {
-//       max-width: min($w-max, 100% - 2 * $px);
-//     }
-//   }
-
-//   .column {
-//     flex-flow: row wrap;
-//     align-content: start;
-//     align-items: start;
-//     justify-content: center;
-
-//     &-text {
-//       min-width: base.$dim-hangul-20ch-px * 1;
-//     }
-//   }
-// }
-
-// @media (width > map.get(base.$dim-bp-gt, 'lg')) {
-//   $px: map.get(base.$dim-container-px, 'lg');
-//   $py: map.get(base.$dim-container-py, 'lg');
-//   $gap-x: map.get(base.$dim-container-gx, 'lg');
-//   $gap-y: map.get(base.$dim-container-gy, 'lg');
-
-//   .container {
-//     padding-block: $py;
-//   }
-
-//   .grp {
-//     &-top {
-//       max-width: min($w-max, 100% - 2 * $px);
-//     }
-
-//     &-bottom {
-//       max-width: min($w-max, 100% - 2 * $px);
-//     }
-//   }
-// }
-
-// @media (width > map.get(base.$dim-bp-gt, 'xl')) {
-// }
-
-// @media (width > map.get(base.$dim-bp-gt, 'xxl')) {
-//   $px: map.get(base.$dim-container-px, 'xxl');
-
-//   .grp {
-//     &-bottom {
-//       display: grid;
-//       grid-template-columns: minmax($px, 1fr) minmax(auto, $w-max) minmax(
-//           $px,
-//           1fr
-//         );
-//       column-gap: 1.5rem;
-//       max-width: unset;
-//     }
-//   }
-
-//   .nav {
-//     position: relative;
-//     grid-row: 1;
-//     grid-column: 3;
-//   }
-
-//   .table {
-//     position: sticky;
-//     top: 0;
-//   }
-
-//   .article {
-//     grid-row: 1;
-//     grid-column: 2;
-//   }
-// }

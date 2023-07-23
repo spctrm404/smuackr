@@ -68,12 +68,12 @@ $button-t: 0.0625rem;
   }
 
   &[data-has-control='false'] {
-    @include base.style-lg {
-      .tab-control-button {
-        display: none;
-      }
+    .tab-control-button {
+      display: none;
     }
+  }
 
+  &[data-has-control='responsive'] {
     @include base.style-xl {
       .tab-control-button {
         display: none;
