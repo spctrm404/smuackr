@@ -22,7 +22,7 @@ function Home() {
   return (
     <>
       <div className={Classes.heroLayout}>
-        <div className={Classes.image}>
+        <div className={Classes.heroImage}>
           <img src={photo} alt="" />
         </div>
         <div className={Classes.widgetContainer}>
@@ -39,7 +39,6 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className={Classes.shortcut}></div>
       <NewsWidget listNews={DB.news} length={12}></NewsWidget>
     </>
   );

@@ -1,8 +1,8 @@
 @use 'sass:map';
 @use '../../style/base';
 
-$gx: base.$dim-static-notice-gx;
-$px: base.$dim-static-notice-px;
+$gx: base.$dim-notice-gx;
+$px: base.$dim-notice-px;
 $py: 0.25rem;
 $prefix-mr: 0.25rem;
 $line-n: 2;

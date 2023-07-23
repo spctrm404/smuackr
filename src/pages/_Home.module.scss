@@ -1,19 +1,26 @@
 @use 'sass:map';
 @use '../style/base';
 
+$hero-image-h-min: (
+  'sm': calc(100dvh - base.$dim-nav-bar-h),
+  'md': 0,
+  'lg': 0,
+  'xl': 0,
+  'xxl': 3.75rem,
+);
 $widget-container-px: (
   'sm': map.get(base.$dim-container-px, 'sm'),
   'md': map.get(base.$dim-container-px, 'md'),
   'lg': map.get(base.$dim-container-px, 'lg'),
   'xl': map.get(base.$dim-container-px, 'xl'),
-  'xxl': map.get(base.$dim-container-px, 'xxl'),
+  'xxl': 3.75rem,
 );
 $widget-container-py: (
   'sm': map.get(base.$dim-container-py, 'sm'),
   'md': map.get(base.$dim-container-py, 'md'),
   'lg': map.get(base.$dim-container-py, 'lg'),
   'xl': map.get(base.$dim-container-py, 'xl'),
-  'xxl': map.get(base.$dim-container-py, 'xxl'),
+  'xxl': 3.5rem,
 );
 $widget-container-gx: (
   'sm': map.get(base.$dim-container-gx, 'sm'),
@@ -29,9 +36,11 @@ $widget-container-gy: (
   'xl': map.get(base.$dim-container-gy, 'xl'),
   'xxl': map.get(base.$dim-container-gy, 'xxl'),
 );
-$widget-container-w-max-gte-xxl: 0;
-$search-widget-w-min: base.$dim-search-widget-w-min;
+$search-widget-flex-basis: base.$dim-search-widget-w-min;
 $notice-widget-w-min: base.$dim-notice-widget-w-min;
+$widget-container-w-max-gte-xxl: calc(
+  $notice-widget-w-min + 2 * map.get($widget-container-px, 'xxl')
+);
 
 .hero {
   &-layout {
@@ -43,16 +52,24 @@ $notice-widget-w-min: base.$dim-notice-widget-w-min;
       flex-wrap: nowrap;
     }
   }
-}
 
-.image {
-  flex-grow: 1;
-  aspect-ratio: 16 / 9;
+  &-image {
+    height: calc(100dvh - base.$dim-nav-bar-h);
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    @include base.style-lg {
+      height: 100dvh;
+    }
+
+    @include base.style-xxl {
+      height: unset;
+      min-height: 100dvh;
+    }
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -91,35 +108,35 @@ $notice-widget-w-min: base.$dim-notice-widget-w-min;
   &-layout {
     display: flex;
     flex-wrap: wrap;
-    row-gap: map.get(base.$dim-container-gy, 'sm');
-    column-gap: map.get(base.$dim-container-gx, 'sm');
+    row-gap: map.get($widget-container-gy, 'sm');
+    column-gap: map.get($widget-container-gx, 'sm');
     align-items: center;
     justify-content: center;
     background-color: base.theme-get-val('surface-container');
 
     @include base.style-md {
-      row-gap: map.get(base.$dim-container-gy, 'md');
-      column-gap: map.get(base.$dim-container-gx, 'md');
+      row-gap: map.get($widget-container-gy, 'md');
+      column-gap: map.get($widget-container-gx, 'md');
     }
 
     @include base.style-lg {
-      row-gap: map.get(base.$dim-container-gy, 'lg');
-      column-gap: map.get(base.$dim-container-gx, 'lg');
+      row-gap: map.get($widget-container-gy, 'lg');
+      column-gap: map.get($widget-container-gx, 'lg');
     }
 
     @include base.style-xl {
-      row-gap: map.get(base.$dim-container-gy, 'xl');
-      column-gap: map.get(base.$dim-container-gx, 'xl');
+      row-gap: map.get($widget-container-gy, 'xl');
+      column-gap: map.get($widget-container-gx, 'xl');
     }
 
     @include base.style-xxl {
-      row-gap: map.get(base.$dim-container-gy, 'xxl');
-      column-gap: map.get(base.$dim-container-gx, 'xxl');
+      row-gap: map.get($widget-container-gy, 'xxl');
+      column-gap: map.get($widget-container-gx, 'xxl');
     }
   }
 
   &-search {
-    flex: 1 1 $search-widget-w-min;
+    flex: 1 1 $search-widget-flex-basis;
   }
 
   &-notice {

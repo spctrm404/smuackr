@@ -30,6 +30,6 @@ $w-min: base.$dim-search-widget-w-min;
   display: flex;
   flex-wrap: wrap;
   column-gap: $chips-gx;
-  max-height: base.$dim-static-chip-interaction-h * $chips-n;
+  max-height: base.$dim-chip-interaction-h * $chips-n;
   overflow: hidden;
 }

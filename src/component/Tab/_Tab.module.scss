@@ -68,8 +68,22 @@ $button-t: 0.0625rem;
   }
 
   &[data-has-control='false'] {
-    .tab-control-button {
-      display: none;
+    @include base.style-lg {
+      .tab-control-button {
+        display: none;
+      }
+    }
+
+    @include base.style-xl {
+      .tab-control-button {
+        display: none;
+      }
+    }
+
+    @include base.style-xxl {
+      .tab-control-button {
+        display: none;
+      }
     }
   }
 

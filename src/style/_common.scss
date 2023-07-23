@@ -70,7 +70,7 @@ h6 {
   $px: map.get(dimension.$container-px, 'sm');
   $py: map.get(dimension.$container-py, 'sm');
 
-  width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
+  width: min(dimension.$container-w-max, calc(100% - 2 * $px));
   padding-block: $py;
   margin-inline: auto;
 
@@ -91,7 +91,7 @@ h6 {
   $gap-y: map.get(dimension.$container-gy, 'md');
 
   .container {
-    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
@@ -112,7 +112,7 @@ h6 {
   $gap-y: map.get(dimension.$container-gy, 'lg');
 
   .container {
-    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
@@ -133,7 +133,7 @@ h6 {
   $gap-y: map.get(dimension.$container-gy, 'xl');
 
   .container {
-    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {
@@ -154,7 +154,7 @@ h6 {
   $gap-y: map.get(dimension.$container-gy, 'xxl');
 
   .container {
-    width: min(dimension.$static-container-w-max, calc(100% - 2 * $px));
+    width: min(dimension.$container-w-max, calc(100% - 2 * $px));
     padding-block: $py;
 
     &--width {

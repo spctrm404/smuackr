@@ -9,7 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 1024;
-  height: base.$dim-static-nav-bar-h;
+  height: base.$dim-nav-bar-h;
   background-color: base.theme-get-val('primary-seed');
 }
 

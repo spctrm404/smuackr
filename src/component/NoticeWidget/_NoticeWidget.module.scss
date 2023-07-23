@@ -2,15 +2,15 @@
 @use 'sass:map';
 @use '../../style/base';
 
-$notice-widget-offset-x: -1 * base.$dim-static-notice-px;
-$grp-control-gx: base.$dim-static-notice-gx;
+$mx: -1 * base.$dim-notice-px;
+$grp-control-gx: base.$dim-notice-gx;
 $grp-control-mb: 1rem;
-$button-mr: -1 * base.$dim-static-button-standard-px;
+$button-mr: -1 * base.$dim-button-standard-px;
 $grp-notice-gy: 0;
 $w-min: base.$dim-notice-widget-w-min;
 
 .notice-widget {
-  margin-inline: $notice-widget-offset-x;
+  margin-inline: $mx;
 
   @include base.type-body-sm;
 
@@ -20,7 +20,7 @@ $w-min: base.$dim-notice-widget-w-min;
 }
 
 .title {
-  margin-inline: -1 * $notice-widget-offset-x;
+  margin-inline: -1 * $mx;
   color: base.theme-get-val('on-surface');
 }
 
@@ -29,7 +29,7 @@ $w-min: base.$dim-notice-widget-w-min;
     display: flex;
     gap: $grp-control-gx;
     align-items: baseline;
-    margin-inline: -1 * $notice-widget-offset-x;
+    margin-inline: -1 * $mx;
     margin-bottom: $grp-control-mb - 0.0625rem;
 
     .tab {

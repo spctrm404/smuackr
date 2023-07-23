@@ -1,7 +1,7 @@
 @use 'sass:selector';
 @use '../../style/base';
 
-$interaction-h: base.$dim-static-chip-interaction-h;
+$interaction-h: base.$dim-chip-interaction-h;
 $visible-h: 2rem;
 $t: 0.0625rem;
 $px: 1rem;
